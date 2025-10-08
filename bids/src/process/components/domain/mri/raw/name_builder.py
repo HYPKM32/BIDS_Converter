@@ -7,7 +7,7 @@ from utils.common import zero_fill
 
 logger = logging.getLogger(__name__)
 
-def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path):
+def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path, alias_id):
     """
     소스 데이터 경로를 BIDS 형식 경로로 매핑하는 함수
     
@@ -79,7 +79,7 @@ def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path):
             source_folder, 
             modality, 
             entity_rules, 
-            subject_id, 
+            alias_id, 
             trial_index, 
             task_info,
             run_number=current_run_str
@@ -91,7 +91,7 @@ def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path):
         # 최종 BIDS 경로 생성
         bids_path = os.path.join(
             raw_path, 
-            f"sub-{subject_id}", 
+            f"sub-{alias_id}", 
             f"ses-{trial_index}", 
             data_type, 
             bids_filename
@@ -110,7 +110,7 @@ def find_data_type(modality, suffix_rules):
     return None
 
 
-def get_base_run_number(modality, subject_id, trial_index, raw_path, data_type):
+def get_base_run_number(modality, alias_id, trial_index, raw_path, data_type):
     """
     기존 파일들을 확인하여 시작 run 번호를 결정
     이미 파일이 있으면 max(run) + 1, 없으면 1부터 시작
@@ -118,7 +118,7 @@ def get_base_run_number(modality, subject_id, trial_index, raw_path, data_type):
     # 대상 폴더 경로
     target_dir = os.path.join(
         raw_path,
-        f"sub-{subject_id}",
+        f"sub-{alias_id}",
         f"ses-{trial_index}",
         data_type
     )
@@ -162,7 +162,7 @@ def get_base_run_number(modality, subject_id, trial_index, raw_path, data_type):
         return 1
 
 
-def build_bids_filename(source_folder, modality, entity_rules, subject_id, 
+def build_bids_filename(source_folder, modality, entity_rules, alias_id, 
                        trial_index, task_info, run_number=None):
     """
     BIDS 파일명 생성
@@ -184,7 +184,7 @@ def build_bids_filename(source_folder, modality, entity_rules, subject_id,
     entities = []
     
     # 1. subject (무조건 포함)
-    entities.append(f"sub-{subject_id}")
+    entities.append(f"sub-{alias_id}")
     
     # 2. session (무조건 포함)  
     entities.append(f"ses-{trial_index}")

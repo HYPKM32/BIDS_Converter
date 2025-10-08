@@ -12,7 +12,7 @@ def create_raw_path(structured_config, source_path, global_vars):
     
     # 1. Raw 경로 생성 (sourcedata -> rawdata)
     raw_path = source_path['source_path'].replace('/sourcedata', '/rawdata')
-    
+    alias_id = os.path.basename(source_path['subject_path'])
     # 2. 포맷 확인 (format_path에서 마지막 폴더명)
     format_name = os.path.basename(source_path['format_path'])
     
@@ -40,7 +40,8 @@ def create_raw_path(structured_config, source_path, global_vars):
             path_mapping, 
             structured_config, 
             global_vars, 
-            raw_path
+            raw_path,
+            alias_id
         )
         print("BIDS mapping:", bids_mapping)
         

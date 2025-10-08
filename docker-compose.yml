@@ -1,67 +1,70 @@
 networks:
-  dev_network:
+  bids_network:
+volumes:
+  defacing-defacer_shared:
+  defacing-mdefacer_shared:
+  canonical_shared:
+  civet_shared:
 
 services:
-  bids-dev:
+  bids:
     build:
       context: ./bids
       dockerfile: Dockerfile
-    container_name: bids-dev
+    container_name: bids
     networks:
-      - dev_network
+      - bids_network
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./bids:/BDSP/bids_app
       - /nasdata4/parknm/bids:/BDSP/data
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
-              device_ids: ['0']
+      - defacing-defacer_shared:/BDSP/interfaces/flag/defacing/defacer
+
     stdin_open: true 
     tty: true           
     command: /bin/bash
     
-  defacing-dev:
+  defacing-defacer:
     build:
-      context: ./defacing
+      context: ./defacing-defacer
       dockerfile: Dockerfile
-    container_name: defacing-dev
+    container_name: defacing-defacer
     networks:
-      - dev_network
+      - bids_network
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
-      - ./defacing/src:/BDSP/defacing_app/src
+      - ./defacing-defacer:/BDSP/defacer_app
+      - defacing-defacer_shared:/BDSP/interfaces/event
+
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
               capabilities: [gpu]
-              device_ids: ['0']
+              device_ids: ['1']
     stdin_open: true 
     tty: true   
     command: /bin/bash
     
-  canonical-dev:
-    build:
-      context: ./canonical
-      dockerfile: Dockerfile
-    container_name: canonical-dev
-    networks:
-      - dev_network
-    volumes:
-      - /nasdata3/BDSP:/BDSP/interfaces/working
-      - ./canonical/src:/BDSP/canonical_app
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
-              device_ids: ['0']
-    stdin_open: true 
-    tty: true   
-    command: /bin/bash
+  #canonical:
+  #  build:
+  #    context: ./canonical
+  #    dockerfile: Dockerfile
+  #  container_name: canonical
+  #  networks:
+  #    - bids_network
+  #  volumes:
+  #    - /nasdata3/BDSP:/BDSP/interfaces/working
+  #    - ./canonical:/BDSP/canonical_app
+  #    - canonical_shared:/BDSP/interfaces/event
+  #  deploy:
+  #    resources:
+  #      reservations:
+  #        devices:
+  #          - driver: nvidia
+  #            capabilities: [gpu]
+  #            device_ids: ['1']
+  #  stdin_open: true 
+  #  tty: true   
+  #  command: /bin/bash

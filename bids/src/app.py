@@ -10,7 +10,7 @@ from globals import (
     EVENT_DIR, WORKING_DIR, UPLOAD_DIR, BACKUP_DIR, ERROR_DIR, 
     MAX_WORKERS, LOG_FILENAME, MAGNETIC_STRENGTH_FIELD,
     DICOM_MODALITY, NIFTI_MODALITY, PARREC_MODALITY, SUFFIX_MAP,
-    FLAG_DIR, DEFACING_FLAG, CANONICAL_FLAG, CIVET_FLAG
+    FLAG_DIR
 )
 
 # 로그 파일 디렉토리 자동 생성
@@ -45,16 +45,12 @@ class JSONFileMonitor:
         self.suffix_map = SUFFIX_MAP
         # Flag paths
         self.flag_dir = FLAG_DIR
-        self.defacing_flag = DEFACING_FLAG
-        self.canonical_flag = CANONICAL_FLAG
-        self.civet_flag = CIVET_FLAG
         self.executor = ThreadPoolExecutor(max_workers=self.max_workers)
         self.processed_files = set()  # 이미 처리된 파일 추적
         
         logger.info(f"Monitor initialized - Event Dir: {self.event_dir}, Working Dir: {self.working_dir}, Upload Dir: {self.upload_dir}, "
                    f"Backup Dir: {self.backup_dir}, Error Dir: {self.error_dir}, Max Workers: {self.max_workers}")
         logger.info(f"Modality paths - DICOM: {self.dicom_modality}, NIFTI: {self.nifti_modality}, PARREC: {self.parrec_modality}, SUFFIX_MAP: {self.suffix_map}")
-        logger.info(f"Flag paths - Base: {self.flag_dir}, Defacing: {self.defacing_flag}, Canonical: {self.canonical_flag}, CIVET: {self.civet_flag}")
     
     
     def get_json_files(self):

@@ -1,3 +1,5 @@
+#/home/mool/dev/bids/Dockerfile
+
 # dcm2niix를 실행할 수 있는 Docker 환경
 FROM ubuntu:22.04
 
@@ -11,9 +13,14 @@ RUN mkdir -p /BDSP/interfaces/event
 RUN mkdir -p /BDSP/interfaces/working
 RUN mkdir -p /BDSP/interfaces/backup
 RUN mkdir -p /BDSP/interfaces/error
-RUN mkdir -p /BDSP/interfaces/flag/canonical/
-RUN mkdir -p /BDSP/interfaces/flag/defacing
-RUN mkdir -p /BDSP/interfaces/flag/civet/
+RUN mkdir -p /BDSP/interfaces/flag
+
+#preprocessing flag folder
+RUN mkdir -p /BDSP/interfaces/flag/defacing/defacer
+RUN mkdir -p /BDSP/interfaces/flag/defacing/medyolo_defacer
+RUN mkdir -p /BDSP/interfaces/flag/canonical/canonical
+RUN mkdir -p /BDSP/interfaces/flag/T1w_preprocessing/civet
+
 
 # 시스템 업데이트 및 필수 패키지 설치
 RUN apt-get update && apt-get install -y \
@@ -42,7 +49,7 @@ RUN git clone https://github.com/rordenlab/dcm2niix.git && \
     make install
 
 # Python 패키지 설치
-RUN pip3 install --no-cache-dir pydicom opencv-python
+RUN pip3 install --no-cache-dir pydicom opencv-python nibabel
 
 # 작업 디렉토리 설정
 WORKDIR /BDSP/bids_app

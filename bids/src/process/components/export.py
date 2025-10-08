@@ -66,6 +66,7 @@ def create_export_json(config, global_vars, paths):
     user = config['user']
     subject_id = config['subjectId']
     upload_time = config['uploadTime']
+    system_id = config['systemId']
     
     working_dir = os.path.dirname(original_json_path)
     now_time = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -124,30 +125,6 @@ def create_export_json(config, global_vars, paths):
         raise
 
 
-def move_export_to_backup(export_filepath, backup_dir):
-    """export.json 파일을 backup 디렉토리로 이동"""
-    
-    try:
-        # backup 디렉토리가 없으면 생성
-        if not os.path.exists(backup_dir):
-            os.makedirs(backup_dir)
-            logger.info(f"backup 디렉토리 생성: {backup_dir}")
-        
-        # 파일명 추출
-        filename = os.path.basename(export_filepath)
-        backup_filepath = os.path.join(backup_dir, filename)
-        
-        # 파일 이동
-        shutil.move(export_filepath, backup_filepath)
-        logger.info(f"export.json 파일 이동: {export_filepath} -> {backup_filepath}")
-        print(f"export.json을 backup 디렉토리로 이동: {backup_filepath}")
-        
-        return backup_filepath
-        
-    except Exception as e:
-        logger.error(f"export.json 파일 이동 실패: {e}")
-        raise
-
 
 def create_export(config, global_vars, paths):
     """export 메인 함수"""
@@ -160,21 +137,14 @@ def create_export(config, global_vars, paths):
         # 2. export.json 생성
         export_filepath = create_export_json(config, global_vars, paths)
         
-        # 3. export.json을 backup 디렉토리로 이동
-        backup_dir = global_vars['backup_dir']
-        final_export_filepath = move_export_to_backup(export_filepath, backup_dir)
-        
         logger.info("Export 완료")
         print("="*50)
         print("Export 작업 완료")
         print(f"  - trace.json: {trace_filepath}")
-        print(f"  - export.json: {final_export_filepath}")
+        print(f"  - export.json: {export_filepath}")
         print("="*50)
         
-        return {
-            'trace_json': trace_filepath,
-            'export_json': final_export_filepath
-        }
+        return export_filepath
         
     except Exception as e:
         logger.error(f"Export 작업 실패: {e}")
