@@ -55,6 +55,45 @@ class JSONFileMonitor:
         return json_files
     
     
+    def check_flag_status(self, json_file_path):
+        """
+        JSON 파일에서 flag를 확인하고 처리 가능 여부 판단
+        process와 package가 globals의 PROCESS, PACKAGE와 같고 status가 'pending'인지 확인
+        
+        Returns:
+            tuple: (처리 가능 여부, flag_data)
+        """
+        try:
+            with open(json_file_path, 'r', encoding='utf-8') as f:
+                json_data = json.load(f)
+            
+            # flag 리스트 가져오기
+            flag_data = json_data.get('flag', [])
+            
+            if not flag_data:
+                logger.warning(f"No flag data found in {os.path.basename(json_file_path)}")
+                return False, None
+            
+            # process와 package가 일치하고 status가 'pending'인 항목 찾기
+            for flag_item in flag_data:
+                if (flag_item.get('process') == self.process and 
+                    flag_item.get('package') == self.package and 
+                    flag_item.get('status') == 'pending'):
+                    logger.info(f"Found matching flag with pending status in {os.path.basename(json_file_path)}")
+                    return True, flag_data
+            
+            logger.info(f"No matching pending flag found in {os.path.basename(json_file_path)} "
+                       f"(looking for process={self.process}, package={self.package}, status=pending)")
+            return False, None
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON format in {json_file_path}: {e}")
+            return False, None
+        except Exception as e:
+            logger.error(f"Error reading JSON file {json_file_path}: {e}")
+            return False, None
+    
+    
     def move_file_to_working(self, json_file_path):
         """JSON 파일을 WORKING_DIR로 이동"""
         try:
@@ -96,31 +135,27 @@ class JSONFileMonitor:
     def process_json_file(self, json_file_path):
         """JSON 파일을 처리하는 메인 로직"""
         file_name = os.path.basename(json_file_path)
-        logger.info(f"Processing file: {file_name}")
+        logger.info(f"Checking file: {file_name}")
         
         working_file_path = None
         try:
-            # 파일을 WORKING_DIR로 이동
-            working_file_path = self.move_file_to_working(json_file_path)
-            if not working_file_path:
+            # 먼저 flag 상태를 확인 (파일을 옮기기 전에)
+            should_process, flag_data = self.check_flag_status(json_file_path)
+            
+            if not should_process:
+                logger.info(f"Skipping file (not pending or no matching flag): {file_name}")
                 return
             
-            # JSON 파일 읽기
-            with open(working_file_path, 'r', encoding='utf-8') as f:
-                json_data = json.load(f)
-            
-            # flag 딕셔너리만 추출
-            flag_data = json_data.get('flag', [])
-            
-            if not flag_data:
-                logger.warning(f"No flag data found in {file_name}")
+            # 처리 가능한 경우에만 파일을 WORKING_DIR로 이동
+            working_file_path = self.move_file_to_working(json_file_path)
+            if not working_file_path:
                 return
             
             # process.main의 함수 호출
             process.main.main(
                 flag_data, 
                 json_file_path=working_file_path, 
-                backup_dir=self.backup_dir,
+                backup_dir=self.event_dir,
                 process=self.process,
                 package=self.package,
                 command=self.command
@@ -144,6 +179,7 @@ class JSONFileMonitor:
     def monitor_loop(self):
         """5초마다 EVENT_DIR을 체크하는 메인 루프"""
         logger.info("Starting JSON file monitoring...")
+        logger.info(f"Monitoring for: process={self.process}, package={self.package}, status=pending")
         
         while True:
             try:
@@ -156,7 +192,7 @@ class JSONFileMonitor:
                         self.processed_files.add(file_name)
                         # 스레드풀에 작업 제출
                         self.executor.submit(self.process_json_file, json_file)
-                        logger.info(f"Submitted for processing: {file_name}")
+                        logger.info(f"Submitted for checking: {file_name}")
                 
                 time.sleep(5)  # 5초 대기
                 

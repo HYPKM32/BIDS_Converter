@@ -1,11 +1,11 @@
-#/BDSP/defacer_app/src/process/components/export.py
+# /BDSP/defacer_app/src/process/components/export.py
 import json
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-def export_json(execution_result, json_file_path, process, package):
+def export_json(execution_result, json_file_path, process, package, sidecar_json_list):
     """
     execution_result의 outputs를 JSON 파일의 flag.derived_data에 업데이트
 
@@ -14,6 +14,7 @@ def export_json(execution_result, json_file_path, process, package):
         json_file_path (str): 업데이트할 JSON 파일 경로
         process (str): 매칭할 process 이름
         package (str): 매칭할 package 이름
+        sidecar_json_list (list): sidecar JSON 파일 경로 리스트 (execution_result와 1:1 대응)
 
     Returns:
         bool: 성공 시 True
@@ -48,22 +49,49 @@ def export_json(execution_result, json_file_path, process, package):
             logger.error(error_msg)
             raise ValueError(error_msg)
 
+        # sidecar_json_list 길이도 검증
+        if len(sidecar_json_list) != len(execution_result):
+            error_msg = (
+                f"Length mismatch: sidecar_json_list has {len(sidecar_json_list)} items, "
+                f"but execution_result has {len(execution_result)} items"
+            )
+            logger.error(error_msg)
+            raise ValueError(error_msg)
+
         # execution_result의 각 항목을 derived_data에 추가
         for idx, result in enumerate(execution_result):
-            outputs = result.get('outputs', {})
-            # outputs 객체를 통째로 derived_data[idx]에 추가
+            result_outputs = result.get('outputs', {})
+            
+            # outputs에는 defaced_data만 담기
+            outputs = {
+                'defaced_data': result_outputs.get('defaced_data', '')
+            }
+            
+            # 해당 index의 sidecar 경로만 가져오기 (문자열)
+            sidecar_path = sidecar_json_list[idx] if idx < len(sidecar_json_list) else ''
+            
+            # byproduct 객체 생성 (키-값 형태)
+            byproduct = {
+                'verification_img': result_outputs.get('verification_img', ''),
+                'defacing_mask': result_outputs.get('defacing_mask', ''),
+                'sidecar': sidecar_path  # 리스트가 아닌 문자열로 저장
+            }
+            
+            # derived_data[idx]에 outputs와 byproduct 추가
             derived_data_list[idx]['outputs'] = outputs
+            derived_data_list[idx]['byproduct'] = byproduct
+            
             logger.info(f"Updated derived_data[{idx}] with outputs: {outputs}")
+            logger.info(f"Updated derived_data[{idx}] with byproduct (sidecar: {sidecar_path})")
 
-        # 변경: status를 'done'으로 갱신
+        # 4. status를 'done'으로 갱신
         try:
             target_flag['status'] = 'done'
             logger.info(f"Set status='done' for flag process={process}, package={package}")
         except Exception as e:
-            # 상태 갱신 실패는 치명적이지 않으나 로그로 남김
             logger.warning(f"Failed to set status on target_flag: {e}")
 
-        # 4. 업데이트된 JSON을 파일에 저장
+        # 5. 업데이트된 JSON을 파일에 저장
         logger.info(f"Writing updated JSON to: {json_file_path}")
         with open(json_file_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
@@ -72,7 +100,6 @@ def export_json(execution_result, json_file_path, process, package):
         return True
 
     except ValueError as e:
-        # 길이 불일치 등 검증 에러
         logger.error(f"Validation error: {e}")
         return False
     except FileNotFoundError:

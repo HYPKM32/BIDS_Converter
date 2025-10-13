@@ -90,6 +90,8 @@ def execute_commands(cli):
                       "index": 0,
                       "command": "python3 defacer_cli.py ...",
                       "success": True,
+                      "input": "...",
+                      "output_dir": "...",
                       "outputs": {
                           "defaced_data": "...",
                           "verification_img": "...",
@@ -108,26 +110,23 @@ def execute_commands(cli):
     execution_results = []
     
     for idx, command_list in enumerate(cli):
+        # 예상 출력 경로 파싱
+        output_paths = parse_output_paths(command_list)
+        
         result_info = {
             "index": idx,
             "command": ' '.join(command_list),
             "success": False,
+            "input": output_paths["input"] if output_paths else None,
+            "output_dir": output_paths["output_dir"] if output_paths else None,
             "outputs": {
-                "defaced_data": None,
-                "verification_img": None,
-                "defacing_mask": None
+                "defaced_data": output_paths["defaced_data"] if output_paths else None,
+                "verification_img": output_paths["verification_img"] if output_paths else None,
+                "defacing_mask": output_paths["defacing_mask"] if output_paths else None
             },
             "exit_code": None,
             "error": None
         }
-        
-        # 예상 출력 경로 파싱
-        output_paths = parse_output_paths(command_list)
-        
-        if output_paths:
-            result_info["outputs"]["defaced_data"] = output_paths["defaced_data"]
-            result_info["outputs"]["verification_img"] = output_paths["verification_img"]
-            result_info["outputs"]["defacing_mask"] = output_paths["defacing_mask"]
         
         try:
             logger.info(f"Executing command [{idx}]: {' '.join(command_list)}")
@@ -145,6 +144,8 @@ def execute_commands(cli):
             
             logger.info(f"Command [{idx}] completed successfully")
             logger.info(f"Expected outputs:")
+            logger.info(f"  - input: {result_info['input']}")
+            logger.info(f"  - output_dir: {result_info['output_dir']}")
             logger.info(f"  - defaced_data: {result_info['outputs']['defaced_data']}")
             logger.info(f"  - verification_img: {result_info['outputs']['verification_img']}")
             logger.info(f"  - defacing_mask: {result_info['outputs']['defacing_mask']}")

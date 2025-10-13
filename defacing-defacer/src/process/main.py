@@ -4,7 +4,7 @@ import json
 import shutil
 import logging
 import subprocess
-from process.components import parser, filter, cli, export
+from process.components import parser, filter, cli, export, sidecar
 
 logger = logging.getLogger(__name__)
 
@@ -91,9 +91,8 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
     
     try:
         execution_result = cli.execute_commands(command_list)
-        
-        # 결과를 JSON 파일에 export
-        is_exported = export.export_json(execution_result, json_file_path, process, package)
+        sidecar_json = sidecar.make_sidecar_json(execution_result, process, package)
+        is_exported = export.export_json(execution_result, json_file_path, process, package, sidecar_json)
         
         # export 성공 시 JSON 파일 백업
         if is_exported:
@@ -106,6 +105,7 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
                 # 백업 실패해도 프로세스는 성공으로 간주 (export는 성공했으므로)
         else:
             logger.error(f"Export failed, skipping backup")
+            return
         
         logger.info(f"All commands executed successfully")
         
