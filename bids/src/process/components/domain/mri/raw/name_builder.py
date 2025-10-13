@@ -91,7 +91,7 @@ def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path, 
         # 최종 BIDS 경로 생성
         bids_path = os.path.join(
             raw_path, 
-            f"sub-{alias_id}", 
+            f"{alias_id}", 
             f"ses-{trial_index}", 
             data_type, 
             bids_filename
@@ -118,7 +118,7 @@ def get_base_run_number(modality, alias_id, trial_index, raw_path, data_type):
     # 대상 폴더 경로
     target_dir = os.path.join(
         raw_path,
-        f"sub-{alias_id}",
+        f"{alias_id}",
         f"ses-{trial_index}",
         data_type
     )
@@ -184,7 +184,7 @@ def build_bids_filename(source_folder, modality, entity_rules, alias_id,
     entities = []
     
     # 1. subject (무조건 포함)
-    entities.append(f"sub-{alias_id}")
+    entities.append(f"{alias_id}")
     
     # 2. session (무조건 포함)  
     entities.append(f"ses-{trial_index}")

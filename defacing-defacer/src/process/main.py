@@ -90,7 +90,7 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
     logger.info(f"Starting defacing process...")
     
     try:
-        execution_result = cli.execute_commands(command_list)
+        execution_result = cli.execute_commands(command_list, flag['derived_data'])
         sidecar_json = sidecar.make_sidecar_json(execution_result, process, package)
         is_exported = export.export_json(execution_result, json_file_path, process, package, sidecar_json)
         

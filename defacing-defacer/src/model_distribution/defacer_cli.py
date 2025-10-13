@@ -55,7 +55,7 @@ Examples:
     parser.add_argument(
         '--suffix', '-s',
         default='defaced',
-        help='Suffix to append to output filename (default: defaced). Example: T1w becomes T1w-defaced'
+        help='Suffix to append to output filename (default: defaced)'
     )
     
     parser.add_argument(
@@ -106,47 +106,52 @@ def parts_to_flags(parts):
 
 def generate_output_filename(input_path, suffix):
     """
-    Generate output filename by adding suffix to the original suffix
+    Generate output filename with format: {prefix}_drv-defaced_{original_suffix}.nii.gz
     
     Args:
         input_path: Input file path
-        suffix: Suffix to add (e.g., 'defaced')
+        suffix: Suffix to add (not used in new logic, kept for compatibility)
     
     Returns:
         Output filename
     
     Example:
         input: 'sub-2cna00001_ses-01_run-01_T1w.nii.gz'
-        suffix: 'defaced'
-        output: 'sub-2cna00001_ses-01_run-01_T1w-defaced.nii.gz'
+        output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
     """
     basename = os.path.basename(input_path)
     
-    # Match pattern: filename ending with underscore + original_suffix + .nii or .nii.gz
-    pattern = r'^(.+_)([^_]+)(\.nii(?:\.gz)?)$'
-    match = re.match(pattern, basename)
+    # Determine extension
+    if basename.endswith('.nii.gz'):
+        extension = '.nii.gz'
+        base_without_ext = basename[:-7]  # Remove .nii.gz
+    elif basename.endswith('.nii'):
+        extension = '.nii'
+        base_without_ext = basename[:-4]  # Remove .nii
+    else:
+        extension = ''
+        base_without_ext = basename
+    
+    # Match pattern: filename ending with underscore + original_suffix
+    pattern = r'^(.+_)([^_]+)$'
+    match = re.match(pattern, base_without_ext)
     
     if match:
+        # Has underscore structure
         prefix_part = match.group(1)  # Everything up to and including last underscore
         original_suffix = match.group(2)  # Original suffix (e.g., 'T1w')
-        extension = match.group(3)  # .nii or .nii.gz
-        
-        new_filename = f"{prefix_part}{original_suffix}-{suffix}{extension}"
+        # Generate new filename: prefix + drv-defaced_ + original_suffix
+        new_filename = f"{prefix_part}drv-defaced_{original_suffix}{extension}"
     else:
-        # Fallback: if pattern doesn't match, just add suffix before extension
-        if basename.endswith('.nii.gz'):
-            new_filename = basename.replace('.nii.gz', f'-{suffix}.nii.gz')
-        elif basename.endswith('.nii'):
-            new_filename = basename.replace('.nii', f'-{suffix}.nii')
-        else:
-            new_filename = f"{basename}-{suffix}"
+        # No underscore structure, just append
+        new_filename = f"{base_without_ext}_drv-defaced{extension}"
     
     return new_filename
 
 
 def generate_mask_filename(input_path):
     """
-    Generate mask filename by replacing the last suffix with 'defacing-mask'
+    Generate mask filename with format: {prefix}_defacemask.nii.gz
     
     Args:
         input_path: Input file path
@@ -155,28 +160,34 @@ def generate_mask_filename(input_path):
         Mask filename
     
     Example:
-        input: 'sub-sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz'
-        output: 'sub-sub-2cna00001Hanyangparknm_ses-01_run-01_defacing-mask.nii.gz'
+        input: 'sub-2cna00001_ses-01_run-01_T1w.nii.gz'
+        output: 'sub-2cna00001_ses-01_run-01_defacemask.nii.gz'
     """
     basename = os.path.basename(input_path)
     
-    # Match pattern: filename ending with underscore + original_suffix + .nii or .nii.gz
-    pattern = r'^(.+_)([^_]+)(\.nii(?:\.gz)?)$'
-    match = re.match(pattern, basename)
+    # Determine extension
+    if basename.endswith('.nii.gz'):
+        extension = '.nii.gz'
+        base_without_ext = basename[:-7]  # Remove .nii.gz
+    elif basename.endswith('.nii'):
+        extension = '.nii'
+        base_without_ext = basename[:-4]  # Remove .nii
+    else:
+        extension = ''
+        base_without_ext = basename
+    
+    # Match pattern: filename ending with underscore + original_suffix
+    pattern = r'^(.+_)([^_]+)$'
+    match = re.match(pattern, base_without_ext)
     
     if match:
+        # Has underscore structure, replace last suffix with 'defacemask'
         prefix_part = match.group(1)  # Everything up to and including last underscore
-        extension = match.group(3)  # .nii or .nii.gz
-        
-        mask_filename = f"{prefix_part}defacing-mask{extension}"
+        # Generate mask filename: prefix + defacemask
+        mask_filename = f"{prefix_part}defacemask{extension}"
     else:
-        # Fallback: if pattern doesn't match, just add mask before extension
-        if basename.endswith('.nii.gz'):
-            mask_filename = basename.replace('.nii.gz', '_defacing-mask.nii.gz')
-        elif basename.endswith('.nii'):
-            mask_filename = basename.replace('.nii', '_defacing-mask.nii')
-        else:
-            mask_filename = f"{basename}_defacing-mask"
+        # No underscore structure, just append
+        mask_filename = f"{base_without_ext}_defacemask{extension}"
     
     return mask_filename
 
@@ -192,8 +203,8 @@ def generate_verification_filename(output_filename):
         Verification PNG filename
     
     Example:
-        input: 'sub-2cna00001_ses-01_run-01_T1w-defaced.nii.gz'
-        output: 'sub-2cna00001_ses-01_run-01_T1w-defaced.png'
+        input: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
+        output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.png'
     """
     if output_filename.endswith('.nii.gz'):
         return output_filename.replace('.nii.gz', '.png')

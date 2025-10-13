@@ -72,7 +72,7 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             
             # byproduct 객체 생성 (키-값 형태)
             byproduct = {
-                'verification_img': result_outputs.get('verification_img', ''),
+                'thumbnail': result_outputs.get('thumbnail', ''),
                 'defacing_mask': result_outputs.get('defacing_mask', ''),
                 'sidecar': sidecar_path  # 리스트가 아닌 문자열로 저장
             }

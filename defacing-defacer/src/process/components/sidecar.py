@@ -2,13 +2,14 @@
 import os
 import json
 import logging
-
+from utils.common import bdsp_walk
 logger = logging.getLogger(__name__)
 
 
 def make_sidecar_json(execution_results, process, package):
     """
     실행 결과를 기반으로 JSON 메타데이터 파일(sidecar) 생성/업데이트
+    모든 sidecar 생성 후 output_dir을 스캔하여 파일 목록 JSON 생성
     
     Args:
         execution_results (list): cli.execute_commands()의 반환값 (리스트)
@@ -33,6 +34,7 @@ def make_sidecar_json(execution_results, process, package):
               예: ['/path/to/sidecar1.json', '/path/to/sidecar2.json']
     """
     sidecar_paths = []
+    output_dirs = set()  # 중복 제거를 위한 set
     
     # execution_results가 리스트인지 확인
     if not isinstance(execution_results, list):
@@ -47,6 +49,11 @@ def make_sidecar_json(execution_results, process, package):
             sidecar_paths.append('')
             continue
         
+        # output_dir 수집
+        output_dir = execution_result.get('output_dir', '')
+        if output_dir:
+            output_dirs.add(output_dir)
+        
         try:
             sidecar_path = _create_single_sidecar(execution_result, process, package)
             sidecar_paths.append(sidecar_path if sidecar_path else '')
@@ -58,6 +65,19 @@ def make_sidecar_json(execution_results, process, package):
             continue
     
     logger.info(f"Created {len([p for p in sidecar_paths if p])} sidecar file(s) out of {len(execution_results)}")
+    
+    # 모든 sidecar 생성 후 각 output_dir에 대해 bdsp_walk 실행
+    for output_dir in output_dirs:
+        if os.path.exists(output_dir):
+            try:
+                logger.info(f"Running bdsp_walk on output_dir: {output_dir}")
+                bdsp_walk(output_dir)
+                logger.info(f"Successfully created file list JSON in: {output_dir}")
+            except Exception as e:
+                logger.error(f"Failed to run bdsp_walk on {output_dir}: {e}")
+        else:
+            logger.warning(f"Output directory does not exist: {output_dir}")
+    
     return sidecar_paths
 
 
@@ -141,7 +161,7 @@ def _create_single_sidecar(execution_result, process, package):
         'input': input_path,
         'output_dir': output_dir,
         'defaced_data': outputs.get('defaced_data', ''),
-        'verification_img': outputs.get('verification_img', ''),
+        'thumbnail': outputs.get('thumbnail_img', ''),
         'defacing_mask': outputs.get('defacing_mask', '')
     }
     

@@ -1,26 +1,36 @@
-#/BDSP/defacer_app/src/process/components/cli.py
 import subprocess
 import logging
 import os
 
 logger = logging.getLogger(__name__)
 
-def parse_output_paths(command_list):
+def parse_output_paths(command_list, flag):
     """
-    커맨드 리스트에서 input/output 경로를 추출하고 예상 출력 파일들을 생성
+    커맨드 리스트에서 input/output 경로를 추출하고 실제/예상 출력 파일들을 생성
     
     Args:
         command_list (list): 실행할 커맨드 리스트
+        flag (dict): flag 딕셔너리 (exe_num 포함)
         
     Returns:
-        dict: 예상되는 출력 파일 경로들
+        dict: 실제 및 예상되는 출력 파일 경로들
               {
                   "input": "...",
                   "output_dir": "...",
-                  "defaced_data": "...",
-                  "verification_img": "...",
-                  "defacing_mask": "..."
+                  "actual_files": {
+                      "defaced_data": "...",  # exe-XX 없는 실제 생성 파일
+                      "thumbnail": "...",
+                      "defacing_mask": "..."
+                  },
+                  "expected_files": {
+                      "defaced_data": "...",  # exe-XX 포함된 예상 파일
+                      "thumbnail": "...",
+                      "defacing_mask": "..."
+                  }
               }
+    
+    Raises:
+        ValueError: exe_num이 flag에 없을 경우
     """
     input_path = None
     output_dir = None
@@ -36,52 +46,131 @@ def parse_output_paths(command_list):
         logger.warning("Could not extract input/output paths from command")
         return None
     
+    # flag에서 exe_num 추출 (필수값)
+    if 'exe_num' not in flag:
+        raise ValueError("flag 딕셔너리에 'exe_num' 키가 필수입니다")
+    
+    exe_num = flag['exe_num']
+    
+    # exe_num이 비어있거나 None인 경우도 체크
+    if not exe_num:
+        raise ValueError("exe_num 값이 비어있습니다")
+    
     # input 파일명에서 정보 추출
-    input_basename = os.path.basename(input_path)  # sub-sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
+    input_basename = os.path.basename(input_path)  # sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
     
     # .nii.gz 제거
     if input_basename.endswith('.nii.gz'):
-        name_without_ext = input_basename[:-7]  # sub-sub-2cna00001Hanyangparknm_ses-01_run-01_T1w
+        name_without_ext = input_basename[:-7]  # sub-2cna00001Hanyangparknm_ses-01_run-01_T1w
     else:
         logger.warning(f"Unexpected file extension: {input_basename}")
         name_without_ext = os.path.splitext(input_basename)[0]
     
-    # 마지막 suffix 추출 (마지막 _T1w 부분)
     parts = name_without_ext.split('_')
-    if len(parts) > 0:
-        last_suffix = parts[-1]  # T1w
-        prefix = '_'.join(parts[:-1])  # sub-sub-2cna00001Hanyangparknm_ses-01_run-01
-    else:
-        last_suffix = ""
-        prefix = name_without_ext
     
-    # 1. defaced_data: prefix_suffix-defaced.nii.gz
-    defaced_filename = f"{prefix}_{last_suffix}-defaced.nii.gz"
-    defaced_data = os.path.join(output_dir, defaced_filename)
+    # 실제 파일명 (exe-XX 없음) - subprocess가 생성하는 파일명
+    # 1. actual defaced_data: *_run-XX_drv-defaced_T1w.nii.gz
+    actual_defaced_parts = parts[:-1] + ['drv-defaced', parts[-1]]
+    actual_defaced_filename = '_'.join(actual_defaced_parts) + '.nii.gz'
+    actual_defaced_data = os.path.join(output_dir, actual_defaced_filename)
     
-    # 2. verification_img: defaced_data에서 .nii.gz -> .png
-    verification_img = defaced_data.replace('.nii.gz', '.png')
+    # 2. actual thumbnail
+    actual_thumbnail = actual_defaced_data.replace('.nii.gz', '.png')
     
-    # 3. defacing_mask: prefix_defacing-mask.nii.gz (마지막 suffix 제거)
-    mask_filename = f"{prefix}_defacing-mask.nii.gz"
-    defacing_mask = os.path.join(output_dir, mask_filename)
+    # 3. actual defacing_mask: *_run-XX_defacemask.nii.gz
+    actual_mask_parts = parts[:-1] + ['defacemask']
+    actual_mask_filename = '_'.join(actual_mask_parts) + '.nii.gz'
+    actual_defacing_mask = os.path.join(output_dir, actual_mask_filename)
+    
+    # 예상 파일명 (exe-XX 포함) - 최종적으로 rename될 파일명
+    # run-XX 패턴을 찾아서 그 뒤에 exe-{exe_num}_ 삽입
+    new_parts = []
+    for part in parts:
+        new_parts.append(part)
+        if part.startswith('run-'):
+            new_parts.append(f'exe-{exe_num}')
+    
+    # 1. expected defaced_data: *_run-XX_exe-{exe_num}_drv-defaced_T1w.nii.gz
+    expected_defaced_parts = new_parts[:-1] + ['drv-defaced', new_parts[-1]]
+    expected_defaced_filename = '_'.join(expected_defaced_parts) + '.nii.gz'
+    expected_defaced_data = os.path.join(output_dir, expected_defaced_filename)
+    
+    # 2. expected thumbnail
+    expected_thumbnail = expected_defaced_data.replace('.nii.gz', '.png')
+    
+    # 3. expected defacing_mask: *_run-XX_exe-{exe_num}_defacemask.nii.gz
+    expected_mask_parts = new_parts[:-1] + ['defacemask']
+    expected_mask_filename = '_'.join(expected_mask_parts) + '.nii.gz'
+    expected_defacing_mask = os.path.join(output_dir, expected_mask_filename)
     
     return {
         "input": input_path,
         "output_dir": output_dir,
-        "defaced_data": defaced_data,
-        "verification_img": verification_img,
-        "defacing_mask": defacing_mask
+        "actual_files": {
+            "defaced_data": actual_defaced_data,
+            "thumbnail": actual_thumbnail,
+            "defacing_mask": actual_defacing_mask
+        },
+        "expected_files": {
+            "defaced_data": expected_defaced_data,
+            "thumbnail": expected_thumbnail,
+            "defacing_mask": expected_defacing_mask
+        }
     }
 
 
-def execute_commands(cli):
+def rename_output_files(actual_files, expected_files):
+    """
+    실제 생성된 파일들을 예상 파일명으로 rename
+    
+    Args:
+        actual_files (dict): 실제 생성된 파일 경로들
+        expected_files (dict): 예상되는 파일 경로들 (rename 목표)
+        
+    Returns:
+        dict: rename 결과
+              {
+                  "defaced_data": {"success": True/False, "error": None/str},
+                  "thumbnail": {...},
+                  "defacing_mask": {...}
+              }
+    """
+    rename_results = {}
+    
+    for file_type in ["defaced_data", "thumbnail", "defacing_mask"]:
+        actual_path = actual_files[file_type]
+        expected_path = expected_files[file_type]
+        
+        result = {"success": False, "error": None}
+        
+        try:
+            if os.path.exists(actual_path):
+                # 파일이 존재하면 rename
+                os.rename(actual_path, expected_path)
+                result["success"] = True
+                logger.info(f"Renamed: {actual_path} -> {expected_path}")
+            else:
+                # 파일이 없으면 경고
+                error_msg = f"File not found: {actual_path}"
+                result["error"] = error_msg
+                logger.warning(error_msg)
+        except Exception as e:
+            result["error"] = str(e)
+            logger.error(f"Failed to rename {actual_path} -> {expected_path}: {e}")
+        
+        rename_results[file_type] = result
+    
+    return rename_results
+
+
+def execute_commands(cli, flags):
     """
     cli 리스트의 커맨드들을 실행하고 각 커맨드의 예상 출력 정보 반환
     실패 시 즉시 예외를 발생시켜 다음 명령어 실행을 중단함
     
     Args:
         cli (list): 커맨드 리스트들의 리스트
+        flags (list): 각 커맨드에 대응하는 flag 딕셔너리 리스트
         
     Returns:
         list: 각 커맨드의 실행 결과 및 출력 정보
@@ -92,13 +181,12 @@ def execute_commands(cli):
                       "success": True,
                       "input": "...",
                       "output_dir": "...",
-                      "outputs": {
-                          "defaced_data": "...",
-                          "verification_img": "...",
-                          "defacing_mask": "..."
-                      },
+                      "actual_files": {...},
+                      "expected_files": {...},
+                      "rename_results": {...},
                       "exit_code": 0,
-                      "error": None
+                      "error": None,
+                      "flag": {...}
                   },
                   ...
               ]
@@ -107,11 +195,14 @@ def execute_commands(cli):
         subprocess.CalledProcessError: 커맨드 실행 실패 시
         Exception: 기타 실행 오류 시
     """
+    if len(cli) != len(flags):
+        raise ValueError(f"cli 리스트와 flags 리스트의 길이가 일치하지 않습니다. cli={len(cli)}, flags={len(flags)}")
+    
     execution_results = []
     
-    for idx, command_list in enumerate(cli):
-        # 예상 출력 경로 파싱
-        output_paths = parse_output_paths(command_list)
+    for idx, (command_list, flag) in enumerate(zip(cli, flags)):
+        # 예상 출력 경로 파싱 (flag 정보 전달)
+        output_paths = parse_output_paths(command_list, flag)
         
         result_info = {
             "index": idx,
@@ -119,17 +210,17 @@ def execute_commands(cli):
             "success": False,
             "input": output_paths["input"] if output_paths else None,
             "output_dir": output_paths["output_dir"] if output_paths else None,
-            "outputs": {
-                "defaced_data": output_paths["defaced_data"] if output_paths else None,
-                "verification_img": output_paths["verification_img"] if output_paths else None,
-                "defacing_mask": output_paths["defacing_mask"] if output_paths else None
-            },
+            "actual_files": output_paths["actual_files"] if output_paths else None,
+            "expected_files": output_paths["expected_files"] if output_paths else None,
+            "rename_results": None,
             "exit_code": None,
-            "error": None
+            "error": None,
+            "flag": flag  # flag 정보 추가
         }
         
         try:
             logger.info(f"Executing command [{idx}]: {' '.join(command_list)}")
+            logger.info(f"  exe_num: {flag.get('exe_num', 'N/A')}")
             
             # subprocess.run으로 커맨드 실행
             result = subprocess.run(
@@ -139,16 +230,9 @@ def execute_commands(cli):
                 check=True,  # CalledProcessError 발생시킴
             )
             
-            result_info["success"] = True
             result_info["exit_code"] = result.returncode
             
             logger.info(f"Command [{idx}] completed successfully")
-            logger.info(f"Expected outputs:")
-            logger.info(f"  - input: {result_info['input']}")
-            logger.info(f"  - output_dir: {result_info['output_dir']}")
-            logger.info(f"  - defaced_data: {result_info['outputs']['defaced_data']}")
-            logger.info(f"  - verification_img: {result_info['outputs']['verification_img']}")
-            logger.info(f"  - defacing_mask: {result_info['outputs']['defacing_mask']}")
             
             if result.stdout:
                 logger.info(f"stdout: {result.stdout}")
@@ -156,6 +240,23 @@ def execute_commands(cli):
             if result.stderr:
                 logger.warning(f"stderr: {result.stderr}")
             
+            # 파일 rename 수행
+            if output_paths:
+                logger.info(f"Renaming output files...")
+                rename_results = rename_output_files(
+                    output_paths["actual_files"],
+                    output_paths["expected_files"]
+                )
+                result_info["rename_results"] = rename_results
+                
+                # rename 결과 로깅
+                for file_type, rename_result in rename_results.items():
+                    if rename_result["success"]:
+                        logger.info(f"  ✓ {file_type}: renamed successfully")
+                    else:
+                        logger.warning(f"  ✗ {file_type}: {rename_result['error']}")
+            
+            result_info["success"] = True
             execution_results.append(result_info)
                 
         except subprocess.CalledProcessError as e:
