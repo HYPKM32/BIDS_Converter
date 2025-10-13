@@ -17,13 +17,13 @@ def parse_output_paths(command_list, flag):
               {
                   "input": "...",
                   "output_dir": "...",
-                  "actual_files": {
+                  "outputs": {
                       "defaced_data": "...",  # exe-XX 없는 실제 생성 파일
                       "thumbnail": "...",
                       "defacing_mask": "..."
                   },
-                  "expected_files": {
-                      "defaced_data": "...",  # exe-XX 포함된 예상 파일
+                  "expected_outputs": {
+                      "defaced_data": "...",  # exe-XX 포함된 예상 파일 (rename 목표)
                       "thumbnail": "...",
                       "defacing_mask": "..."
                   }
@@ -106,12 +106,12 @@ def parse_output_paths(command_list, flag):
     return {
         "input": input_path,
         "output_dir": output_dir,
-        "actual_files": {
+        "outputs": {
             "defaced_data": actual_defaced_data,
             "thumbnail": actual_thumbnail,
             "defacing_mask": actual_defacing_mask
         },
-        "expected_files": {
+        "expected_outputs": {
             "defaced_data": expected_defaced_data,
             "thumbnail": expected_thumbnail,
             "defacing_mask": expected_defacing_mask
@@ -138,13 +138,13 @@ def rename_output_files(actual_files, expected_files):
     rename_results = {}
     
     for file_type in ["defaced_data", "thumbnail", "defacing_mask"]:
-        actual_path = actual_files[file_type]
-        expected_path = expected_files[file_type]
+        actual_path = actual_files.get(file_type)
+        expected_path = expected_files.get(file_type)
         
         result = {"success": False, "error": None}
         
         try:
-            if os.path.exists(actual_path):
+            if actual_path and expected_path and os.path.exists(actual_path):
                 # 파일이 존재하면 rename
                 os.rename(actual_path, expected_path)
                 result["success"] = True
@@ -181,8 +181,7 @@ def execute_commands(cli, flags):
                       "success": True,
                       "input": "...",
                       "output_dir": "...",
-                      "actual_files": {...},
-                      "expected_files": {...},
+                      "outputs": {...},  # rename 후 최종 파일 경로
                       "rename_results": {...},
                       "exit_code": 0,
                       "error": None,
@@ -210,12 +209,11 @@ def execute_commands(cli, flags):
             "success": False,
             "input": output_paths["input"] if output_paths else None,
             "output_dir": output_paths["output_dir"] if output_paths else None,
-            "actual_files": output_paths["actual_files"] if output_paths else None,
-            "expected_files": output_paths["expected_files"] if output_paths else None,
+            "outputs": output_paths["outputs"] if output_paths else None,
             "rename_results": None,
             "exit_code": None,
             "error": None,
-            "flag": flag  # flag 정보 추가
+            "flag": flag
         }
         
         try:
@@ -244,17 +242,18 @@ def execute_commands(cli, flags):
             if output_paths:
                 logger.info(f"Renaming output files...")
                 rename_results = rename_output_files(
-                    output_paths["actual_files"],
-                    output_paths["expected_files"]
+                    output_paths["outputs"],
+                    output_paths["expected_outputs"]
                 )
                 result_info["rename_results"] = rename_results
                 
-                # rename 결과 로깅
-                for file_type, rename_result in rename_results.items():
-                    if rename_result["success"]:
+                # rename 성공한 파일들은 outputs를 expected_outputs로 업데이트
+                for file_type in ["defaced_data", "thumbnail", "defacing_mask"]:
+                    if rename_results[file_type]["success"]:
+                        result_info["outputs"][file_type] = output_paths["expected_outputs"][file_type]
                         logger.info(f"  ✓ {file_type}: renamed successfully")
                     else:
-                        logger.warning(f"  ✗ {file_type}: {rename_result['error']}")
+                        logger.warning(f"  ✗ {file_type}: {rename_results[file_type]['error']}")
             
             result_info["success"] = True
             execution_results.append(result_info)

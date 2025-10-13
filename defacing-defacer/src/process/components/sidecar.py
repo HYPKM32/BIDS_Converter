@@ -161,7 +161,7 @@ def _create_single_sidecar(execution_result, process, package):
         'input': input_path,
         'output_dir': output_dir,
         'defaced_data': outputs.get('defaced_data', ''),
-        'thumbnail': outputs.get('thumbnail_img', ''),
+        'thumbnail': outputs.get('thumbnail', ''),
         'defacing_mask': outputs.get('defacing_mask', '')
     }
     
