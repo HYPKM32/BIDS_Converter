@@ -64,7 +64,7 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             
             # outputs에는 defaced_data만 담기
             outputs = {
-                'defaced_data': result_outputs.get('defaced_data', '')
+                'drv-defaced_T1w': result_outputs.get('defaced_data', '')
             }
             
             # 해당 index의 sidecar 경로만 가져오기 (문자열)
@@ -73,7 +73,7 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             # byproduct 객체 생성 (키-값 형태)
             byproduct = {
                 'thumbnail': result_outputs.get('thumbnail', ''),
-                'defacing_mask': result_outputs.get('defacing_mask', ''),
+                'defacemask': result_outputs.get('defacing_mask', ''),
                 'sidecar': sidecar_path  # 리스트가 아닌 문자열로 저장
             }
             

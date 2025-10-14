@@ -31,9 +31,6 @@ RUN apt-get update && apt-get install -y \
 # pip 업그레이드
 RUN python3 -m pip install --upgrade pip
 
-# Defacer 라이브러리 클론
-WORKDIR /BDSP/defacer_lib
-RUN git clone https://github.com/yeonuk-Jeong/Defacer.git .
 
 # Python 패키지 설치 (Defacer 요구사항)
 RUN pip3 install --no-cache-dir \

@@ -117,7 +117,7 @@ def get_input_paths_from_derivatives(modality_condition, flag_list):
     """
     target_process = modality_condition.get('process')
     target_package = modality_condition.get('package')
-    modality_list = modality_condition.get('modality', [])
+    modality_list = modality_condition.get('modality', [])  # 예: ["drv-defaced_T1w"]
     
     matched_paths = []
     
@@ -128,12 +128,20 @@ def get_input_paths_from_derivatives(modality_condition, flag_list):
             for derived in flag.get('derived_data', []):
                 outputs = derived.get('outputs', {})
                 
-                # modality_list에 있는 키의 값을 가져오기
-                for modality_key in modality_list:
-                    if modality_key in outputs:
-                        path = outputs[modality_key]
-                        matched_paths.append(path)
-                        logger.debug(f"Derivatives 매칭: {target_process}/{target_package} -> {modality_key}: {path}")
+                # outputs의 모든 항목을 순회
+                for output_key, output_path in outputs.items():
+                    # 각 modality와 비교
+                    for modality_suffix in modality_list:
+                        # 방법 1: outputs의 키가 정확히 일치하는 경우
+                        if output_key == modality_suffix:
+                            matched_paths.append(output_path)
+                            logger.debug(f"Derivatives 매칭 (키): {target_process}/{target_package} -> {modality_suffix}: {output_path}")
+                            break
+                        # 방법 2: 파일 경로에 해당 suffix가 포함된 경우
+                        elif f"_{modality_suffix}." in output_path or output_path.endswith(f"_{modality_suffix}.nii.gz"):
+                            matched_paths.append(output_path)
+                            logger.debug(f"Derivatives 매칭 (경로): {target_process}/{target_package} -> {modality_suffix}: {output_path}")
+                            break
             
             break  # 해당 프로세스를 찾았으므로 종료
     

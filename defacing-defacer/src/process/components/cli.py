@@ -83,12 +83,21 @@ def parse_output_paths(command_list, flag):
     actual_defacing_mask = os.path.join(output_dir, actual_mask_filename)
     
     # 예상 파일명 (exe-XX 포함) - 최종적으로 rename될 파일명
-    # run-XX 패턴을 찾아서 그 뒤에 exe-{exe_num}_ 삽입
+    # exe-* 패턴이 있으면 교체, 없으면 run-XX 뒤에 추가
     new_parts = []
+    has_exe = False
+    
     for part in parts:
-        new_parts.append(part)
-        if part.startswith('run-'):
+        if part.startswith('exe-'):
+            # 기존 exe-* 를 새로운 exe-{exe_num}으로 교체
             new_parts.append(f'exe-{exe_num}')
+            has_exe = True
+        else:
+            new_parts.append(part)
+            # exe-*가 없었고, run-XX를 만났다면 그 뒤에 추가
+            if not has_exe and part.startswith('run-'):
+                new_parts.append(f'exe-{exe_num}')
+                has_exe = True  # 중복 추가 방지
     
     # 1. expected defaced_data: *_run-XX_exe-{exe_num}_drv-defaced_T1w.nii.gz
     expected_defaced_parts = new_parts[:-1] + ['drv-defaced', new_parts[-1]]

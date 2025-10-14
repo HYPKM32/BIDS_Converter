@@ -107,6 +107,7 @@ def parts_to_flags(parts):
 def generate_output_filename(input_path, suffix):
     """
     Generate output filename with format: {prefix}_drv-defaced_{original_suffix}.nii.gz
+    If drv-* already exists, replace it with drv-defaced
     
     Args:
         input_path: Input file path
@@ -115,8 +116,13 @@ def generate_output_filename(input_path, suffix):
     Returns:
         Output filename
     
-    Example:
-        input: 'sub-2cna00001_ses-01_run-01_T1w.nii.gz'
+    Examples:
+        # Case 1: No drv-* (add drv-defaced_)
+        input:  'sub-2cna00001_ses-01_run-01_T1w.nii.gz'
+        output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
+        
+        # Case 2: Has drv-* (replace with drv-defaced)
+        input:  'sub-2cna00001_ses-01_run-01_drv-original_T1w.nii.gz'
         output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
     """
     basename = os.path.basename(input_path)
@@ -132,20 +138,31 @@ def generate_output_filename(input_path, suffix):
         extension = ''
         base_without_ext = basename
     
-    # Match pattern: filename ending with underscore + original_suffix
-    pattern = r'^(.+_)([^_]+)$'
-    match = re.match(pattern, base_without_ext)
+    # Split by underscore
+    parts = base_without_ext.split('_')
     
-    if match:
-        # Has underscore structure
-        prefix_part = match.group(1)  # Everything up to and including last underscore
-        original_suffix = match.group(2)  # Original suffix (e.g., 'T1w')
-        # Generate new filename: prefix + drv-defaced_ + original_suffix
-        new_filename = f"{prefix_part}drv-defaced_{original_suffix}{extension}"
-    else:
-        # No underscore structure, just append
-        new_filename = f"{base_without_ext}_drv-defaced{extension}"
+    # Check if drv-* already exists
+    has_drv = False
+    new_parts = []
     
+    for part in parts:
+        if part.startswith('drv-'):
+            # Replace existing drv-* with drv-defaced
+            new_parts.append('drv-defaced')
+            has_drv = True
+        else:
+            new_parts.append(part)
+    
+    # If no drv-* found, insert drv-defaced_ before last part
+    if not has_drv:
+        if len(new_parts) > 1:
+            # Insert drv-defaced_ before the last suffix
+            new_parts = new_parts[:-1] + ['drv-defaced', new_parts[-1]]
+        else:
+            # Only one part, just append
+            new_parts.append('drv-defaced')
+    
+    new_filename = '_'.join(new_parts) + extension
     return new_filename
 
 
