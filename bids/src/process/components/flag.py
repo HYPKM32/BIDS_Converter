@@ -415,11 +415,13 @@ def process_flags(flag_list, global_vars, export_json_path):
         print("ERROR: flag_dir 경로가 없습니다")
         return None
     
-    # 8. 각 프로세스를 순차적으로 처리
+    # 8. 각 프로세스를 순차적으로 처리 (while 루프 사용)
     current_json_data = export_data
     current_json_path = export_json_path
     
-    for idx, flag in enumerate(flag_list):
+    idx = 0
+    while idx < len(flag_list):
+        flag = flag_list[idx]
         process_name = flag.get('process')
         package = flag.get('package')
         
@@ -434,17 +436,18 @@ def process_flags(flag_list, global_vars, export_json_path):
         # 8-2. 현재 flag_list를 JSON에 업데이트
         current_json_data['flag'] = flag_list
         
-        # 8-3. input/output 경로 준비
+        # 8-3. input/output 경로 준비 (최신 flag_list 사용)
         matched_count = prepare_process_data(
             flag, 
             export_list, 
-            flag_list, 
+            flag_list,
             derivatives_path
         )
         
         if matched_count == 0:
             logger.warning(f"프로세스 '{process_name}'에 처리할 데이터가 없음 - 건너뛰기")
             print(f"WARNING: '{process_name}' 프로세스에 처리할 데이터가 없습니다 - 건너뛰기")
+            idx += 1
             continue
         
         # 8-4. JSON 파일 업데이트 및 저장
@@ -497,9 +500,11 @@ def process_flags(flag_list, global_vars, export_json_path):
             print(f"\nERROR: 프로세스 '{process_name}'이(가) 완료되지 않았습니다")
             return None
         
-        # 완료된 데이터로 업데이트
+        # 완료된 데이터로 업데이트 (outputs 포함)
         current_json_data = completed_data
         flag_list = completed_data.get('flag', [])
+        
+        logger.info(f"프로세스 '{process_name}' 완료 후 flag_list 업데이트 완료")
         
         # 8-7. 다음 프로세스로 파일 이동 또는 working_dir로 이동
         if idx < len(flag_list) - 1:
@@ -562,6 +567,8 @@ def process_flags(flag_list, global_vars, export_json_path):
                 logger.error(f"working_dir로 파일 이동 오류: {e}")
                 print(f"ERROR: 최종 파일 이동 실패: {e}")
                 return None
+        
+        idx += 1  # 다음 프로세스로
     
     print(f"\n{'='*60}")
     print(f"전처리 파이프라인 완료!")
