@@ -54,8 +54,8 @@ Examples:
     
     parser.add_argument(
         '--suffix', '-s',
-        default='defaced',
-        help='Suffix to append to output filename (default: defaced)'
+        default='defacing',
+        help='Suffix to append to output filename (default: defacing)'
     )
     
     parser.add_argument(
@@ -106,24 +106,24 @@ def parts_to_flags(parts):
 
 def generate_output_filename(input_path, suffix):
     """
-    Generate output filename with format: {prefix}_drv-defaced_{original_suffix}.nii.gz
-    If drv-* already exists, replace it with drv-defaced
+    Generate output filename with format: {prefix}_drv-{suffix}_{original_suffix}.nii.gz
+    If drv-* already exists, replace it with drv-{suffix}
     
     Args:
         input_path: Input file path
-        suffix: Suffix to add (not used in new logic, kept for compatibility)
+        suffix: Suffix to add after 'drv-'
     
     Returns:
         Output filename
     
     Examples:
-        # Case 1: No drv-* (add drv-defaced_)
-        input:  'sub-2cna00001_ses-01_run-01_T1w.nii.gz'
+        # Case 1: No drv-* (add drv-{suffix}_)
+        input:  'sub-2cna00001_ses-01_run-01_T1w.nii.gz', suffix='defaced'
         output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
         
-        # Case 2: Has drv-* (replace with drv-defaced)
-        input:  'sub-2cna00001_ses-01_run-01_drv-original_T1w.nii.gz'
-        output: 'sub-2cna00001_ses-01_run-01_drv-defaced_T1w.nii.gz'
+        # Case 2: Has drv-* (replace with drv-{suffix})
+        input:  'sub-2cna00001_ses-01_run-01_drv-original_T1w.nii.gz', suffix='anonymized'
+        output: 'sub-2cna00001_ses-01_run-01_drv-anonymized_T1w.nii.gz'
     """
     basename = os.path.basename(input_path)
     
@@ -147,20 +147,20 @@ def generate_output_filename(input_path, suffix):
     
     for part in parts:
         if part.startswith('drv-'):
-            # Replace existing drv-* with drv-defaced
-            new_parts.append('drv-defaced')
+            # Replace existing drv-* with drv-{suffix}
+            new_parts.append(f'drv-{suffix}')
             has_drv = True
         else:
             new_parts.append(part)
     
-    # If no drv-* found, insert drv-defaced_ before last part
+    # If no drv-* found, insert drv-{suffix}_ before last part
     if not has_drv:
         if len(new_parts) > 1:
-            # Insert drv-defaced_ before the last suffix
-            new_parts = new_parts[:-1] + ['drv-defaced', new_parts[-1]]
+            # Insert drv-{suffix}_ before the last suffix
+            new_parts = new_parts[:-1] + [f'drv-{suffix}', new_parts[-1]]
         else:
             # Only one part, just append
-            new_parts.append('drv-defaced')
+            new_parts.append(f'drv-{suffix}')
     
     new_filename = '_'.join(new_parts) + extension
     return new_filename
@@ -271,7 +271,7 @@ def main():
     # Convert parts to flags
     where = parts_to_flags(args.parts)
     
-    # Generate output filename
+    # Generate output filename (now uses suffix properly)
     output_filename = generate_output_filename(args.input, args.suffix)
     output_path = os.path.join(args.output, output_filename)
     

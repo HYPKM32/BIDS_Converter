@@ -57,11 +57,11 @@ def validate_and_initialize_config(config):
                 
         # 선택적 필드 초기화
         
-        if 'enabled' not in config or config['enabled'] is None:
-            config['enabled'] = True
-            print("Enabled 필드를 기본값으로 초기화: True")
+        if 'bids' not in config or config['bids'] is None:
+            config['bids'] = True
+            print("bids 필드를 기본값으로 초기화: True")
         else:
-            print(f"Enabled: {config['enabled']}")
+            print(f"bids: {config['bids']}")
         
         if 'domain' not in config or not config['domain']:
             config['domain'] = "DATA"
@@ -205,9 +205,9 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
         
         # Step 0: 변수 정리 및 초기화
         structured_config = validate_and_initialize_config(config)
-        if not config.get('enabled', True):
-            logger.info("enabled=False이므로 Step 1-6을 건너뛰고 Step 7로 점프합니다")
-            print("enabled=False: 데이터 처리를 건너뛰고 Flag 처리만 수행합니다")
+        if not config.get('bids', True):
+            logger.info("bids=False이므로 Step 1-6을 건너뛰고 Step 7로 점프합니다")
+            print("bids=False: 데이터 처리를 건너뛰고 Flag 처리만 수행합니다")
             
             # Step 7: 전처리 Flag 처리만 수행
             logger.info("Step 7: 전처리 Flag 처리만 진행")

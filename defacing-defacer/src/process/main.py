@@ -47,6 +47,28 @@ def backup_json_file(json_file_path, backup_dir):
         raise
 
 
+def extract_space_from_flag(flag_data, process, package):
+    """
+    flag 리스트에서 process와 package가 일치하는 객체의 space 값을 추출
+    
+    Args:
+        flag_data (list): flag 딕셔너리 리스트
+        process (str): 필터링할 process 이름
+        package (str): 필터링할 package 이름
+        
+    Returns:
+        str: space 값 (없으면 빈 문자열)
+    """
+    for flag in flag_data:
+        if flag.get('process') == process and flag.get('package') == package:
+            space = flag.get('space', '')
+            logger.info(f"Extracted space value: '{space}' for process={process}, package={package}")
+            return space
+    
+    logger.warning(f"No space value found for process={process}, package={package}")
+    return ''
+
+
 def main(flag_data, json_file_path, backup_dir, process, package, command):
     """
     메인 처리 함수
@@ -64,6 +86,9 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
     logger.info(f"Backup dir: {backup_dir}")
     logger.info(f"Filter: process={process}, package={package}")
     logger.info(f"Command: {command}")
+    
+    # space 값 추출
+    space = extract_space_from_flag(flag_data, process, package)
     
     # flag 필터링
     filtered_flags = filter.filter_flags(flag_data, process, package)
@@ -91,7 +116,10 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
     
     try:
         execution_result = cli.execute_commands(command_list, flag['derived_data'])
-        sidecar_json = sidecar.make_sidecar_json(execution_result, process, package)
+        
+        # space 값을 sidecar 모듈에 전달
+        sidecar_json = sidecar.make_sidecar_json(execution_result, process, package, space)
+        
         is_exported = export.export_json(execution_result, json_file_path, process, package, sidecar_json)
         
         # export 성공 시 JSON 파일 백업

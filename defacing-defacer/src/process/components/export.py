@@ -1,4 +1,3 @@
-# /BDSP/defacer_app/src/process/components/export.py
 import json
 import logging
 
@@ -62,27 +61,31 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
         for idx, result in enumerate(execution_result):
             result_outputs = result.get('outputs', {})
             
-            # outputs에는 defaced_data만 담기
-            outputs = {
-                'drv-defaced_T1w': result_outputs.get('defaced_data', '')
-            }
+            # outputs: 익명화된 데이터 경로 (문자열)
+            outputs = result_outputs.get('defaced_data', '')
             
-            # 해당 index의 sidecar 경로만 가져오기 (문자열)
-            sidecar_path = sidecar_json_list[idx] if idx < len(sidecar_json_list) else ''
+            # sidecar: 해당 index의 sidecar 경로 (문자열)
+            sidecar = sidecar_json_list[idx] if idx < len(sidecar_json_list) else ''
             
-            # byproduct 객체 생성 (키-값 형태)
+            # byproduct: defacemask만 포함 (객체)
             byproduct = {
-                'thumbnail': result_outputs.get('thumbnail', ''),
-                'defacemask': result_outputs.get('defacing_mask', ''),
-                'sidecar': sidecar_path  # 리스트가 아닌 문자열로 저장
+                'defacemask': result_outputs.get('defacing_mask', '')
             }
             
-            # derived_data[idx]에 outputs와 byproduct 추가
-            derived_data_list[idx]['outputs'] = outputs
-            derived_data_list[idx]['byproduct'] = byproduct
+            # thumbnail: 썸네일 경로 (문자열)
+            thumbnail = result_outputs.get('thumbnail', '')
             
-            logger.info(f"Updated derived_data[{idx}] with outputs: {outputs}")
-            logger.info(f"Updated derived_data[{idx}] with byproduct (sidecar: {sidecar_path})")
+            # derived_data[idx]에 필드 추가
+            derived_data_list[idx]['outputs'] = outputs
+            derived_data_list[idx]['sidecar'] = sidecar
+            derived_data_list[idx]['byproduct'] = byproduct
+            derived_data_list[idx]['thumbnail'] = thumbnail
+            
+            logger.info(f"Updated derived_data[{idx}]:")
+            logger.info(f"  - outputs: {outputs}")
+            logger.info(f"  - sidecar: {sidecar}")
+            logger.info(f"  - byproduct: {byproduct}")
+            logger.info(f"  - thumbnail: {thumbnail}")
 
         # 4. status를 'done'으로 갱신
         try:

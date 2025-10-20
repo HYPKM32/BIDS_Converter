@@ -6,7 +6,7 @@ from utils.common import bdsp_walk
 logger = logging.getLogger(__name__)
 
 
-def make_sidecar_json(execution_results, process, package):
+def make_sidecar_json(execution_results, process, package, space):
     """
     실행 결과를 기반으로 JSON 메타데이터 파일(sidecar) 생성/업데이트
     모든 sidecar 생성 후 output_dir을 스캔하여 파일 목록 JSON 생성
@@ -27,6 +27,7 @@ def make_sidecar_json(execution_results, process, package):
                                 ]
         process (str): 프로세스 이름
         package (str): 패키지 이름
+        space (str): 공간 정보 (예: 'orig')
     
     Returns:
         list: 각 실행 결과에 대응하는 sidecar 경로 리스트 (index 순서 유지)
@@ -55,7 +56,7 @@ def make_sidecar_json(execution_results, process, package):
             output_dirs.add(output_dir)
         
         try:
-            sidecar_path = _create_single_sidecar(execution_result, process, package)
+            sidecar_path = _create_single_sidecar(execution_result, process, package, space)
             sidecar_paths.append(sidecar_path if sidecar_path else '')
             logger.info(f"Created sidecar for index {idx}: {sidecar_path}")
         except Exception as e:
@@ -81,7 +82,7 @@ def make_sidecar_json(execution_results, process, package):
     return sidecar_paths
 
 
-def _create_single_sidecar(execution_result, process, package):
+def _create_single_sidecar(execution_result, process, package, space):
     """
     단일 실행 결과에 대한 sidecar JSON 생성
     
@@ -89,6 +90,7 @@ def _create_single_sidecar(execution_result, process, package):
         execution_result (dict): 단일 실행 결과
         process (str): 프로세스 이름
         package (str): 패키지 이름
+        space (str): 공간 정보 (예: 'orig')
     
     Returns:
         str: 생성된 JSON 파일 경로 또는 None
@@ -157,6 +159,7 @@ def _create_single_sidecar(execution_result, process, package):
     # 5. 새로운 derivative 객체 생성
     derivative_entry = {
         'process': process,
+        'space': space,
         'package': package,
         'input': input_path,
         'output_dir': output_dir,
@@ -167,7 +170,7 @@ def _create_single_sidecar(execution_result, process, package):
     
     # 6. derivatives 리스트에 추가
     metadata['derivatives'].append(derivative_entry)
-    logger.info(f"Added derivative entry (process={process}, package={package})")
+    logger.info(f"Added derivative entry (process={process}, space={space}, package={package})")
     
     # 7. 새 경로에 JSON 파일 저장
     try:
