@@ -1,5 +1,6 @@
 #/BDSP/defacer_app/src/process/components/filter.py
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -72,14 +73,26 @@ def validate_filtered_flags(filtered_flags):
     return flag
 
 
-def update_flag_status(flag, new_status):
+def update_flag_status(flag, new_status, json_file_path):
     """
-    flag의 status를 변경
-    
-    Args:
-        flag (dict): flag 객체
-        new_status (str): 새로운 status 값
+    flag의 status를 업데이트하고 JSON 파일에도 반영
     """
-    old_status = flag.get('status', '')
     flag['status'] = new_status
-    logger.info(f"Status updated: {old_status} -> {new_status}")
+    logger.info(f"Status updated to '{new_status}'")
+    
+    # JSON 파일 읽기
+    with open(json_file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # 해당 flag 찾아서 status 업데이트
+    for item in data.get('flag', []):
+        if (item.get('process') == flag['process'] and 
+            item.get('package') == flag['package']):
+            item['status'] = new_status
+            break
+    
+    # JSON 파일에 쓰기
+    with open(json_file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    
+    logger.info(f"JSON file updated: {json_file_path}")

@@ -107,7 +107,7 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
         raise
     
     # status를 pending -> running으로 변경
-    filter.update_flag_status(flag, 'running')
+    filter.update_flag_status(flag, 'running',json_file_path)
     
     # components.parser 호출 (command와 flag 전달)
     command_list = parser.parser(command, [flag])

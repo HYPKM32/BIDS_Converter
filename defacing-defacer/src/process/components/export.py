@@ -61,8 +61,10 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
         for idx, result in enumerate(execution_result):
             result_outputs = result.get('outputs', {})
             
-            # outputs: 익명화된 데이터 경로 (문자열)
-            outputs = result_outputs.get('defaced_data', '')
+            # outputs: 익명화된 데이터 경로를 객체로 감싸기
+            outputs = {
+                'defaced_data': result_outputs.get('defaced_data', '')
+            }
             
             # sidecar: 해당 index의 sidecar 경로 (문자열)
             sidecar = sidecar_json_list[idx] if idx < len(sidecar_json_list) else ''

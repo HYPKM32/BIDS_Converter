@@ -70,7 +70,7 @@ def parse_output_paths(command_list, flag):
     
     # 실제 파일명 (exe-XX 없음) - subprocess가 생성하는 파일명
     # 1. actual defaced_data: *_run-XX_drv-defaced_T1w.nii.gz
-    actual_defaced_parts = parts[:-1] + ['drv-defaced', parts[-1]]
+    actual_defaced_parts = parts[:-1] + ['drv-defacing', parts[-1]]
     actual_defaced_filename = '_'.join(actual_defaced_parts) + '.nii.gz'
     actual_defaced_data = os.path.join(output_dir, actual_defaced_filename)
     
@@ -100,7 +100,7 @@ def parse_output_paths(command_list, flag):
                 has_exe = True  # 중복 추가 방지
     
     # 1. expected defaced_data: *_run-XX_exe-{exe_num}_drv-defaced_T1w.nii.gz
-    expected_defaced_parts = new_parts[:-1] + ['drv-defaced', new_parts[-1]]
+    expected_defaced_parts = new_parts[:-1] + ['drv-defacing', new_parts[-1]]
     expected_defaced_filename = '_'.join(expected_defaced_parts) + '.nii.gz'
     expected_defaced_data = os.path.join(output_dir, expected_defaced_filename)
     

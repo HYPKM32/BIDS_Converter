@@ -1,0 +1,39 @@
+process: canonical
+package: canonical
+description: "이미지 방향 정규화 프로세스 - 여러 파일 배치 처리"
+
+required_arguments:
+  - name: "input"
+    flag: "--input"
+    type: "list"
+    min_count: 1
+    max_count: 1
+    modality_condition: ["T1w"]
+    description: "입력 파일 경로(들)"
+  
+  - name: "output_path"
+    flag: "--output"
+    type: "string"
+    description: "출력 디렉토리 경로"
+
+optional_arguments:
+  - name: "axis"
+    flag: "--axis"
+    short_flag: "-a"
+    type: "string"
+    default: "RAS"
+    description: "목표 방향 (예: RAS, LPS, LPI, LAS)"
+  
+  - name: "suffix"
+    flag: "--suffix"
+    short_flag: "-s"
+    type: "string"
+    default: "canonical"
+    description: "출력 파일명의 drv- 태그용 접미사"
+
+outputs:
+  - canonical_data:
+    modality: "drv-canonical_*"
+    min_count: 1
+    max_count: 1
+

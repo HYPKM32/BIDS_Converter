@@ -1,0 +1,61 @@
+process: defacer
+package: defacing
+description: "얼굴 제거 프로세스 - 여러 파일 동시 처리"
+
+required_arguments:
+  - name: "input"
+    flag: "--input"
+    type: "list"
+    min_count: 1
+    max_count: 1
+    modality_condition: ["T1w"]
+    description: "입력 파일 경로(들)"
+  
+  - name: "output_path"
+    flag: "--output"
+    type: "string"
+    description: "출력 디렉토리 경로"
+
+optional_arguments:
+  - name: "parts"
+    flag: "--parts"
+    short_flag: "-p"
+    type: "list"
+    choices: ["eyes", "nose", "ears", "mouth", "all"]
+    default: ["all"]
+    description: "De-identify할 얼굴 부위"
+  
+  - name: "suffix"
+    flag: "--suffix"
+    short_flag: "-s"
+    type: "string"
+    default: "defacing"
+    description: "출력 파일명 접미사"
+  
+  - name: "verification"
+    flag: "--verification"
+    short_flag: "-v"
+    type: "choice"
+    choices: ["y", "n"]
+    default: "y"
+    description: "검증 이미지 생성 여부"
+  
+  - name: "mask"
+    flag: "--mask"
+    short_flag: "-m"
+    type: "choice"
+    choices: ["y", "n"]
+    default: "y"
+    description: "세그멘테이션 마스크 저장 여부"
+
+outputs:
+  - defaced_data:
+    modality: "drv-defacing_*"
+    min_count: 1
+    max_count: 1
+
+byproduct:
+  - defacemask:
+    modality: "defacemask"
+    min_count: 0
+    max_count: 1

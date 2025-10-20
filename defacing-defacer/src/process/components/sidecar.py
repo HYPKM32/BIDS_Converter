@@ -163,9 +163,9 @@ def _create_single_sidecar(execution_result, process, package, space):
         'package': package,
         'input': input_path,
         'output_dir': output_dir,
-        'defaced_data': outputs.get('defaced_data', ''),
+        'outputs': outputs.get('defaced_data', ''),
         'thumbnail': outputs.get('thumbnail', ''),
-        'defacing_mask': outputs.get('defacing_mask', '')
+        'defacemask': outputs.get('defacing_mask', '')
     }
     
     # 6. derivatives 리스트에 추가

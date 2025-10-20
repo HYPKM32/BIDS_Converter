@@ -141,7 +141,7 @@ Examples:
     
     parser.add_argument(
         '--suffix', '-s',
-        default='oriented',
+        default='canonical',
         help='Suffix for drv- tag in output filename. Default: oriented'
     )
     
