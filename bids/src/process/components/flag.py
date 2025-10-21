@@ -1,3 +1,4 @@
+#/BDSP/bids_app/src/process/components/flag.py
 import json
 import logging
 import os
@@ -607,4 +608,4 @@ def process_flags(flag_list, global_vars, export_json_path):
     print(f"{'='*60}\n")
     logger.info("모든 프로세스 처리 완료")
     
-    return current_json_data
+    return json.dumps(current_json_data, ensure_ascii=False, indent=2)

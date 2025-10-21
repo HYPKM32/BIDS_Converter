@@ -44,11 +44,11 @@ services:
     tty: true   
     command: /bin/bash
     
-  canonical-canonical:
+  canonical:
     build:
       context: ./canonical
       dockerfile: Dockerfile
-    container_name: canonical-canonical
+    container_name: canonical
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./canonical:/BDSP/canonical_app
