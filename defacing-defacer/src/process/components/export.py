@@ -61,33 +61,30 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
         for idx, result in enumerate(execution_result):
             result_outputs = result.get('outputs', {})
             
-            # outputs: 익명화된 데이터 경로를 객체로 감싸기
+            # outputs: defaced_data와 defacemask 모두 포함 (키 이름은 유지)
             outputs = {
-                'defaced_data': result_outputs.get('defaced_data', '')
+                'defaced_data': result_outputs.get('data', ''),
+                'defacemask': result_outputs.get('mask', '')
             }
             
             # sidecar: 해당 index의 sidecar 경로 (문자열)
             sidecar = sidecar_json_list[idx] if idx < len(sidecar_json_list) else ''
             
-            # byproduct: defacemask만 포함 (객체)
-            byproduct = {
-                'defacemask': result_outputs.get('defacing_mask', '')
-            }
-            
-            # thumbnail: 썸네일 경로 (문자열)
+            # byproduct: thumbnail을 포함한 객체
+            byproduct = {}
             thumbnail = result_outputs.get('thumbnail', '')
+            if thumbnail:
+                byproduct['thumbnail'] = thumbnail
             
             # derived_data[idx]에 필드 추가
             derived_data_list[idx]['outputs'] = outputs
             derived_data_list[idx]['sidecar'] = sidecar
             derived_data_list[idx]['byproduct'] = byproduct
-            derived_data_list[idx]['thumbnail'] = thumbnail
             
             logger.info(f"Updated derived_data[{idx}]:")
             logger.info(f"  - outputs: {outputs}")
             logger.info(f"  - sidecar: {sidecar}")
             logger.info(f"  - byproduct: {byproduct}")
-            logger.info(f"  - thumbnail: {thumbnail}")
 
         # 4. status를 'done'으로 갱신
         try:

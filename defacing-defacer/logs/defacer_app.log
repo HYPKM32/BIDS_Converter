@@ -10928,3 +10928,654 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 2025-10-20 05:50:07,871 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251020054903_export.json
 2025-10-20 05:50:07,871 - INFO - All commands executed successfully
 2025-10-20 05:50:07,872 - INFO - Successfully processed: pkm_parknm_33333333_20251020054903_export.json
+2025-10-20 09:58:27,583 - INFO - Submitted for checking: pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 09:58:27,584 - INFO - Checking file: pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 09:58:27,586 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 09:58:27,589 - INFO - Moved file: pkm_parknm_33333333_20251020095825_export.json to working directory
+2025-10-20 09:58:27,589 - INFO - Starting main process
+2025-10-20 09:58:27,590 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 09:58:27,590 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 09:58:27,590 - INFO - Filter: process=defacing, package=defacer
+2025-10-20 09:58:27,590 - INFO - Command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 09:58:27,590 - INFO - Extracted space value: 'orig' for process=defacing, package=defacer
+2025-10-20 09:58:27,591 - INFO - Matched flag: process=defacing, package=defacer
+2025-10-20 09:58:27,591 - INFO - Found 1 matching flag(s)
+2025-10-20 09:58:27,591 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 09:58:27,591 - INFO - Status updated to 'running'
+2025-10-20 09:58:27,605 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 09:58:27,606 - INFO - Parsing 1 flag(s) with command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 09:58:27,606 - INFO - Processing flag 0: process=defacing, package=defacer
+2025-10-20 09:58:27,607 - ERROR - Error processing pkm_parknm_33333333_20251020095825_export.json: sequence item 3: expected str instance, list found
+2025-10-20 09:58:27,623 - INFO - Moved error file to error directory: pkm_parknm_33333333_20251020095825_export.json
+2025-10-20 10:02:55,319 - INFO - Starting JSON file monitoring...
+2025-10-20 10:02:55,319 - INFO - Monitoring for: process=defacing, package=defacer, status=pending
+2025-10-20 10:06:28,824 - INFO - Starting JSON file monitoring...
+2025-10-20 10:06:28,824 - INFO - Monitoring for: process=defacing, package=defacer, status=pending
+2025-10-20 10:06:28,826 - INFO - Submitted for checking: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:06:28,827 - INFO - Checking file: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:06:28,828 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:06:28,832 - INFO - Moved file: pkm_parknm_33333333_20251020100620_export.json to working directory
+2025-10-20 10:06:28,832 - INFO - Starting main process
+2025-10-20 10:06:28,833 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:06:28,833 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 10:06:28,833 - INFO - Filter: process=defacing, package=defacer
+2025-10-20 10:06:28,833 - INFO - Command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 10:06:28,834 - INFO - Extracted space value: 'orig' for process=defacing, package=defacer
+2025-10-20 10:06:28,834 - INFO - Matched flag: process=defacing, package=defacer
+2025-10-20 10:06:28,834 - INFO - Found 1 matching flag(s)
+2025-10-20 10:06:28,834 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 10:06:28,835 - INFO - Status updated to 'running'
+2025-10-20 10:06:28,851 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:06:28,852 - INFO - Parsing 1 flag(s) with command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 10:06:28,852 - INFO - Processing flag 0: process=defacing, package=defacer
+2025-10-20 10:06:28,852 - INFO - Generated command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:06:28,852 - INFO - Generated command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:06:28,852 - INFO - Total commands generated: 2
+2025-10-20 10:06:28,852 - INFO - Starting defacing process...
+2025-10-20 10:06:28,853 - INFO - Executing command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:06:28,853 - INFO -   exe_num: 01
+2025-10-20 10:06:51,276 - INFO - Command [0] completed successfully
+2025-10-20 10:06:51,277 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-20 10:06:51,277 - WARNING - stderr: 2025-10-20 10:06:33.420793: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20 10:06:34.111662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-20 10:06:40.094419: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-20 10:06:40.912877: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-20 10:06:51,278 - INFO - Renaming output files...
+2025-10-20 10:06:51,279 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+2025-10-20 10:06:51,280 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-20 10:06:51,281 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz
+2025-10-20 10:06:51,281 - INFO -   ✓ defaced_data: renamed successfully
+2025-10-20 10:06:51,281 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-20 10:06:51,281 - INFO -   ✓ defacing_mask: renamed successfully
+2025-10-20 10:06:51,282 - INFO - Executing command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:06:51,282 - INFO -   exe_num: 01
+2025-10-20 10:07:19,305 - INFO - Command [1] completed successfully
+2025-10-20 10:07:19,306 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-20 10:07:19,306 - WARNING - stderr: 2025-10-20 10:06:55.678190: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20 10:06:56.393421: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-20 10:07:02.675489: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-20 10:07:03.504517: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-20 10:07:19,307 - INFO - Renaming output files...
+2025-10-20 10:07:19,308 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+2025-10-20 10:07:19,309 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-20 10:07:19,309 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz
+2025-10-20 10:07:19,310 - INFO -   ✓ defaced_data: renamed successfully
+2025-10-20 10:07:19,310 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-20 10:07:19,310 - INFO -   ✓ defacing_mask: renamed successfully
+2025-10-20 10:07:19,310 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-20 10:07:19,311 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-20 10:07:19,311 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,311 - INFO - Original JSON file found, loading metadata
+2025-10-20 10:07:19,312 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-20 10:07:19,312 - INFO - Created new 'derivatives' list
+2025-10-20 10:07:19,312 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-20 10:07:19,321 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,321 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,321 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-20 10:07:19,321 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,322 - INFO - Original JSON file found, loading metadata
+2025-10-20 10:07:19,322 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-20 10:07:19,322 - INFO - Created new 'derivatives' list
+2025-10-20 10:07:19,323 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-20 10:07:19,330 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,331 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,331 - INFO - Created 2 sidecar file(s) out of 2
+2025-10-20 10:07:19,331 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:07:19,335 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:07:19,335 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:07:19,338 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:07:19,338 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:07:19,339 - INFO - Found matching flag: process=defacing, package=defacer
+2025-10-20 10:07:19,339 - INFO - Updated derived_data[0]:
+2025-10-20 10:07:19,339 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz'}
+2025-10-20 10:07:19,339 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,340 - INFO -   - byproduct: {}
+2025-10-20 10:07:19,340 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-20 10:07:19,340 - INFO - Updated derived_data[1]:
+2025-10-20 10:07:19,340 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz'}
+2025-10-20 10:07:19,340 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:07:19,340 - INFO -   - byproduct: {}
+2025-10-20 10:07:19,340 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-20 10:07:19,341 - INFO - Set status='done' for flag process=defacing, package=defacer
+2025-10-20 10:07:19,341 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:07:19,351 - INFO - JSON file updated successfully
+2025-10-20 10:07:19,351 - INFO - Export successful, backing up JSON file...
+2025-10-20 10:07:19,361 - INFO - JSON file backed up successfully
+2025-10-20 10:07:19,362 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:07:19,362 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:07:19,362 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:07:19,362 - INFO - All commands executed successfully
+2025-10-20 10:07:19,362 - INFO - Successfully processed: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:49:25,806 - INFO - Starting JSON file monitoring...
+2025-10-20 10:49:25,807 - INFO - Monitoring for: process=defacing, package=defacer, status=pending
+2025-10-20 10:49:40,825 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:49:40,826 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:49:40,827 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:49:40,830 - INFO - Moved file: pkm_parknm_33333333_20251020104938_export.json to working directory
+2025-10-20 10:49:40,830 - INFO - Starting main process
+2025-10-20 10:49:40,831 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:49:40,831 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 10:49:40,831 - INFO - Filter: process=defacing, package=defacer
+2025-10-20 10:49:40,831 - INFO - Command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 10:49:40,832 - INFO - Extracted space value: 'orig' for process=defacing, package=defacer
+2025-10-20 10:49:40,832 - INFO - Matched flag: process=defacing, package=defacer
+2025-10-20 10:49:40,832 - INFO - Found 1 matching flag(s)
+2025-10-20 10:49:40,832 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 10:49:40,833 - INFO - Status updated to 'running'
+2025-10-20 10:49:40,850 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:49:40,850 - INFO - Parsing 1 flag(s) with command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-20 10:49:40,851 - INFO - Processing flag 0: process=defacing, package=defacer
+2025-10-20 10:49:40,851 - INFO - Generated command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:49:40,851 - INFO - Generated command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:49:40,851 - INFO - Total commands generated: 2
+2025-10-20 10:49:40,851 - INFO - Starting defacing process...
+2025-10-20 10:49:40,851 - INFO - Executing command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:49:40,852 - INFO -   exe_num: 01
+2025-10-20 10:50:05,073 - INFO - Command [0] completed successfully
+2025-10-20 10:50:05,074 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-20 10:50:05,074 - WARNING - stderr: 2025-10-20 10:49:45.263810: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20 10:49:45.971744: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-20 10:49:52.230948: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-20 10:49:53.046244: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-20 10:50:05,075 - INFO - Renaming output files...
+2025-10-20 10:50:05,077 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+2025-10-20 10:50:05,078 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-20 10:50:05,078 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz
+2025-10-20 10:50:05,079 - INFO -   ✓ data: renamed successfully
+2025-10-20 10:50:05,079 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-20 10:50:05,079 - INFO -   ✓ mask: renamed successfully
+2025-10-20 10:50:05,079 - INFO - Executing command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:50:05,080 - INFO -   exe_num: 01
+2025-10-20 10:50:32,897 - INFO - Command [1] completed successfully
+2025-10-20 10:50:32,898 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-20 10:50:32,898 - WARNING - stderr: 2025-10-20 10:50:09.787841: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20 10:50:10.471102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-20 10:50:16.880525: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-20 10:50:17.686182: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-20 10:50:32,899 - INFO - Renaming output files...
+2025-10-20 10:50:32,900 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+2025-10-20 10:50:32,900 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-20 10:50:32,901 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz
+2025-10-20 10:50:32,901 - INFO -   ✓ data: renamed successfully
+2025-10-20 10:50:32,902 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-20 10:50:32,902 - INFO -   ✓ mask: renamed successfully
+2025-10-20 10:50:32,902 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-20 10:50:32,902 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-20 10:50:32,903 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,903 - INFO - Original JSON file found, loading metadata
+2025-10-20 10:50:32,904 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-20 10:50:32,904 - INFO - Created new 'derivatives' list
+2025-10-20 10:50:32,904 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-20 10:50:32,913 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,913 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,913 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-20 10:50:32,914 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,914 - INFO - Original JSON file found, loading metadata
+2025-10-20 10:50:32,915 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-20 10:50:32,915 - INFO - Created new 'derivatives' list
+2025-10-20 10:50:32,915 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-20 10:50:32,921 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,921 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,921 - INFO - Created 2 sidecar file(s) out of 2
+2025-10-20 10:50:32,921 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:50:32,924 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:50:32,924 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:50:32,926 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:50:32,927 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:50:32,927 - INFO - Found matching flag: process=defacing, package=defacer
+2025-10-20 10:50:32,927 - INFO - Updated derived_data[0]:
+2025-10-20 10:50:32,927 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz'}
+2025-10-20 10:50:32,928 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,928 - INFO -   - byproduct: {}
+2025-10-20 10:50:32,928 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-20 10:50:32,928 - INFO - Updated derived_data[1]:
+2025-10-20 10:50:32,928 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz'}
+2025-10-20 10:50:32,928 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:50:32,928 - INFO -   - byproduct: {}
+2025-10-20 10:50:32,928 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-20 10:50:32,929 - INFO - Set status='done' for flag process=defacing, package=defacer
+2025-10-20 10:50:32,929 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:50:32,937 - INFO - JSON file updated successfully
+2025-10-20 10:50:32,937 - INFO - Export successful, backing up JSON file...
+2025-10-20 10:50:32,939 - INFO - JSON file backed up successfully
+2025-10-20 10:50:32,939 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:50:32,939 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:50:32,939 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:50:32,939 - INFO - All commands executed successfully
+2025-10-20 10:50:32,939 - INFO - Successfully processed: pkm_parknm_33333333_20251020104938_export.json
+2025-10-21 08:29:38,270 - INFO - Starting JSON file monitoring...
+2025-10-21 08:29:38,271 - INFO - Monitoring for: process=defacing, package=defacer, status=pending
+2025-10-21 08:29:48,285 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:29:48,286 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:29:48,287 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:29:48,290 - INFO - Moved file: pkm_parknm_33333333_20251021082945_export.json to working directory
+2025-10-21 08:29:48,291 - INFO - Starting main process
+2025-10-21 08:29:48,291 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:29:48,291 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 08:29:48,292 - INFO - Filter: process=defacing, package=defacer
+2025-10-21 08:29:48,292 - INFO - Command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-21 08:29:48,292 - INFO - Extracted space value: 'orig' for process=defacing, package=defacer
+2025-10-21 08:29:48,292 - INFO - Matched flag: process=defacing, package=defacer
+2025-10-21 08:29:48,293 - INFO - Found 1 matching flag(s)
+2025-10-21 08:29:48,293 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 08:29:48,293 - INFO - Status updated to 'running'
+2025-10-21 08:29:48,310 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:29:48,310 - INFO - Parsing 1 flag(s) with command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-21 08:29:48,310 - INFO - Processing flag 0: process=defacing, package=defacer
+2025-10-21 08:29:48,310 - INFO - Generated command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:29:48,311 - INFO - Generated command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:29:48,311 - INFO - Total commands generated: 2
+2025-10-21 08:29:48,311 - INFO - Starting defacing process...
+2025-10-21 08:29:48,311 - INFO - Executing command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:29:48,311 - INFO -   exe_num: 01
+2025-10-21 08:30:10,413 - INFO - Command [0] completed successfully
+2025-10-21 08:30:10,413 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-21 08:30:10,414 - WARNING - stderr: 2025-10-21 08:29:52.777992: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-21 08:29:53.419130: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-21 08:29:59.473527: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-21 08:30:00.284132: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-21 08:30:10,414 - INFO - Renaming output files...
+2025-10-21 08:30:10,415 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+2025-10-21 08:30:10,416 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-21 08:30:10,416 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz
+2025-10-21 08:30:10,417 - INFO -   ✓ data: renamed successfully
+2025-10-21 08:30:10,417 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-21 08:30:10,417 - INFO -   ✓ mask: renamed successfully
+2025-10-21 08:30:10,417 - INFO - Executing command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:30:10,418 - INFO -   exe_num: 01
+2025-10-21 08:30:37,462 - INFO - Command [1] completed successfully
+2025-10-21 08:30:37,463 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-21 08:30:37,464 - WARNING - stderr: 2025-10-21 08:30:14.887224: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-21 08:30:15.573512: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-21 08:30:21.715081: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-21 08:30:22.508126: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-21 08:30:37,464 - INFO - Renaming output files...
+2025-10-21 08:30:37,465 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+2025-10-21 08:30:37,466 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-21 08:30:37,466 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz
+2025-10-21 08:30:37,467 - INFO -   ✓ data: renamed successfully
+2025-10-21 08:30:37,467 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-21 08:30:37,467 - INFO -   ✓ mask: renamed successfully
+2025-10-21 08:30:37,467 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 08:30:37,468 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-21 08:30:37,468 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,468 - INFO - Original JSON file found, loading metadata
+2025-10-21 08:30:37,469 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-21 08:30:37,469 - INFO - Created new 'derivatives' list
+2025-10-21 08:30:37,470 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-21 08:30:37,478 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,479 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,479 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-21 08:30:37,479 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,480 - INFO - Original JSON file found, loading metadata
+2025-10-21 08:30:37,480 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-21 08:30:37,480 - INFO - Created new 'derivatives' list
+2025-10-21 08:30:37,481 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-21 08:30:37,487 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,487 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,487 - INFO - Created 2 sidecar file(s) out of 2
+2025-10-21 08:30:37,487 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:30:37,490 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:30:37,491 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:30:37,493 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:30:37,494 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:37,494 - INFO - Found matching flag: process=defacing, package=defacer
+2025-10-21 08:30:37,495 - INFO - Updated derived_data[0]:
+2025-10-21 08:30:37,495 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz'}
+2025-10-21 08:30:37,495 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,495 - INFO -   - byproduct: {'thumbnail': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png'}
+2025-10-21 08:30:37,495 - INFO - Updated derived_data[1]:
+2025-10-21 08:30:37,495 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz'}
+2025-10-21 08:30:37,495 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:30:37,495 - INFO -   - byproduct: {'thumbnail': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png'}
+2025-10-21 08:30:37,496 - INFO - Set status='done' for flag process=defacing, package=defacer
+2025-10-21 08:30:37,496 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:37,504 - INFO - JSON file updated successfully
+2025-10-21 08:30:37,505 - INFO - Export successful, backing up JSON file...
+2025-10-21 08:30:37,546 - INFO - JSON file backed up successfully
+2025-10-21 08:30:37,547 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:37,547 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:37,547 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:37,547 - INFO - All commands executed successfully
+2025-10-21 08:30:37,547 - INFO - Successfully processed: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:38,338 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:38,338 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:30:38,339 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=defacing, package=defacer, status=pending)
+2025-10-21 08:30:38,339 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:52:44,657 - INFO - Submitted for checking: pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:52:44,659 - INFO - Checking file: pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:52:44,660 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:52:44,663 - INFO - Moved file: pkm_parknm_33333333_20251021085242_export.json to working directory
+2025-10-21 08:52:44,663 - INFO - Starting main process
+2025-10-21 08:52:44,664 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:52:44,664 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 08:52:44,664 - INFO - Filter: process=defacing, package=defacer
+2025-10-21 08:52:44,664 - INFO - Command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-21 08:52:44,664 - INFO - Extracted space value: 'orig' for process=defacing, package=defacer
+2025-10-21 08:52:44,665 - INFO - Matched flag: process=defacing, package=defacer
+2025-10-21 08:52:44,665 - INFO - Found 1 matching flag(s)
+2025-10-21 08:52:44,665 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 08:52:44,665 - INFO - Status updated to 'running'
+2025-10-21 08:52:44,678 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:52:44,679 - INFO - Parsing 1 flag(s) with command: /BDSP/defacer_app/src/model_distribution/defacer_cli.py
+2025-10-21 08:52:44,679 - INFO - Processing flag 0: process=defacing, package=defacer
+2025-10-21 08:52:44,679 - INFO - Generated command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:52:44,679 - INFO - Generated command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:52:44,679 - INFO - Total commands generated: 2
+2025-10-21 08:52:44,680 - INFO - Starting defacing process...
+2025-10-21 08:52:44,680 - INFO - Executing command [0]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:52:44,680 - INFO -   exe_num: 01
+2025-10-21 08:53:06,672 - INFO - Command [0] completed successfully
+2025-10-21 08:53:06,673 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-21 08:53:06,673 - WARNING - stderr: 2025-10-21 08:52:49.032944: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-21 08:52:49.727069: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-21 08:52:55.582531: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-21 08:52:56.368617: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-21 08:53:06,673 - INFO - Renaming output files...
+2025-10-21 08:53:06,674 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+2025-10-21 08:53:06,675 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png
+2025-10-21 08:53:06,676 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz
+2025-10-21 08:53:06,676 - INFO -   ✓ data: renamed successfully
+2025-10-21 08:53:06,676 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-21 08:53:06,677 - INFO -   ✓ mask: renamed successfully
+2025-10-21 08:53:06,677 - INFO - Executing command [1]: /bin/python3 /BDSP/defacer_app/src/model_distribution/defacer_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:53:06,677 - INFO -   exe_num: 01
+2025-10-21 08:53:33,025 - INFO - Command [1] completed successfully
+2025-10-21 08:53:33,025 - INFO - stdout: GPU configuration error: Physical devices cannot be modified after being initialized
+============================================================
+Defacer - Medical Image De-identification (NIfTI)
+============================================================
+Input:        /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.nii.gz
+Output Dir:   /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+Output File:  sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask File:    sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Parts:        ['all']
+  - Eyes:     Yes
+  - Nose:     Yes
+  - Ears:     Yes
+  - Mouth:    Yes
+Suffix:       defacing
+Verification: sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+============================================================
+
+Initializing Defacer...
+
+Processing NIfTI file...
+
+============================================================
+✓ De-identification completed successfully!
+============================================================
+Output saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz
+Mask saved to: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz
+Verification image: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png
+Processed 3 file(s)
+
+2025-10-21 08:53:33,026 - WARNING - stderr: 2025-10-21 08:53:11.238490: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-21 08:53:11.912470: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46722 MB memory:  -> device: 0, name: NVIDIA RTX A6000, pci bus id: 0000:1e:00.0, compute capability: 8.6
+2025-10-21 08:53:18.118537: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8500
+2025-10-21 08:53:18.912640: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+2025-10-21 08:53:33,026 - INFO - Renaming output files...
+2025-10-21 08:53:33,027 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+2025-10-21 08:53:33,028 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_drv-defacing_T1w.png -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png
+2025-10-21 08:53:33,029 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_defacemask.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz
+2025-10-21 08:53:33,029 - INFO -   ✓ data: renamed successfully
+2025-10-21 08:53:33,029 - INFO -   ✓ thumbnail: renamed successfully
+2025-10-21 08:53:33,029 - INFO -   ✓ mask: renamed successfully
+2025-10-21 08:53:33,029 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 08:53:33,030 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-21 08:53:33,030 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,031 - INFO - Original JSON file found, loading metadata
+2025-10-21 08:53:33,031 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_T1w.json
+2025-10-21 08:53:33,031 - INFO - Created new 'derivatives' list
+2025-10-21 08:53:33,032 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-21 08:53:33,040 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,040 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,041 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-21 08:53:33,041 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,041 - INFO - Original JSON file found, loading metadata
+2025-10-21 08:53:33,042 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/rawdata/sub-2cna00001Hanyangparknm/ses-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_T1w.json
+2025-10-21 08:53:33,042 - INFO - Created new 'derivatives' list
+2025-10-21 08:53:33,042 - INFO - Added derivative entry (process=defacing, space=orig, package=defacer)
+2025-10-21 08:53:33,049 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,049 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,049 - INFO - Created 2 sidecar file(s) out of 2
+2025-10-21 08:53:33,049 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:53:33,052 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:53:33,052 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:53:33,054 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:53:33,055 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:33,055 - INFO - Found matching flag: process=defacing, package=defacer
+2025-10-21 08:53:33,055 - INFO - Updated derived_data[0]:
+2025-10-21 08:53:33,055 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_defacemask.nii.gz'}
+2025-10-21 08:53:33,055 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,056 - INFO -   - byproduct: {'thumbnail': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.png'}
+2025-10-21 08:53:33,056 - INFO - Updated derived_data[1]:
+2025-10-21 08:53:33,056 - INFO -   - outputs: {'defaced_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz', 'defacemask': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_defacemask.nii.gz'}
+2025-10-21 08:53:33,056 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 08:53:33,056 - INFO -   - byproduct: {'thumbnail': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.png'}
+2025-10-21 08:53:33,056 - INFO - Set status='done' for flag process=defacing, package=defacer
+2025-10-21 08:53:33,056 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:33,065 - INFO - JSON file updated successfully
+2025-10-21 08:53:33,066 - INFO - Export successful, backing up JSON file...
+2025-10-21 08:53:33,067 - INFO - JSON file backed up successfully
+2025-10-21 08:53:33,067 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:33,067 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:33,067 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:33,067 - INFO - All commands executed successfully
+2025-10-21 08:53:33,067 - INFO - Successfully processed: pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:34,706 - INFO - Submitted for checking: pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:34,706 - INFO - Checking file: pkm_parknm_33333333_20251021085242_export.json
+2025-10-21 08:53:34,707 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021085242_export.json (looking for process=defacing, package=defacer, status=pending)
+2025-10-21 08:53:34,707 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021085242_export.json

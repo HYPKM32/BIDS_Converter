@@ -6,7 +6,8 @@ logger = logging.getLogger(__name__)
 
 def parse_output_paths(command_list, flag):
     """
-    커맨드 리스트에서 input/output 경로를 추출하고 실제/예상 출력 파일들을 생성
+    커맨드 리스트에서 input/output 경로를 추출하고 실제/예상 출력 파일들을 생성 
+    각 프로세스마다 실제 수정해야할 파일
     
     Args:
         command_list (list): 실행할 커맨드 리스트
@@ -18,14 +19,14 @@ def parse_output_paths(command_list, flag):
                   "input": "...",
                   "output_dir": "...",
                   "outputs": {
-                      "defaced_data": "...",  # exe-XX 없는 실제 생성 파일
+                      "data": "...",  # exe-XX 없는 실제 생성 파일
                       "thumbnail": "...",
-                      "defacing_mask": "..."
+                      "mask": "..."
                   },
                   "expected_outputs": {
-                      "defaced_data": "...",  # exe-XX 포함된 예상 파일 (rename 목표)
+                      "data": "...",  # exe-XX 포함된 예상 파일 (rename 목표)
                       "thumbnail": "...",
-                      "defacing_mask": "..."
+                      "mask": "..."
                   }
               }
     
@@ -69,18 +70,18 @@ def parse_output_paths(command_list, flag):
     parts = name_without_ext.split('_')
     
     # 실제 파일명 (exe-XX 없음) - subprocess가 생성하는 파일명
-    # 1. actual defaced_data: *_run-XX_drv-defaced_T1w.nii.gz
-    actual_defaced_parts = parts[:-1] + ['drv-defacing', parts[-1]]
-    actual_defaced_filename = '_'.join(actual_defaced_parts) + '.nii.gz'
-    actual_defaced_data = os.path.join(output_dir, actual_defaced_filename)
+    # 1. actual data: *_run-XX_drv-defacing_T1w.nii.gz
+    actual_data_parts = parts[:-1] + ['drv-defacing', parts[-1]]
+    actual_data_filename = '_'.join(actual_data_parts) + '.nii.gz'
+    actual_data = os.path.join(output_dir, actual_data_filename)
     
     # 2. actual thumbnail
-    actual_thumbnail = actual_defaced_data.replace('.nii.gz', '.png')
+    actual_thumbnail = actual_data.replace('.nii.gz', '.png')
     
-    # 3. actual defacing_mask: *_run-XX_defacemask.nii.gz
+    # 3. actual mask: *_run-XX_defacemask.nii.gz
     actual_mask_parts = parts[:-1] + ['defacemask']
     actual_mask_filename = '_'.join(actual_mask_parts) + '.nii.gz'
-    actual_defacing_mask = os.path.join(output_dir, actual_mask_filename)
+    actual_mask = os.path.join(output_dir, actual_mask_filename)
     
     # 예상 파일명 (exe-XX 포함) - 최종적으로 rename될 파일명
     # exe-* 패턴이 있으면 교체, 없으면 run-XX 뒤에 추가
@@ -89,9 +90,12 @@ def parse_output_paths(command_list, flag):
     
     for part in parts:
         if part.startswith('exe-'):
-            # 기존 exe-* 를 새로운 exe-{exe_num}으로 교체
-            new_parts.append(f'exe-{exe_num}')
-            has_exe = True
+            # 기존 exe-*를 건너뛰고 아직 추가 안했으면 새로운 exe 추가
+            if not has_exe:
+                new_parts.append(f'exe-{exe_num}')
+                has_exe = True
+            # 기존 exe는 무시 (중복 방지)
+            continue
         else:
             new_parts.append(part)
             # exe-*가 없었고, run-XX를 만났다면 그 뒤에 추가
@@ -99,31 +103,31 @@ def parse_output_paths(command_list, flag):
                 new_parts.append(f'exe-{exe_num}')
                 has_exe = True  # 중복 추가 방지
     
-    # 1. expected defaced_data: *_run-XX_exe-{exe_num}_drv-defaced_T1w.nii.gz
-    expected_defaced_parts = new_parts[:-1] + ['drv-defacing', new_parts[-1]]
-    expected_defaced_filename = '_'.join(expected_defaced_parts) + '.nii.gz'
-    expected_defaced_data = os.path.join(output_dir, expected_defaced_filename)
+    # 1. expected data: *_run-XX_exe-{exe_num}_drv-defacing_T1w.nii.gz
+    expected_data_parts = new_parts[:-1] + ['drv-defacing', new_parts[-1]]
+    expected_data_filename = '_'.join(expected_data_parts) + '.nii.gz'
+    expected_data = os.path.join(output_dir, expected_data_filename)
     
     # 2. expected thumbnail
-    expected_thumbnail = expected_defaced_data.replace('.nii.gz', '.png')
+    expected_thumbnail = expected_data.replace('.nii.gz', '.png')
     
-    # 3. expected defacing_mask: *_run-XX_exe-{exe_num}_defacemask.nii.gz
+    # 3. expected mask: *_run-XX_exe-{exe_num}_defacemask.nii.gz
     expected_mask_parts = new_parts[:-1] + ['defacemask']
     expected_mask_filename = '_'.join(expected_mask_parts) + '.nii.gz'
-    expected_defacing_mask = os.path.join(output_dir, expected_mask_filename)
+    expected_mask = os.path.join(output_dir, expected_mask_filename)
     
     return {
         "input": input_path,
         "output_dir": output_dir,
         "outputs": {
-            "defaced_data": actual_defaced_data,
+            "data": actual_data,
             "thumbnail": actual_thumbnail,
-            "defacing_mask": actual_defacing_mask
+            "mask": actual_mask
         },
         "expected_outputs": {
-            "defaced_data": expected_defaced_data,
+            "data": expected_data,
             "thumbnail": expected_thumbnail,
-            "defacing_mask": expected_defacing_mask
+            "mask": expected_mask
         }
     }
 
@@ -139,14 +143,14 @@ def rename_output_files(actual_files, expected_files):
     Returns:
         dict: rename 결과
               {
-                  "defaced_data": {"success": True/False, "error": None/str},
+                  "data": {"success": True/False, "error": None/str},
                   "thumbnail": {...},
-                  "defacing_mask": {...}
+                  "mask": {...}
               }
     """
     rename_results = {}
     
-    for file_type in ["defaced_data", "thumbnail", "defacing_mask"]:
+    for file_type in ["data", "thumbnail", "mask"]:
         actual_path = actual_files.get(file_type)
         expected_path = expected_files.get(file_type)
         
@@ -257,7 +261,7 @@ def execute_commands(cli, flags):
                 result_info["rename_results"] = rename_results
                 
                 # rename 성공한 파일들은 outputs를 expected_outputs로 업데이트
-                for file_type in ["defaced_data", "thumbnail", "defacing_mask"]:
+                for file_type in ["data", "thumbnail", "mask"]:
                     if rename_results[file_type]["success"]:
                         result_info["outputs"][file_type] = output_paths["expected_outputs"][file_type]
                         logger.info(f"  ✓ {file_type}: renamed successfully")

@@ -1,4 +1,3 @@
-#/BDSP/defacer_app/src/process/components/parser.py
 import logging
 import sys
 
@@ -56,8 +55,12 @@ def parser(command, filtered_flags):
 
         # derived_data 개수만큼 커맨드 생성
         for data_idx, derived_data in enumerate(derived_data_list):
-            input_path = derived_data.get('input', '')
+            input_data = derived_data.get('input', [])
             output_path = derived_data.get('output_path', '')
+
+            # input이 리스트가 아닌 경우 리스트로 변환 (하위 호환성)
+            if not isinstance(input_data, list):
+                input_data = [input_data] if input_data else []
 
             # 전체 커맨드 구성: 항상 sys.executable을 앞에 둠
             command_list = [sys.executable, command]
@@ -65,9 +68,15 @@ def parser(command, filtered_flags):
             if option_args:
                 command_list.extend(option_args)
 
-            # 입력/출력 추가 (빈 값은 무시)
-            if input_path:
-                command_list.extend(["--input", input_path])
+            # 입력 추가: --input path1 path2 path3
+            if input_data:
+                # None 값 필터링
+                filtered_inputs = [str(inp) for inp in input_data if inp is not None]
+                if filtered_inputs:
+                    command_list.append("--input")
+                    command_list.extend(filtered_inputs)
+
+            # 출력 추가
             if output_path:
                 command_list.extend(["--output", output_path])
 

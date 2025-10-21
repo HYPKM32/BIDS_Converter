@@ -114,22 +114,22 @@ def _create_single_sidecar(execution_result, process, package, space):
     
     logger.info(f"Looking for original JSON: {original_json_path}")
     
-    # 2. defaced_data 파일명 기반으로 새 JSON 파일명 생성
+    # 2. data 파일명 기반으로 새 JSON 파일명 생성
     outputs = execution_result.get('outputs', {})
-    defaced_data_path = outputs.get('defaced_data', '')
+    data_path = outputs.get('data', '')  # 수정: 'defaced_data' -> 'data'
     
-    if not defaced_data_path:
-        logger.warning("No defaced_data path in execution result")
+    if not data_path:
+        logger.warning("No data path in execution result")
         return None
     
-    defaced_basename = os.path.basename(defaced_data_path)  # 예: "sub-01_T1w-defaced.nii.gz"
+    data_basename = os.path.basename(data_path)  # 수정: defaced_basename -> data_basename
     
-    if not defaced_basename.endswith('.nii.gz'):
-        logger.warning(f"Defaced data doesn't end with .nii.gz: {defaced_basename}")
+    if not data_basename.endswith('.nii.gz'):
+        logger.warning(f"Data file doesn't end with .nii.gz: {data_basename}")
         return None
     
-    # defaced_data와 같은 이름의 JSON 파일명
-    new_json_filename = defaced_basename.replace('.nii.gz', '.json')  # "sub-01_T1w-defaced.json"
+    # data와 같은 이름의 JSON 파일명
+    new_json_filename = data_basename.replace('.nii.gz', '.json')  # "sub-01_T1w-defaced.json"
     output_dir = execution_result.get('output_dir', '')
     new_json_path = os.path.join(output_dir, new_json_filename)
     
@@ -156,16 +156,16 @@ def _create_single_sidecar(execution_result, process, package, space):
         metadata['derivatives'] = []
         logger.info("Created new 'derivatives' list")
     
-    # 5. 새로운 derivative 객체 생성
+    # 5. 새로운 derivative 객체 생성 ======================> 이부분은 프로세스마다 맞춰서 세팅
     derivative_entry = {
         'process': process,
         'space': space,
         'package': package,
         'input': input_path,
         'output_dir': output_dir,
-        'outputs': outputs.get('defaced_data', ''),
+        'outputs': outputs.get('data', ''),  # 수정: 'defaced_data' -> 'data'
         'thumbnail': outputs.get('thumbnail', ''),
-        'defacemask': outputs.get('defacing_mask', '')
+        'defacemask': outputs.get('mask', '')  # 수정: 'defacing_mask' -> 'mask' (키 이름은 'defacemask'로 유지)
     }
     
     # 6. derivatives 리스트에 추가

@@ -1,4 +1,3 @@
-#/BDSP/bids_app/src/process/components/flag.py
 import json
 import logging
 import os
@@ -201,24 +200,56 @@ def prepare_process_data(flag, export_list, flag_list, derivatives_path):
     print(f"\n프로세스 '{process_name}' 입력 데이터 매칭 및 경로 생성 중...")
     print(f"  매칭 조건: {modality_conditions}")
     
-    # modality_condition에 따라 input 경로 가져오기
-    input_paths = get_input_paths(modality_conditions, export_list, flag_list)
+    # modality_conditions가 단일 객체인 경우 리스트로 변환
+    if isinstance(modality_conditions, dict):
+        modality_conditions = [modality_conditions]
     
-    if not input_paths:
+    # 각 modality_condition별로 input 경로 수집
+    all_condition_paths = []
+    for condition in modality_conditions:
+        process = condition.get('process')
+        
+        if process == 'bids':
+            paths = get_input_paths_from_bids(condition, export_list)
+        else:
+            paths = get_input_paths_from_derivatives(condition, flag_list)
+        
+        all_condition_paths.append(paths)
+    
+    # 입력 경로가 하나도 없으면 종료
+    if not any(all_condition_paths):
         logger.warning(f"프로세스 '{process_name}'에 매칭되는 데이터가 없음")
         print(f"WARNING: '{process_name}' 프로세스에 처리할 데이터가 없습니다")
         return 0
     
+    # 가장 많은 경로를 가진 리스트의 길이를 기준으로 설정
+    max_length = max(len(paths) for paths in all_condition_paths)
+    
     matched_count = 0
     
-    for input_path in input_paths:
+    # 인덱스별로 묶어서 처리
+    for idx in range(max_length):
         try:
+            # 각 condition에서 idx번째 경로 가져오기
+            input_paths_for_this_run = []
+            for paths in all_condition_paths:
+                if idx < len(paths):
+                    input_paths_for_this_run.append(paths[idx])
+                else:
+                    # 경로가 부족한 경우 None 추가 (또는 건너뛸 수 있음)
+                    input_paths_for_this_run.append(None)
+            
+            # None이 아닌 첫 번째 경로를 기준으로 BIDS 정보 추출
+            reference_path = next((p for p in input_paths_for_this_run if p is not None), None)
+            if not reference_path:
+                continue
+            
             # BIDS 정보 추출
-            bids_info = extract_bids_info(input_path)
+            bids_info = extract_bids_info(reference_path)
             
             if not all([bids_info['run_num'], bids_info['alias_id'], 
                        bids_info['ses_num'], bids_info['data_type']]):
-                logger.warning(f"BIDS 정보 추출 실패: {input_path}")
+                logger.warning(f"BIDS 정보 추출 실패: {reference_path}")
                 continue
             
             # 폴더명 생성
@@ -241,19 +272,19 @@ def prepare_process_data(flag, export_list, flag_list, derivatives_path):
             os.makedirs(derived_output_folder_path, exist_ok=True)
             logger.debug(f"출력 경로 생성: {derived_output_folder_path}")
             
-            # derived_data에 추가
+            # derived_data에 추가 (input을 리스트로 저장)
             flag['derived_data'].append({
-                'input': input_path,
+                'input': input_paths_for_this_run,  # 리스트로 저장
                 'output_path': str(derived_output_folder_path),
                 'run_num': bids_info['run_num'],
                 'exe_num': exe_num
             })
             
             matched_count += 1
-            logger.info(f"매칭 성공: {input_path} -> run:{bids_info['run_num']}, exe:{exe_num}")
+            logger.info(f"매칭 성공: {input_paths_for_this_run} -> run:{bids_info['run_num']}, exe:{exe_num}")
             
         except Exception as e:
-            logger.error(f"경로 생성 오류 ({input_path}): {e}")
+            logger.error(f"경로 생성 오류 (index {idx}): {e}")
             continue
     
     print(f"  매칭 및 경로 생성 완료: {matched_count}개 데이터\n")

@@ -1,5 +1,3 @@
-# /BDSP/bids_app/src/process/components/export.py
-
 import json
 import os
 import shutil
@@ -93,14 +91,21 @@ def create_export_json(config, global_vars, paths):
     # data 리스트 생성
     data_list = []
     for index, (raw_path, checklist_data) in enumerate(bids_checklist.items()):
+        # byproduct 가져오기 (없으면 빈 딕셔너리)
+        byproduct = checklist_data.get('byproduct', {})
+        
+        # thumbnail을 byproduct에 추가
+        thumbnail = checklist_data.get('thumbnail', '')
+        if thumbnail:
+            byproduct['thumbnail'] = thumbnail
+        
         data_item = {
             'index': index,
             'modality': checklist_data.get('modality', ''),
             'raw': raw_path,
             'source': checklist_data.get('source',''),
             'sidecar': checklist_data.get('sidecar_json', ''),
-            'byproduct': checklist_data.get('byproduct', {}),
-            'thumbnail': checklist_data.get('thumbnail', '')
+            'byproduct': byproduct
         }
         data_list.append(data_item)
     

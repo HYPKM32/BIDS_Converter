@@ -17,7 +17,7 @@ RUN mkdir -p /BDSP/interfaces/flag
 
 #preprocessing flag folder
 RUN mkdir -p /BDSP/interfaces/flag/defacing/defacer
-RUN mkdir -p /BDSP/interfaces/flag/defacing/medyolo_defacer
+RUN mkdir -p /BDSP/interfaces/flag/defacing/medfacer
 RUN mkdir -p /BDSP/interfaces/flag/canonical/canonical
 RUN mkdir -p /BDSP/interfaces/flag/T1w_preprocessing/civet
 

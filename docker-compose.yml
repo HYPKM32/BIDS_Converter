@@ -4,7 +4,7 @@ volumes:
   defacing-defacer_shared:
   defacing-medfacer_shared:
   canonical_shared:
-  civet_shared:
+  T1w_preprocessing-civet_shared:
 
 services:
   bids:
@@ -17,6 +17,7 @@ services:
       - ./bids:/BDSP/bids_app
       - /nasdata4/parknm/bids:/BDSP/data
       - defacing-defacer_shared:/BDSP/interfaces/flag/defacing/defacer
+      - canonical_shared:/BDSP/interfaces/flag/canonical/canonical
 
     stdin_open: true 
     tty: true           
@@ -43,11 +44,11 @@ services:
     tty: true   
     command: /bin/bash
     
-  canonical:
+  canonical-canonical:
     build:
       context: ./canonical
       dockerfile: Dockerfile
-    container_name: canonical
+    container_name: canonical-canonical
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./canonical:/BDSP/canonical_app

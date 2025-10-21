@@ -4,8 +4,7 @@ import logging
 import os
 import shutil
 from pathlib import Path
-from process.components.flag import flag
-from process.components import mss, origin, export
+from process.components import mss, origin, export, flag
 from utils import common
 
 logger = logging.getLogger(__name__)

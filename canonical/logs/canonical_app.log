@@ -1,0 +1,588 @@
+2025-10-20 10:47:03,952 - INFO - Starting JSON file monitoring...
+2025-10-20 10:47:03,952 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-20 10:47:03,954 - INFO - Submitted for checking: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:47:03,955 - INFO - Checking file: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:47:03,956 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:47:03,961 - INFO - Moved file: pkm_parknm_33333333_20251020100620_export.json to working directory
+2025-10-20 10:47:03,962 - INFO - Starting main process
+2025-10-20 10:47:03,962 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:47:03,962 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 10:47:03,963 - INFO - Filter: process=canonical, package=canonical
+2025-10-20 10:47:03,963 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 10:47:03,963 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-20 10:47:03,964 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-20 10:47:03,964 - INFO - Found 1 matching flag(s)
+2025-10-20 10:47:03,964 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 10:47:03,965 - INFO - Status updated to 'running'
+2025-10-20 10:47:03,985 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:47:03,985 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 10:47:03,985 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-20 10:47:03,985 - ERROR - Error processing pkm_parknm_33333333_20251020100620_export.json: sequence item 3: expected str instance, list found
+2025-10-20 10:47:03,987 - INFO - Moved error file to error directory: pkm_parknm_33333333_20251020100620_export.json
+2025-10-20 10:53:54,829 - INFO - Starting JSON file monitoring...
+2025-10-20 10:53:54,830 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-20 10:53:54,832 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:53:54,832 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:53:54,834 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:53:54,836 - INFO - Moved file: pkm_parknm_33333333_20251020104938_export.json to working directory
+2025-10-20 10:53:54,837 - INFO - Starting main process
+2025-10-20 10:53:54,837 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:53:54,837 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 10:53:54,837 - INFO - Filter: process=canonical, package=canonical
+2025-10-20 10:53:54,838 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 10:53:54,838 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-20 10:53:54,838 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-20 10:53:54,838 - INFO - Found 1 matching flag(s)
+2025-10-20 10:53:54,839 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 10:53:54,839 - INFO - Status updated to 'running'
+2025-10-20 10:53:54,858 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:53:54,859 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 10:53:54,859 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-20 10:53:54,859 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:53:54,859 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:53:54,859 - INFO - Total commands generated: 2
+2025-10-20 10:53:54,859 - INFO - Starting defacing process...
+2025-10-20 10:53:54,859 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:53:54,860 - INFO -   exe_num: 01
+2025-10-20 10:54:03,371 - INFO - Command [0] completed successfully
+2025-10-20 10:54:03,372 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-20 10:54:03,372 - INFO - Renaming output files...
+2025-10-20 10:54:03,373 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 10:54:03,374 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:03,374 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 10:54:03,374 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:03,374 - INFO - Executing command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:54:03,375 - INFO -   exe_num: 01
+2025-10-20 10:54:11,346 - INFO - Command [1] completed successfully
+2025-10-20 10:54:11,347 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-20 10:54:11,347 - INFO - Renaming output files...
+2025-10-20 10:54:11,348 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 10:54:11,348 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:11,349 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 10:54:11,349 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:11,349 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-20 10:54:11,350 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-20 10:54:11,350 - WARNING - No defaced_data path in execution result
+2025-10-20 10:54:11,350 - INFO - Created sidecar for index 0: None
+2025-10-20 10:54:11,350 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-20 10:54:11,351 - WARNING - No defaced_data path in execution result
+2025-10-20 10:54:11,351 - INFO - Created sidecar for index 1: None
+2025-10-20 10:54:11,351 - INFO - Created 0 sidecar file(s) out of 2
+2025-10-20 10:54:11,351 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:54:11,354 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 10:54:11,354 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:54:11,356 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 10:54:11,357 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:11,358 - INFO - Found matching flag: process=canonical, package=canonical
+2025-10-20 10:54:11,358 - INFO - Updated derived_data[0]:
+2025-10-20 10:54:11,358 - INFO -   - outputs: {'oriented_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz'}
+2025-10-20 10:54:11,358 - INFO -   - sidecar: 
+2025-10-20 10:54:11,359 - INFO -   - byproduct: {}
+2025-10-20 10:54:11,359 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:11,359 - INFO - Updated derived_data[1]:
+2025-10-20 10:54:11,359 - INFO -   - outputs: {'oriented_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz'}
+2025-10-20 10:54:11,359 - INFO -   - sidecar: 
+2025-10-20 10:54:11,360 - INFO -   - byproduct: {}
+2025-10-20 10:54:11,360 - INFO -   - thumbnail: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 10:54:11,360 - INFO - Set status='done' for flag process=canonical, package=canonical
+2025-10-20 10:54:11,360 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:11,376 - INFO - JSON file updated successfully
+2025-10-20 10:54:11,376 - INFO - Export successful, backing up JSON file...
+2025-10-20 10:54:11,393 - INFO - JSON file backed up successfully
+2025-10-20 10:54:11,394 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:11,394 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:11,394 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:11,395 - INFO - All commands executed successfully
+2025-10-20 10:54:11,395 - INFO - Successfully processed: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:14,852 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:14,853 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:14,854 - INFO - No matching pending flag found in pkm_parknm_33333333_20251020104938_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-20 10:54:14,854 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:19,858 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:19,858 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:19,859 - INFO - No matching pending flag found in pkm_parknm_33333333_20251020104938_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-20 10:54:19,859 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:24,864 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:24,864 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:24,865 - INFO - No matching pending flag found in pkm_parknm_33333333_20251020104938_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-20 10:54:24,866 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:29,870 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:29,870 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 10:54:29,871 - INFO - No matching pending flag found in pkm_parknm_33333333_20251020104938_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-20 10:54:29,871 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,809 - INFO - Starting JSON file monitoring...
+2025-10-20 11:03:01,809 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-20 11:03:01,811 - INFO - Submitted for checking: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,812 - INFO - Checking file: pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,814 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,816 - INFO - Moved file: pkm_parknm_33333333_20251020104938_export.json to working directory
+2025-10-20 11:03:01,817 - INFO - Starting main process
+2025-10-20 11:03:01,817 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,817 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-20 11:03:01,818 - INFO - Filter: process=canonical, package=canonical
+2025-10-20 11:03:01,818 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 11:03:01,818 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-20 11:03:01,818 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-20 11:03:01,819 - INFO - Found 1 matching flag(s)
+2025-10-20 11:03:01,819 - INFO - Flag validation passed: status changed pending -> running
+2025-10-20 11:03:01,819 - INFO - Status updated to 'running'
+2025-10-20 11:03:01,838 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251020104938_export.json
+2025-10-20 11:03:01,839 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-20 11:03:01,839 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-20 11:03:01,839 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 11:03:01,839 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 11:03:01,839 - INFO - Total commands generated: 2
+2025-10-20 11:03:01,839 - INFO - Starting defacing process...
+2025-10-20 11:03:01,839 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-20 11:03:01,839 - INFO -   exe_num: 01
+2025-10-20 11:03:09,715 - INFO - Command [0] completed successfully
+2025-10-20 11:03:09,715 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-20 11:03:09,716 - INFO - Renaming output files...
+2025-10-20 11:03:09,716 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 11:03:09,717 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 11:03:09,717 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 11:03:09,717 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 11:03:09,717 - INFO - Executing command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-20 11:03:09,718 - INFO -   exe_num: 01
+2025-10-20 11:03:17,571 - INFO - Command [1] completed successfully
+2025-10-20 11:03:17,572 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-20 11:03:17,572 - INFO - Renaming output files...
+2025-10-20 11:03:17,572 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 11:03:17,573 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 11:03:17,573 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-20 11:03:17,573 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-20 11:03:17,573 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 08:37:49,462 - INFO - Starting JSON file monitoring...
+2025-10-21 08:37:49,462 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-21 08:37:49,464 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:37:49,465 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:37:49,466 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:37:49,469 - INFO - Moved file: pkm_parknm_33333333_20251021082945_export.json to working directory
+2025-10-21 08:37:49,470 - INFO - Starting main process
+2025-10-21 08:37:49,470 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:37:49,470 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 08:37:49,470 - INFO - Filter: process=canonical, package=canonical
+2025-10-21 08:37:49,471 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:37:49,471 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-21 08:37:49,471 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-21 08:37:49,471 - INFO - Found 1 matching flag(s)
+2025-10-21 08:37:49,472 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 08:37:49,472 - INFO - Status updated to 'running'
+2025-10-21 08:37:49,492 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:37:49,492 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:37:49,492 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-21 08:37:49,492 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:37:49,492 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:37:49,492 - INFO - Total commands generated: 2
+2025-10-21 08:37:49,492 - INFO - Starting defacing process...
+2025-10-21 08:37:49,493 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:37:49,493 - INFO -   exe_num: 01
+2025-10-21 08:38:00,268 - INFO - Command [0] completed successfully
+2025-10-21 08:38:00,269 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 08:38:00,269 - INFO - Renaming output files...
+2025-10-21 08:38:00,270 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:38:00,271 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:38:00,271 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:38:00,271 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:38:00,271 - INFO - Executing command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:38:00,272 - INFO -   exe_num: 01
+2025-10-21 08:38:08,184 - INFO - Command [1] completed successfully
+2025-10-21 08:38:08,185 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 08:38:08,185 - INFO - Renaming output files...
+2025-10-21 08:38:08,186 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:38:08,187 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:38:08,187 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:38:08,187 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:38:08,187 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 08:43:47,203 - INFO - Starting JSON file monitoring...
+2025-10-21 08:43:47,203 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-21 08:43:47,205 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:43:47,206 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:43:47,207 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:43:47,211 - INFO - Moved file: pkm_parknm_33333333_20251021082945_export.json to working directory
+2025-10-21 08:43:47,211 - INFO - Starting main process
+2025-10-21 08:43:47,212 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:43:47,212 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 08:43:47,212 - INFO - Filter: process=canonical, package=canonical
+2025-10-21 08:43:47,212 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:43:47,212 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-21 08:43:47,213 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-21 08:43:47,213 - INFO - Found 1 matching flag(s)
+2025-10-21 08:43:47,213 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 08:43:47,214 - INFO - Status updated to 'running'
+2025-10-21 08:43:47,234 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:43:47,235 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:43:47,235 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-21 08:43:47,235 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:43:47,235 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:43:47,235 - INFO - Total commands generated: 2
+2025-10-21 08:43:47,235 - INFO - Starting defacing process...
+2025-10-21 08:43:47,235 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:43:47,235 - INFO -   exe_num: 01
+2025-10-21 08:43:55,202 - INFO - Command [0] completed successfully
+2025-10-21 08:43:55,203 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 08:43:55,203 - INFO - Renaming output files...
+2025-10-21 08:43:55,204 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:43:55,204 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:43:55,204 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:43:55,205 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:43:55,205 - INFO - Executing command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:43:55,205 - INFO -   exe_num: 01
+2025-10-21 08:44:03,129 - INFO - Command [1] completed successfully
+2025-10-21 08:44:03,129 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 08:44:03,130 - INFO - Renaming output files...
+2025-10-21 08:44:03,130 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:44:03,130 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:44:03,130 - WARNING -   ✗ data: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.nii.gz
+2025-10-21 08:44:03,131 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_drv-canonical_T1w.png
+2025-10-21 08:44:03,131 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 08:55:00,267 - INFO - Starting JSON file monitoring...
+2025-10-21 08:55:00,267 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-21 08:55:00,269 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:00,270 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:00,271 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 08:55:00,271 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:05,275 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:05,275 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:05,276 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 08:55:05,277 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:10,281 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:10,282 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:10,283 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 08:55:10,283 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:15,288 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:15,288 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:15,289 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 08:55:15,289 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,294 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,294 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,295 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,298 - INFO - Moved file: pkm_parknm_33333333_20251021082945_export.json to working directory
+2025-10-21 08:55:20,299 - INFO - Starting main process
+2025-10-21 08:55:20,299 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,299 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 08:55:20,299 - INFO - Filter: process=canonical, package=canonical
+2025-10-21 08:55:20,300 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:55:20,300 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-21 08:55:20,300 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-21 08:55:20,301 - INFO - Found 1 matching flag(s)
+2025-10-21 08:55:20,301 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 08:55:20,301 - INFO - Status updated to 'running'
+2025-10-21 08:55:20,323 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 08:55:20,324 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 08:55:20,324 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-21 08:55:20,324 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:55:20,324 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 08:55:20,324 - INFO - Total commands generated: 2
+2025-10-21 08:55:20,324 - INFO - Starting defacing process...
+2025-10-21 08:56:12,553 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 08:56:12,554 - INFO -   exe_num: 01
+2025-10-21 08:56:27,673 - INFO - Command [0] completed successfully
+2025-10-21 08:56:27,674 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 09:08:32,339 - INFO - Starting JSON file monitoring...
+2025-10-21 09:08:32,339 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-10-21 09:08:32,342 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:32,343 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:32,344 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:32,344 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:37,348 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:37,349 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:37,350 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:37,351 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:42,355 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:42,355 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:42,356 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:42,356 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:47,358 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:47,359 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:47,360 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:47,360 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:52,365 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:52,366 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:52,367 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:52,367 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:57,372 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:57,372 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:08:57,373 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:08:57,373 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:02,378 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:02,378 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:02,379 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:09:02,380 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:07,384 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:07,385 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:07,386 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:09:07,386 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,391 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,391 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,392 - INFO - Found matching flag with pending status in pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,395 - INFO - Moved file: pkm_parknm_33333333_20251021082945_export.json to working directory
+2025-10-21 09:09:12,396 - INFO - Starting main process
+2025-10-21 09:09:12,396 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,397 - INFO - Backup dir: /BDSP/interfaces/event
+2025-10-21 09:09:12,397 - INFO - Filter: process=canonical, package=canonical
+2025-10-21 09:09:12,397 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 09:09:12,397 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-10-21 09:09:12,398 - INFO - Matched flag: process=canonical, package=canonical
+2025-10-21 09:09:12,398 - INFO - Found 1 matching flag(s)
+2025-10-21 09:09:12,398 - INFO - Flag validation passed: status changed pending -> running
+2025-10-21 09:09:12,398 - INFO - Status updated to 'running'
+2025-10-21 09:09:12,419 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:12,419 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-10-21 09:09:12,419 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-10-21 09:09:12,419 - INFO - Generated command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 09:09:12,419 - INFO - Generated command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 09:09:12,420 - INFO - Total commands generated: 2
+2025-10-21 09:09:12,420 - INFO - Starting defacing process...
+2025-10-21 09:09:17,395 - INFO - Executing command [0]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 09:09:17,395 - INFO -   exe_num: 01
+2025-10-21 09:09:25,324 - INFO - Command [0] completed successfully
+2025-10-21 09:09:25,324 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 09:09:25,324 - INFO - Renaming output files...
+2025-10-21 09:09:25,325 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+2025-10-21 09:09:25,325 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.png
+2025-10-21 09:09:25,325 - INFO -   ✓ data: renamed successfully
+2025-10-21 09:09:25,325 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.png
+2025-10-21 09:09:25,326 - INFO - Executing command [1]: /bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 09:09:25,326 - INFO -   exe_num: 01
+2025-10-21 09:09:33,225 - INFO - Command [1] completed successfully
+2025-10-21 09:09:33,225 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-10-21 09:09:33,226 - INFO - Renaming output files...
+2025-10-21 09:09:33,226 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+2025-10-21 09:09:33,227 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.png
+2025-10-21 09:09:33,227 - INFO -   ✓ data: renamed successfully
+2025-10-21 09:09:33,227 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.png
+2025-10-21 09:09:33,228 - INFO - Execution summary: 2/2 commands succeeded
+2025-10-21 09:09:53,938 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 09:09:53,939 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:53,940 - INFO - Original JSON file found, loading metadata
+2025-10-21 09:09:53,941 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-10-21 09:09:53,941 - INFO - Added derivative entry (process=canonical, space=orig, package=canonical)
+2025-10-21 09:09:53,951 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:53,951 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:56,688 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 09:09:56,689 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:56,690 - INFO - Original JSON file found, loading metadata
+2025-10-21 09:09:56,691 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-10-21 09:09:56,691 - INFO - Added derivative entry (process=canonical, space=orig, package=canonical)
+2025-10-21 09:09:56,701 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:56,701 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:56,701 - INFO - Created 2 sidecar file(s) out of 2
+2025-10-21 09:09:56,702 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 09:09:56,704 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-10-21 09:09:56,704 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 09:09:56,707 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-10-21 09:09:58,107 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:58,108 - INFO - Found matching flag: process=canonical, package=canonical
+2025-10-21 09:09:58,108 - INFO - Updated derived_data[0]:
+2025-10-21 09:09:58,108 - INFO -   - outputs: {'canonical_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz'}
+2025-10-21 09:09:58,109 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:58,109 - INFO -   - byproduct: {}
+2025-10-21 09:09:58,109 - INFO - Updated derived_data[1]:
+2025-10-21 09:09:58,109 - INFO -   - outputs: {'canonical_data': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz'}
+2025-10-21 09:09:58,110 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-10-21 09:09:58,110 - INFO -   - byproduct: {}
+2025-10-21 09:09:58,110 - INFO - Set status='done' for flag process=canonical, package=canonical
+2025-10-21 09:09:58,110 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:58,128 - INFO - JSON file updated successfully
+2025-10-21 09:09:58,128 - INFO - Export successful, backing up JSON file...
+2025-10-21 09:09:58,163 - INFO - JSON file backed up successfully
+2025-10-21 09:09:58,163 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:58,164 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:58,164 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:09:58,164 - INFO - All commands executed successfully
+2025-10-21 09:09:58,164 - INFO - Successfully processed: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:03,094 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:03,094 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:03,095 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:03,095 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:08,100 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:08,100 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:08,101 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:08,101 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:13,106 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:13,106 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:13,107 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:13,108 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:18,112 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:18,113 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:18,114 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:18,114 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:23,119 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:23,119 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:23,120 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:23,120 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:28,125 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:28,125 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:28,126 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:28,126 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:33,131 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:33,132 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:33,133 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:33,133 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:38,137 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:38,138 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:38,139 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:38,139 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:43,144 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:43,144 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:43,145 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:43,145 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:48,150 - INFO - Submitted for checking: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:48,150 - INFO - Checking file: pkm_parknm_33333333_20251021082945_export.json
+2025-10-21 09:10:48,151 - INFO - No matching pending flag found in pkm_parknm_33333333_20251021082945_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-10-21 09:10:48,152 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_33333333_20251021082945_export.json
