@@ -12,6 +12,10 @@ from globals import (
     DICOM_MODALITY, NIFTI_MODALITY, PARREC_MODALITY, SUFFIX_MAP,
     FLAG_DIR
 )
+import threading
+
+
+
 
 # 로그 파일 디렉토리 자동 생성
 log_dir = os.path.dirname(LOG_FILENAME)
@@ -28,6 +32,23 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+
+def run_api_server():
+    """Thread로 FastAPI API 서버 실행"""
+    import uvicorn
+    from api import app
+    
+    HOST = "0.0.0.0"
+    PORT = int(os.getenv("PORT", "8896"))
+    
+    try:
+        logger.info(f"[BDSP] Starting API server on {HOST}:{PORT}")
+        uvicorn.run(app, host=HOST, port=PORT, log_level="info")
+    except Exception as e:
+        logger.error(f"Failed to start API server: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
 
 class JSONFileMonitor:
     def __init__(self):
@@ -179,6 +200,8 @@ class JSONFileMonitor:
 
 def main():
     """메인 함수"""
+    
+    threading.Thread(target=run_api_server, daemon=True).start()
     monitor = JSONFileMonitor()
     monitor.monitor_loop()
 

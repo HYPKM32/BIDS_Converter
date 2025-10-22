@@ -1,0 +1,30 @@
+{
+  "T1w": [
+    {
+      "Technique": [
+        "T1TFE"
+      ]
+    }
+  ],
+  "FLAIR": [
+    {
+      "ProtocolName": [
+        "3D Brain View FLAIR SAG"
+      ]
+    }
+  ],
+  "dwi": [
+    {
+      "ProtocolName": [
+        "DTI 32DIR"
+      ]
+    }
+  ],
+  "bold": [
+    {
+      "ProtocolName": [
+        "fMRI_REST_165"
+      ]
+    }
+  ]
+}

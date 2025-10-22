@@ -48,9 +48,18 @@ RUN pip3 install --no-cache-dir \
     nibabel==5.3.2 \
     numpy==2.2.6 \
     pydicom==3.0.1 \
-    opencv-python 
+    opencv-python \
+    uvicorn \
+    fastapi \
+    sse-starlette \
+    python-multipart 
 
 WORKDIR /BDSP/bids_app
+
 RUN dcm2niix -h
+
+ENV PORT=8896
+
+EXPOSE $PORT
 
 CMD ["/bin/bash"]

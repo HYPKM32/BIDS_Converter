@@ -122,7 +122,7 @@ def get_file_format(origin_unzip_path):
                     return "NIFTI"
                 else:
                     logger.warning(f"알 수 없는 파일 확장자: {file_ext}")
-                    return "UNKNOWN"
+                    return "DICOM"
         
         logger.error("index가 1인 파일을 찾을 수 없음")
         return "UNKNOWN"

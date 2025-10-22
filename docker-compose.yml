@@ -1,13 +1,15 @@
 networks:
   bids_network:
+
 volumes:
   defacing-defacer_flag:
   defacing-medfacer_flag:
   canonical_flag:
   T1w_preprocessing-civet_flag:
   T1w_preprocessing-freesurfer_flag:
-
+###############################################################################
 services:
+###############################################################################
   bids:
     build:
       context: ./bids
@@ -19,11 +21,17 @@ services:
       - /nasdata4/parknm/bids:/BDSP/data
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
       - canonical_flag:/BDSP/interfaces/flag/canonical/canonical
-
+    ports:
+      - "210.117.210.9:8896:8896"
+    dns:
+      - 8.8.8.8
+    environment: 
+      - HOST=210.117.210.9
+      - PORT=8896
     stdin_open: true 
     tty: true           
     command: /bin/bash
-    
+###############################################################################
   defacing-defacer:
     build:
       context: ./defacing-defacer
@@ -33,7 +41,6 @@ services:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./defacing-defacer:/BDSP/defacer_app
       - defacing-defacer_flag:/BDSP/interfaces/event
-
     deploy:
       resources:
         reservations:
@@ -44,7 +51,7 @@ services:
     stdin_open: true 
     tty: true   
     command: ["python3","/BDSP/defacer_app/src/app.py"]
-    
+###############################################################################
   canonical:
     build:
       context: ./canonical
@@ -64,3 +71,4 @@ services:
     stdin_open: true 
     tty: true   
     command: ["python3","/BDSP/canonical_app/src/app.py"]
+###############################################################################
