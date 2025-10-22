@@ -1,28 +1,21 @@
 #/home/mool/dev/bids/Dockerfile
-
-# dcm2niix를 실행할 수 있는 Docker 환경
 FROM ubuntu:22.04
-
-# 비대화형 모드로 설정 (패키지 설치 시 프롬프트 방지)
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN mkdir -p /BDSP/bids_app
-RUN mkdir -p /BDSP/bids_lib
-RUN mkdir -p /BDSP/interfaces/upload
-RUN mkdir -p /BDSP/interfaces/event
-RUN mkdir -p /BDSP/interfaces/working
-RUN mkdir -p /BDSP/interfaces/backup
-RUN mkdir -p /BDSP/interfaces/error
-RUN mkdir -p /BDSP/interfaces/flag
-
-#preprocessing flag folder
-RUN mkdir -p /BDSP/interfaces/flag/defacing/defacer
-RUN mkdir -p /BDSP/interfaces/flag/defacing/medfacer
-RUN mkdir -p /BDSP/interfaces/flag/canonical/canonical
-RUN mkdir -p /BDSP/interfaces/flag/T1w_preprocessing/civet
-
-
-# 시스템 업데이트 및 필수 패키지 설치
+# 디렉토리 구조
+RUN mkdir -p /BDSP/bids_app \
+    /BDSP/bids_lib \
+    /BDSP/interfaces/upload \
+    /BDSP/interfaces/event \
+    /BDSP/interfaces/working \
+    /BDSP/interfaces/backup \
+    /BDSP/interfaces/error \
+    /BDSP/interfaces/flag/defacing/defacer \
+    /BDSP/interfaces/flag/defacing/medfacer \
+    /BDSP/interfaces/flag/canonical/canonical \
+    /BDSP/interfaces/flag/T1w_preprocessing/civet \
+    /BDSP/interfaces/flag/T1w_preprocessing/freesurfer 
+# 시스템 업데이트 및 Python 준비
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -38,24 +31,26 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# dcm2niix 최신 버전 다운로드 및 컴파일
+# pip 최신화
+RUN pip install --upgrade pip setuptools wheel
+
+# dcm2niix 설치
 WORKDIR /BDSP/bids_lib
 RUN git clone https://github.com/rordenlab/dcm2niix.git && \
     cd dcm2niix && \
     mkdir build && \
     cd build && \
     cmake -DZLIB_IMPLEMENTATION=Cloudflare -DUSE_JPEGLS=ON -DUSE_OPENJPEG=ON .. && \
-    make && \
-    make install
+    make && make install
 
-# Python 패키지 설치
-RUN pip3 install --no-cache-dir pydicom opencv-python nibabel
+# Python 패키지 설치 (핵심만 버전 고정)
+RUN pip3 install --no-cache-dir \
+    nibabel==5.3.2 \
+    numpy==2.2.6 \
+    pydicom==3.0.1 \
+    opencv-python 
 
-# 작업 디렉토리 설정
 WORKDIR /BDSP/bids_app
-
-# dcm2niix가 PATH에 있는지 확인
 RUN dcm2niix -h
 
-# 기본 명령어
 CMD ["/bin/bash"]

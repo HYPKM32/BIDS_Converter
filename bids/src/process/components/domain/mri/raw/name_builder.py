@@ -60,7 +60,7 @@ def create_bids_mapping(path_mapping, structured_config, global_vars, raw_path, 
         if modality_key not in modality_run_counter:
             base_run = get_base_run_number(
                 modality, 
-                subject_id, 
+                alias_id, 
                 trial_index, 
                 raw_path, 
                 data_type
@@ -179,7 +179,7 @@ def build_bids_filename(source_folder, modality, entity_rules, alias_id,
     Returns:
         str: BIDS 파일명 (예: sub-01_ses-01_run-01_T1w.nii.gz)
     """
-    
+    modality = str(modality).strip()
     # 기본 엔티티들
     entities = []
     

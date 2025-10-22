@@ -1,10 +1,11 @@
 networks:
   bids_network:
 volumes:
-  defacing-defacer_shared:
-  defacing-medfacer_shared:
-  canonical_shared:
-  T1w_preprocessing-civet_shared:
+  defacing-defacer_flag:
+  defacing-medfacer_flag:
+  canonical_flag:
+  T1w_preprocessing-civet_flag:
+  T1w_preprocessing-freesurfer_flag:
 
 services:
   bids:
@@ -16,8 +17,8 @@ services:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./bids:/BDSP/bids_app
       - /nasdata4/parknm/bids:/BDSP/data
-      - defacing-defacer_shared:/BDSP/interfaces/flag/defacing/defacer
-      - canonical_shared:/BDSP/interfaces/flag/canonical/canonical
+      - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
+      - canonical_flag:/BDSP/interfaces/flag/canonical/canonical
 
     stdin_open: true 
     tty: true           
@@ -31,7 +32,7 @@ services:
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./defacing-defacer:/BDSP/defacer_app
-      - defacing-defacer_shared:/BDSP/interfaces/event
+      - defacing-defacer_flag:/BDSP/interfaces/event
 
     deploy:
       resources:
@@ -42,7 +43,7 @@ services:
               device_ids: ['1']
     stdin_open: true 
     tty: true   
-    command: /bin/bash
+    command: ["python3","/BDSP/defacer_app/src/app.py"]
     
   canonical:
     build:
@@ -52,7 +53,7 @@ services:
     volumes:
       - /nasdata3/BDSP:/BDSP/interfaces/working
       - ./canonical:/BDSP/canonical_app
-      - canonical_shared:/BDSP/interfaces/event
+      - canonical_flag:/BDSP/interfaces/event
     deploy:
       resources:
         reservations:
@@ -62,4 +63,4 @@ services:
               device_ids: ['1']
     stdin_open: true 
     tty: true   
-    command: /bin/bash
+    command: ["python3","/BDSP/canonical_app/src/app.py"]

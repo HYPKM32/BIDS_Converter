@@ -78,31 +78,48 @@ def remove_all_whitespace(text):
 def separated_walk(separated_path, json_output_path):
     """분리된 파일들을 스캔하여 파일명의 index 기준으로 JSON 생성
     
-    파일명 패턴: item_{set_id}_{index}{ext} (index는 가변 자리수)
+    파일명 패턴: item_{set_id}_{index} 또는 item_{set_id}_{index}{ext}
     """
-    separated_path = Path(separated_path)
-    entries = []
+    from pathlib import Path
+    import re
+    import json
     
-    # item_{set_id}_{숫자}{ext} 패턴 매칭 (숫자 자리수 제한 없음)
-    pattern = re.compile(r'item_.*?_(\d+)\.')
+    separated_path = Path(separated_path)
+    
+    if not separated_path.exists():
+        raise FileNotFoundError(f"경로를 찾을 수 없습니다: {separated_path}")
+    
+    if not separated_path.is_dir():
+        raise NotADirectoryError(f"디렉토리가 아닙니다: {separated_path}")
+    
+    entries = []
+    # 확장자가 있을 수도, 없을 수도 있는 패턴
+    pattern = re.compile(r'item_.*?_(\d+)(?:\.|$)')
     
     for file_path in separated_path.iterdir():
         if file_path.is_file() and not file_path.name.endswith('.json'):
             match = pattern.search(file_path.name)
             if match:
-                index = int(match.group(1))  # 01 -> 1, 0001 -> 1, 123 -> 123
+                index = int(match.group(1))
                 entries.append({
                     "index": index,
-                    "file_path": str(file_path)  # 전체 경로 저장
+                    "file_path": str(file_path)
                 })
     
-    # index 순서로 정렬
+    if not entries:
+        print(f"경고: 패턴에 맞는 파일을 찾지 못했습니다.")
+    
     entries.sort(key=lambda x: x["index"])
     
-    # JSON 생성
+    json_output_path = Path(json_output_path)
+    json_output_path.parent.mkdir(parents=True, exist_ok=True)
+    
     data = {"path": entries}
     with open(json_output_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    
+    print(f"총 {len(entries)}개 파일 처리 완료")
+    return data
         
 def remove_special_chars(text: str) -> str:
     """

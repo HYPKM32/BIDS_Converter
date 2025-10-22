@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 # Python 패키지 설치
 RUN pip install --no-cache-dir \
-    nibabel \
-    nipype
+    nibabel==5.3.2 \
+    nipype==1.10.0
 
 # 디렉토리 생성
 RUN mkdir -p /BDSP/canonical_app \
