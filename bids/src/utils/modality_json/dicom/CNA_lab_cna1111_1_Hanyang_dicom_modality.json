@@ -8,10 +8,10 @@
       ]
     }
   ],
-  "FLAIR": [
+  "T2w": [
     {
       "SeriesDescription": [
-        "FLAIR"
+        "FSE"
       ]
     }
   ],
@@ -25,17 +25,18 @@
       ]
     }
   ],
-  "T2w": [
-    {
-      "SeriesDescription": [
-        "FSE"
-      ]
-    }
-  ],
   "CR": [
     {
       "Modality": [
         "CR"
+      ]
+    }
+  ],
+  "FLAIR": [
+    {
+      "SeriesDescription": [
+        "FLAIR",
+        "adsfadsf"
       ]
     }
   ],
