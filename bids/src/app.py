@@ -1,5 +1,6 @@
 #/BDSP/bids_app/src/app.py
 import os
+import sys
 import time
 import shutil
 from concurrent.futures import ThreadPoolExecutor
@@ -14,7 +15,7 @@ from globals import (
 )
 import threading
 
-
+from services.watch import start_all_watchers
 
 
 # 로그 파일 디렉토리 자동 생성
@@ -37,7 +38,7 @@ logger = logging.getLogger(__name__)
 def run_api_server():
     """Thread로 FastAPI API 서버 실행"""
     import uvicorn
-    from api import app
+    from services.api import app
     
     HOST = "0.0.0.0"
     PORT = int(os.getenv("PORT", "8896"))
@@ -200,8 +201,13 @@ class JSONFileMonitor:
 
 def main():
     """메인 함수"""
-    
+    #api
     threading.Thread(target=run_api_server, daemon=True).start()
+    
+    # Watchers 5종
+    threading.Thread(target=start_all_watchers, daemon=True).start()
+
+    #main
     monitor = JSONFileMonitor()
     monitor.monitor_loop()
 

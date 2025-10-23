@@ -52,7 +52,10 @@ RUN pip3 install --no-cache-dir \
     uvicorn \
     fastapi \
     sse-starlette \
-    python-multipart 
+    python-multipart \
+    httpx \
+    watchdog \
+    requests
 
 WORKDIR /BDSP/bids_app
 

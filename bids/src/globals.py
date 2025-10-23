@@ -22,3 +22,6 @@ SUFFIX_MAP = config['MODALITY']['SUFFIX_MAP']
 
 # FLAG 섹션
 FLAG_DIR = config['FLAG']['FLAG_DIR']
+
+#API섹션 
+BACKEND_URL = config['API']['BACKEND_URL']
