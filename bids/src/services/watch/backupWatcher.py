@@ -1,12 +1,11 @@
-import os
-import logging
+import os, json, logging
 from globals import BACKUP_DIR, BACKEND_URL
 from ._watchEngine import BaseDirectoryEventHandler, start_watcher
 
 logger = logging.getLogger(__name__)
 
 class BackupWatcherHandler(BaseDirectoryEventHandler):
-    """새로 생성된 JSON 파일만 감시하여 systemId와 파일 정보 전송"""
+    """개선: JSON 파일 내용도 함께 전송"""
     
     def on_created(self, event):
         # 디렉토리면 무시
@@ -23,15 +22,22 @@ class BackupWatcherHandler(BaseDirectoryEventHandler):
             parts = rel_path.split(os.sep)
             system_id = parts[0] if len(parts) > 1 else "unknown"
 
+            # JSON 파일 내용 읽기
+            with open(event.src_path, "r") as fp:
+                content = json.load(fp)
+
             payload = {
                 "systemId": system_id,
                 "filename": os.path.basename(event.src_path),
                 "path": event.src_path,
+                "content": content,  # 👈 파일 내용 추가!
             }
 
             self.post_json("backup", payload)
             logger.info(f"[BackupWatcher] Detected new backup file: {event.src_path}")
         
+        except json.JSONDecodeError as e:
+            logger.error(f"[BackupWatcher] Invalid JSON in {event.src_path}: {e}")
         except Exception as e:
             logger.error(f"[BackupWatcher] Failed to process {event.src_path}: {e}")
 
