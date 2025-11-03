@@ -13,8 +13,8 @@ RUN mkdir -p /BDSP/bids_app \
     /BDSP/interfaces/flag/defacing/defacer \
     /BDSP/interfaces/flag/defacing/medfacer \
     /BDSP/interfaces/flag/canonical/canonical \
-    /BDSP/interfaces/flag/T1w_preprocessing/civet \
-    /BDSP/interfaces/flag/T1w_preprocessing/freesurfer 
+    /BDSP/interfaces/flag/T1wPreprocess/civet \
+    /BDSP/interfaces/flag/T1wPreprocess/freesurfer 
 # 시스템 업데이트 및 Python 준비
 RUN apt-get update && apt-get install -y \
     wget \

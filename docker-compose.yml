@@ -1,15 +1,13 @@
-networks:
-  bids_network:
-
 volumes:
   defacing-defacer_flag:
   defacing-medfacer_flag:
   canonical_flag:
-  T1w_preprocessing-civet_flag:
-  T1w_preprocessing-freesurfer_flag:
+  T1wPreprocess-civet_flag:
+  T1wpreprocess-freesurfer_flag:
+
 ###############################################################################
 services:
-D
+
   bids:
     build:
       context: ./bids
@@ -72,3 +70,17 @@ D
     tty: true   
     command: ["python3","/BDSP/canonical_app/src/app.py"]
 ###############################################################################
+  civet:
+    build: 
+      context: ./civet
+      dockerfile: Dockerfile
+    container_name: T1wPreprocess-civet
+    volumes: 
+      - /nasdata3/BDSP:/BDSP/interfaces/working
+      - ./civet:/BDSP/civet_app
+      - T1wPreprocess-civet_flag:/BDSP/interfaces/event 
+    environment: 
+      - LANG=en_US.UTF-8
+    stdin_open: true
+    tty: true
+    command: /bin/bash

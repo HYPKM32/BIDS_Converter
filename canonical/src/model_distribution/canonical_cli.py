@@ -15,7 +15,7 @@ sys.path.append(str(Path(__file__).parent))
 from model.reorienter import Reorienter
 
 
-def generate_output_filename(input_path, suffix='oriented'):
+def generate_output_filename(input_path, suffix='canonical'):
     """
     Generate output filename with format: {prefix}_drv-{suffix}_{original_suffix}.nii.gz
     If drv-* already exists, replace it with drv-{suffix}
