@@ -3,7 +3,7 @@ volumes:
   defacing-medfacer_flag:
   canonical_flag:
   T1wPreprocess-civet_flag:
-  T1wpreprocess-freesurfer_flag:
+  T1wPreprocess-freesurfer_flag:
 
 ###############################################################################
 services:
@@ -19,6 +19,7 @@ services:
       - /nasdata4/parknm/bids:/BDSP/data
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
       - canonical_flag:/BDSP/interfaces/flag/canonical/canonical
+      - T1wPreprocess-civet_flag:/BDSP/interfaces/flag/T1wPreprocess/civet
     ports:
       - "210.117.210.9:8896:8896"
     dns:
