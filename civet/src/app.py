@@ -1,3 +1,4 @@
+#/BDSP/civet_app/src/app.py
 import os
 import time
 import shutil
@@ -149,7 +150,8 @@ class JSONFileMonitor:
                 backup_dir=self.event_dir,
                 process=self.process,
                 package=self.package,
-                command=self.command
+                command=self.command,
+                workers = self.sub_workers
             )
             logger.info(f"Successfully processed: {file_name}")
 

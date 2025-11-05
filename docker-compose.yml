@@ -85,3 +85,5 @@ services:
     stdin_open: true
     tty: true
     command: /bin/bash
+    ulimits:
+      stack: -1
