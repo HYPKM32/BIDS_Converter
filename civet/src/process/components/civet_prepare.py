@@ -1,3 +1,4 @@
+#/BDSP/civet_app/src/process/components/civet_prepare.py
 import os
 import logging
 import subprocess
@@ -161,9 +162,8 @@ def decompress_if_needed(filepath):
         try:
             subprocess.run(
                 ['gunzip', '-k', filepath],
-                check=True,
-                capture_output=True,
-                text=True
+                capture_output=True,  
+                text=True             
             )
             
             if not os.path.exists(nii_file):
@@ -231,11 +231,9 @@ def convert_nii_to_mnc(nii_filepath, output_dir):
         # nii2mnc 실행
         result = subprocess.run(
             ['nii2mnc', nii_filepath, mnc_filepath],
-            check=True,
-            capture_output=True,
-            text=True
+            capture_output=True,  # ← 삭제
+            text=True             # ← 삭제
         )
-        
         # 변환 성공 확인
         if not os.path.exists(mnc_filepath):
             raise FileNotFoundError(f"MINC file not created: {mnc_filepath}")

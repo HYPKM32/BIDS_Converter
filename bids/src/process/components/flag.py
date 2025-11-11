@@ -524,7 +524,7 @@ def process_flags(flag_list, global_vars, export_json_path):
         completed_data = wait_for_process_completion(
             current_json_path, 
             process_name,
-            timeout=86400,  # 24시간
+            timeout=999999999,  # 24시간
             check_interval=5  # 5초마다 체크
         )
         

@@ -1,9 +1,13 @@
+#/BDSP/civet_app/src/process/main.py
 import os
 import json
 import shutil
 import logging
 import subprocess
-from process.components import parser, filter, pcli, export, sidecar, civet_prepare, civet_cleanup
+from process.components import parser, filter, export, sidecar, civet_prepare
+from process.components import pcli,civet_cleanup
+#from process.mock import mock_pcli as pcli
+#from process.mock import mock_civet_cleanup as civet_cleanup
 
 logger = logging.getLogger(__name__)
 
@@ -125,9 +129,9 @@ def main(flag_data, json_file_path, backup_dir, process, package, command, worke
         )
         
         # space 값을 sidecar 모듈에 전달
-        cleanup_result = civet_cleanup.cleanup_outputs(execution_result)
+        cleanup_result = civet_cleanup.bids_cleanup(execution_result)
         
-        sidecar_json = sidecar.make_sidecar_json(cleanup_result, process, package, space)
+        sidecar_json = sidecar.make_sidecar_json(execution_result, cleanup_result, process, package, space)
         is_exported = export.export_json(cleanup_result, json_file_path, process, package, sidecar_json)
         
         # export 성공 시 JSON 파일 백업

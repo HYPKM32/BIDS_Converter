@@ -1,88 +1,65 @@
+#/BDSP/civet_app/src/process/components/parser.py
 import logging
-import sys
+import os
+import glob
 
 logger = logging.getLogger(__name__)
 
 
-def parser(command, filtered_flags):
+def parser(command, filtered_flags, civet_work_mapping):
     """
-    필터링된 flag 데이터에서 커맨드 아규먼트를 정리
-
-    Args:
-        command (str): 실행할 스크립트/실행파일 경로 (예: "/BDSP/.../defacer_cli.py")
-        filtered_flags (list): 필터링된 flag 딕셔너리 리스트
-
+    CIVET 명령어 생성
+    
+    CIVET 형식:
+        CIVET_Processing_Pipeline [options] -sourcedir {input} -targetdir {output} {working_name} -run
+    
     Returns:
-        list: cli 리스트 (각 요소가 토큰 리스트로 된 커맨드)
-              (예: [[sys.executable, "/path/defacer_cli.py", "--verification", "y", ...], ...])
+        list: 명령어 리스트 [["cmd", "arg1", ...], ["cmd", "arg2", ...]]
     """
-    logger.info(f"Parsing {len(filtered_flags)} flag(s) with command: {command}")
-
-    cli = []
-
-    for flag_idx, flag in enumerate(filtered_flags):
-        process = flag.get('process', '')
-        package = flag.get('package', '')
+    logger.info(f"Starting parser: {len(filtered_flags)} flag(s)")
+    
+    command_list = []
+    
+    for flag in filtered_flags:
         options = flag.get('options', []) or []
         derived_data_list = flag.get('derived_data', []) or []
-
-        logger.info(f"Processing flag {flag_idx}: process={process}, package={package}")
-
-        # options 파싱
+        
+        # Options 파싱
         option_args = []
         for option in options:
             for key, value in option.items():
-                # boolean 플래그 (True => --flag, False => skip)
                 if isinstance(value, bool):
                     if value:
-                        option_args.append(f"--{key}")
-                    # False는 아예 추가하지 않음
-                    continue
-
-                # 리스트인 경우: --parts eyes nose ears mouth
-                if isinstance(value, (list, tuple)):
-                    if len(value) == 0:
-                        # 빈 리스트면 단순히 플래그로 취급 (원하면 수정)
-                        option_args.append(f"--{key}")
-                    else:
-                        option_args.append(f"--{key}")
-                        # str 변환 후 extend
-                        option_args.extend([str(v) for v in value])
+                        option_args.append(f"-{key}")
+                elif isinstance(value, (list, tuple)):
+                    option_args.append(f"-{key}")
+                    option_args.extend([str(v) for v in value])
                 else:
-                    # 단일 값인 경우: --verification y
-                    option_args.append(f"--{key}")
+                    option_args.append(f"-{key}")
                     option_args.append(str(value))
-
-        # derived_data 개수만큼 커맨드 생성
-        for data_idx, derived_data in enumerate(derived_data_list):
-            input_data = derived_data.get('input', [])
+        
+        # Derived data별 명령어 생성
+        for derived_data in derived_data_list:
             output_path = derived_data.get('output_path', '')
-
-            # input이 리스트가 아닌 경우 리스트로 변환 (하위 호환성)
-            if not isinstance(input_data, list):
-                input_data = [input_data] if input_data else []
-
-            # 전체 커맨드 구성: 항상 sys.executable을 앞에 둠
-            command_list = [sys.executable, command]
-            # 옵션들 추가
-            if option_args:
-                command_list.extend(option_args)
-
-            # 입력 추가: --input path1 path2 path3
-            if input_data:
-                # None 값 필터링
-                filtered_inputs = [str(inp) for inp in input_data if inp is not None]
-                if filtered_inputs:
-                    command_list.append("--input")
-                    command_list.extend(filtered_inputs)
-
-            # 출력 추가
-            if output_path:
-                command_list.extend(["--output", output_path])
-
-            cli.append(command_list)
-
-            logger.info(f"Generated command [{len(cli)-1}]: {' '.join(command_list)}")
-
-    logger.info(f"Total commands generated: {len(cli)}")
-    return cli
+            
+            # Mapping에서 정보 가져오기
+            mapping = civet_work_mapping.get(output_path)
+            if not mapping:
+                raise ValueError(f"Mapping not found: {output_path}")
+            
+            tmp_dir = mapping['tmp_dir']
+            working_name = mapping['working_name']
+            
+            # 명령어 구성: CIVET 표준 형식
+            cmd = [command]
+            cmd.extend(option_args)
+            cmd.extend(["-sourcedir", tmp_dir])
+            cmd.extend(["-targetdir", tmp_dir])
+            cmd.append(working_name)
+            cmd.append("-run")
+            
+            command_list.append(cmd)
+            logger.info(f"Command: {' '.join(cmd)}")
+    
+    logger.info(f"Generated {len(command_list)} command(s)")
+    return command_list

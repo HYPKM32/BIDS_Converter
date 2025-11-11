@@ -66,10 +66,6 @@ def validate_filtered_flags(filtered_flags):
         logger.error(error_msg)
         raise ValueError(error_msg)
     
-    # 상태 변경
-    flag['status'] = 'running'
-    logger.info(f"Flag validation passed: status changed pending -> running")
-    
     return flag
 
 
