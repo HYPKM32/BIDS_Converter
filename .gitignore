@@ -1,0 +1,73 @@
+# Python 관련
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# 로그 파일
+*.log
+
+# 데이터 파일 (용량 큰 파일들)
+*.h5
+*.hdf5
+*.hdf
+*.mat
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# 이미지/비디오 (큰 용량)
+*.avi
+*.mp4
+*.mov
+*.mkv
+*.wmv
+*.flv
+
+# 의료 영상 데이터
+*.nii
+*.nii.gz
+*.dcm
+*.DICOM
+
+# 압축 파일
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# 데이터베이스
+*.db
+*.sqlite
+*.sqlite3
+
+# 대용량 텍스트/CSV
+*.csv
+*.tsv
+*.dat
+
+# 모델 가중치
+*.pth
+*.pt
+*.ckpt
+*.weights
+*.model
+
+# OS 관련
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE 관련
+.vscode/
+.idea/
+*.iml

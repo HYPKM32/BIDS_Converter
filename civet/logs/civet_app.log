@@ -53917,3 +53917,99 @@ Can't create output file '/BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Han
 2025-11-12 10:39:54,604 - INFO - [1] Executing command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/813e5d79f6bcc1bd -targetdir /BDSP/interfaces/tmp/813e5d79f6bcc1bd sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet -run
 2025-11-12 10:41:09,594 - INFO - Starting JSON file monitoring...
 2025-11-12 10:41:09,594 - INFO - Monitoring for: process=T1wPreprocess, package=civet, status=pending
+2025-11-12 10:47:14,933 - INFO - Checking file: pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,933 - INFO - Submitted for checking: pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,934 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,937 - INFO - Moved file: pkm_parknm_99999999_20251112104605_export.json to working directory
+2025-11-12 10:47:14,937 - INFO - Starting main process
+2025-11-12 10:47:14,937 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,938 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:47:14,938 - INFO - Filter: process=T1wPreprocess, package=civet
+2025-11-12 10:47:14,938 - INFO - Command: CIVET_Processing_Pipeline
+2025-11-12 10:47:14,938 - INFO - Extracted space value: 'orig' for process=T1wPreprocess, package=civet
+2025-11-12 10:47:14,938 - INFO - Matched flag: process=T1wPreprocess, package=civet
+2025-11-12 10:47:14,938 - INFO - Found 1 matching flag(s)
+2025-11-12 10:47:14,938 - INFO - Status updated to 'running'
+2025-11-12 10:47:14,941 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,941 - INFO - Starting CIVET input preparation
+2025-11-12 10:47:14,941 - WARNING - No derivatives found in flag
+2025-11-12 10:47:14,941 - INFO - Starting parser: 1 flag(s)
+2025-11-12 10:47:14,941 - INFO - Generated 0 command(s)
+2025-11-12 10:47:14,942 - INFO - Starting CIVET processing...
+2025-11-12 10:47:14,942 - INFO - Starting parallel execution of 0 commands with 10 workers
+2025-11-12 10:47:14,946 - INFO - Submitted 0 commands to executor
+2025-11-12 10:47:14,946 - INFO - Execution completed: 0 succeeded, 0 failed
+2025-11-12 10:47:14,947 - INFO - All 0 commands completed successfully
+2025-11-12 10:47:14,947 - INFO - Starting CIVET cleanup for 0 results
+2025-11-12 10:47:14,947 - INFO - CIVET cleanup completed: 0 results
+2025-11-12 10:47:14,947 - INFO - Created 0 sidecar file(s) out of 0
+2025-11-12 10:47:14,947 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,948 - INFO - Found matching flag: process=T1wPreprocess, package=civet
+2025-11-12 10:47:14,948 - INFO - Set status='done' for flag process=T1wPreprocess, package=civet
+2025-11-12 10:47:14,948 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,950 - INFO - JSON file updated successfully
+2025-11-12 10:47:14,950 - INFO - Export successful, backing up JSON file...
+2025-11-12 10:47:14,951 - INFO - JSON file backed up successfully
+2025-11-12 10:47:14,951 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,951 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,952 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:14,952 - INFO - All commands executed successfully
+2025-11-12 10:47:14,952 - INFO - Successfully processed: pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,939 - INFO - Submitted for checking: pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,940 - INFO - Checking file: pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,941 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,943 - INFO - Moved file: pkm_parknm_99999999_20251112104605_export.json to working directory
+2025-11-12 10:47:19,943 - INFO - Starting main process
+2025-11-12 10:47:19,943 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,943 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:47:19,944 - INFO - Filter: process=T1wPreprocess, package=civet
+2025-11-12 10:47:19,944 - INFO - Command: CIVET_Processing_Pipeline
+2025-11-12 10:47:19,944 - INFO - Extracted space value: 'orig' for process=T1wPreprocess, package=civet
+2025-11-12 10:47:19,944 - INFO - Matched flag: process=T1wPreprocess, package=civet
+2025-11-12 10:47:19,944 - INFO - Found 1 matching flag(s)
+2025-11-12 10:47:19,944 - INFO - Status updated to 'running'
+2025-11-12 10:47:19,946 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 10:47:19,947 - INFO - Starting CIVET input preparation
+2025-11-12 10:47:19,947 - INFO - Processing derivatives[0]: run=01, exe=01
+2025-11-12 10:47:19,947 - INFO - Original outputDir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 10:47:19,948 - INFO - Created tmp directory: /BDSP/interfaces/tmp/274a999374a24993
+2025-11-12 10:47:19,948 - INFO -   Hash: 274a999374a24993
+2025-11-12 10:47:19,949 - INFO - Decompressing: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+2025-11-12 10:47:20,215 - INFO - Decompressed with gunzip: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii
+2025-11-12 10:47:20,246 - INFO - Moved to tmp: /BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii
+2025-11-12 10:47:20,247 - INFO - Renamed to: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.nii
+2025-11-12 10:47:20,247 - INFO - Converting NIfTI to MINC: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.nii → sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:20,934 - INFO - Successfully converted to MINC: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:20,943 - INFO - Removed original NIfTI file: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.nii
+2025-11-12 10:47:20,944 - INFO - Converted to MINC: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:20,944 - INFO - Prepared file: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:20,944 - INFO -   Final location: /BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:20,944 - INFO -   Working name: sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet
+2025-11-12 10:47:20,945 - INFO -   Mapped: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat -> /BDSP/interfaces/tmp/274a999374a24993
+2025-11-12 10:47:20,945 - INFO - Processing derivatives[1]: run=02, exe=01
+2025-11-12 10:47:20,945 - INFO - Original outputDir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 10:47:20,945 - INFO - Created tmp directory: /BDSP/interfaces/tmp/813e5d79f6bcc1bd
+2025-11-12 10:47:20,945 - INFO -   Hash: 813e5d79f6bcc1bd
+2025-11-12 10:47:20,946 - INFO - Decompressing: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+2025-11-12 10:47:21,379 - INFO - Decompressed with gunzip: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii
+2025-11-12 10:47:21,421 - INFO - Moved to tmp: /BDSP/interfaces/tmp/813e5d79f6bcc1bd/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii
+2025-11-12 10:47:21,421 - INFO - Renamed to: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.nii
+2025-11-12 10:47:21,421 - INFO - Converting NIfTI to MINC: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.nii → sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:22,329 - INFO - Successfully converted to MINC: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:22,344 - INFO - Removed original NIfTI file: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.nii
+2025-11-12 10:47:22,345 - INFO - Converted to MINC: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:22,345 - INFO - Prepared file: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:22,345 - INFO -   Final location: /BDSP/interfaces/tmp/813e5d79f6bcc1bd/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_t1.mnc
+2025-11-12 10:47:22,345 - INFO -   Working name: sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet
+2025-11-12 10:47:22,345 - INFO -   Mapped: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat -> /BDSP/interfaces/tmp/813e5d79f6bcc1bd
+2025-11-12 10:47:22,345 - INFO - CIVET input preparation completed
+2025-11-12 10:47:22,345 - INFO - Working mapping: {'/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat': {'tmp_dir': '/BDSP/interfaces/tmp/274a999374a24993', 'working_name': 'sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet'}, '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat': {'tmp_dir': '/BDSP/interfaces/tmp/813e5d79f6bcc1bd', 'working_name': 'sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet'}}
+2025-11-12 10:47:22,345 - INFO - Starting parser: 1 flag(s)
+2025-11-12 10:47:22,345 - INFO - Command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/274a999374a24993 -targetdir /BDSP/interfaces/tmp/274a999374a24993 sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet -run
+2025-11-12 10:47:22,345 - INFO - Command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/813e5d79f6bcc1bd -targetdir /BDSP/interfaces/tmp/813e5d79f6bcc1bd sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet -run
+2025-11-12 10:47:22,346 - INFO - Generated 2 command(s)
+2025-11-12 10:47:22,346 - INFO - Starting CIVET processing...
+2025-11-12 10:47:22,346 - INFO - Starting parallel execution of 2 commands with 10 workers
+2025-11-12 10:47:22,359 - INFO - Submitted 2 commands to executor
+2025-11-12 10:47:22,360 - INFO - [0] Executing command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/274a999374a24993 -targetdir /BDSP/interfaces/tmp/274a999374a24993 sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet -run
+2025-11-12 10:47:22,361 - INFO - [1] Executing command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/813e5d79f6bcc1bd -targetdir /BDSP/interfaces/tmp/813e5d79f6bcc1bd sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet -run
