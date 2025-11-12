@@ -3050,3 +3050,697 @@ Starting reorientation...
 2025-11-11 09:23:44,130 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_99999999_20251111092245_export.json
 2025-11-11 09:23:44,130 - INFO - All commands executed successfully
 2025-11-11 09:23:44,130 - INFO - Successfully processed: pkm_parknm_99999999_20251111092245_export.json
+2025-11-12 10:10:30,817 - INFO - Starting JSON file monitoring...
+2025-11-12 10:10:30,817 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-11-12 10:12:50,954 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,954 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,955 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,958 - INFO - Moved file: pkm_parknm_99999999_20251112101201_export.json to working directory
+2025-11-12 10:12:50,958 - INFO - Starting main process
+2025-11-12 10:12:50,958 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,958 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:12:50,958 - INFO - Filter: process=canonical, package=canonical
+2025-11-12 10:12:50,958 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:12:50,958 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-11-12 10:12:50,959 - INFO - Matched flag: process=canonical, package=canonical
+2025-11-12 10:12:50,959 - INFO - Found 1 matching flag(s)
+2025-11-12 10:12:50,959 - INFO - Flag validation passed: status changed pending -> running
+2025-11-12 10:12:50,959 - INFO - Status updated to 'running'
+2025-11-12 10:12:50,961 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,962 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:12:50,962 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-11-12 10:12:50,962 - INFO - Total commands generated: 0
+2025-11-12 10:12:50,962 - INFO - Starting defacing process...
+2025-11-12 10:12:50,962 - INFO - Execution summary: 0/0 commands succeeded
+2025-11-12 10:12:50,962 - INFO - Created 0 sidecar file(s) out of 0
+2025-11-12 10:12:50,962 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,963 - INFO - Found matching flag: process=canonical, package=canonical
+2025-11-12 10:12:50,963 - INFO - Set status='done' for flag process=canonical, package=canonical
+2025-11-12 10:12:50,963 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,967 - INFO - JSON file updated successfully
+2025-11-12 10:12:50,967 - INFO - Export successful, backing up JSON file...
+2025-11-12 10:12:50,969 - INFO - JSON file backed up successfully
+2025-11-12 10:12:50,969 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,969 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,969 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:50,969 - INFO - All commands executed successfully
+2025-11-12 10:12:50,970 - INFO - Successfully processed: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,955 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,956 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,956 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,959 - INFO - Moved file: pkm_parknm_99999999_20251112101201_export.json to working directory
+2025-11-12 10:12:55,959 - INFO - Starting main process
+2025-11-12 10:12:55,959 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,959 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:12:55,959 - INFO - Filter: process=canonical, package=canonical
+2025-11-12 10:12:55,959 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:12:55,959 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-11-12 10:12:55,960 - INFO - Matched flag: process=canonical, package=canonical
+2025-11-12 10:12:55,960 - INFO - Found 1 matching flag(s)
+2025-11-12 10:12:55,960 - INFO - Flag validation passed: status changed pending -> running
+2025-11-12 10:12:55,960 - INFO - Status updated to 'running'
+2025-11-12 10:12:55,962 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,962 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:12:55,963 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-11-12 10:12:55,963 - INFO - Total commands generated: 0
+2025-11-12 10:12:55,963 - INFO - Starting defacing process...
+2025-11-12 10:12:55,963 - ERROR - Unexpected error during execution: cli 리스트와 flags 리스트의 길이가 일치하지 않습니다. cli=0, flags=2
+2025-11-12 10:12:55,963 - ERROR - Error processing pkm_parknm_99999999_20251112101201_export.json: cli 리스트와 flags 리스트의 길이가 일치하지 않습니다. cli=0, flags=2
+2025-11-12 10:12:55,965 - INFO - [ErrorHandler] Moved failed file back to EVENT_DIR: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:12:55,966 - WARNING - [ErrorHandler] Updated flag status to 'error' in pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:00,961 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:00,962 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:00,962 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:00,963 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:05,967 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:05,967 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:05,968 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:05,969 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:10,973 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:10,973 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:10,974 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:10,975 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:15,979 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:15,980 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:15,980 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:15,981 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:20,985 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:20,986 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:20,986 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:20,987 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:25,991 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:25,992 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:25,992 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:25,993 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:30,994 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:30,994 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:30,995 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:30,995 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:35,995 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:35,995 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:35,996 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:35,996 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:41,001 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:41,001 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:41,002 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:41,002 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:46,007 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:46,007 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:46,008 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:46,008 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:51,013 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:51,013 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:51,014 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:51,014 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:56,019 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:56,019 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:13:56,020 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:13:56,020 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:01,024 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:01,024 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:01,024 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:01,025 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:06,029 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:06,030 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:06,030 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:06,031 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:11,035 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:11,035 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:11,036 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:11,036 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:16,041 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:16,041 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:16,042 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:16,042 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:21,047 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:21,047 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:21,048 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:21,048 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:26,053 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:26,053 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:26,054 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:26,054 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:31,059 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:31,059 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:31,060 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:31,060 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:36,065 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:36,065 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:36,066 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:36,066 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:41,071 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:41,071 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:41,072 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:41,072 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:46,077 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:46,077 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:46,077 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:46,078 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:51,083 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:51,083 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:51,083 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:51,084 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:56,088 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:56,089 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:14:56,089 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:14:56,089 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:01,094 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:01,094 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:01,095 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:01,095 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:06,100 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:06,100 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:06,101 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:06,101 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:11,106 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:11,106 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:11,107 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:11,107 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:16,112 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:16,112 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:16,113 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:16,113 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:21,118 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:21,118 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:21,119 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:21,119 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:26,123 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:26,124 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:26,124 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:26,125 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:31,129 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:31,130 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:31,130 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:31,130 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:36,135 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:36,135 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:36,136 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:36,136 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:41,141 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:41,141 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:41,142 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:41,142 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:46,142 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:46,142 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:46,143 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:46,143 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:51,148 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:51,148 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:51,149 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:51,149 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:56,154 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:56,154 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:15:56,155 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:15:56,155 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:01,160 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:01,160 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:01,160 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:01,161 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:06,161 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:06,161 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:06,162 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:06,162 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:11,163 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:11,163 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:11,164 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:11,164 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:16,169 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:16,169 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:16,170 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:16,170 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:21,175 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:21,175 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:21,176 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:21,176 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:26,181 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:26,181 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:26,182 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:26,182 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:31,187 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:31,187 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:31,188 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:31,188 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:36,193 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:36,193 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:36,193 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:36,194 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:41,198 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:41,199 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:41,199 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:41,200 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:46,204 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:46,205 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:46,205 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:46,205 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:51,210 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:51,211 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:51,211 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:51,211 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:56,216 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:56,216 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:16:56,217 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:16:56,217 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:01,222 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:01,222 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:01,223 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:01,223 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:06,228 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:06,228 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:06,229 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:06,229 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:11,234 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:11,234 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:11,235 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:11,235 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:16,240 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:16,240 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:16,241 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:16,241 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:21,246 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:21,246 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:21,247 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:21,247 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:26,251 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:26,252 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:26,252 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:26,253 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:31,257 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:31,258 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:31,258 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:31,258 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:36,263 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:36,263 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:36,264 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:36,264 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:41,269 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:41,269 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:41,270 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:41,270 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:46,272 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:46,273 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:46,273 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:46,273 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:51,278 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:51,278 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:51,279 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:51,279 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:56,284 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:56,284 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:17:56,285 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:17:56,285 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:01,290 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:01,290 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:01,291 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:01,291 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:06,296 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:06,296 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:06,297 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:06,297 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:11,302 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:11,302 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:11,303 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:11,303 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:16,308 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:16,308 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:16,309 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:16,309 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:21,314 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:21,314 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:21,314 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:21,315 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:26,319 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:26,320 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:26,320 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:26,320 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:31,325 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:31,325 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:31,326 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:31,326 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:36,329 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:36,330 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:36,330 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:36,331 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:41,333 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:41,333 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:41,333 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:41,334 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:46,338 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:46,339 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:46,339 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:46,340 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:51,344 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:51,345 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:51,345 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:51,346 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:56,350 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:56,350 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:18:56,351 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:18:56,351 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:01,356 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:01,356 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:01,357 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:01,357 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:06,362 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:06,362 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:06,363 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:06,363 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:11,368 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:11,368 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:11,369 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:11,369 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:16,374 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:16,374 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:16,374 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:16,375 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:21,379 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:21,380 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:21,380 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:21,380 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:26,384 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:26,385 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:26,385 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:26,386 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:31,390 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:31,391 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:31,391 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:31,391 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:36,396 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:36,396 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:36,397 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:36,397 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,402 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,402 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,403 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,405 - INFO - Moved file: pkm_parknm_99999999_20251112101201_export.json to working directory
+2025-11-12 10:19:41,405 - INFO - Starting main process
+2025-11-12 10:19:41,406 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,406 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:19:41,406 - INFO - Filter: process=canonical, package=canonical
+2025-11-12 10:19:41,406 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:19:41,406 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-11-12 10:19:41,406 - INFO - Matched flag: process=canonical, package=canonical
+2025-11-12 10:19:41,406 - INFO - Found 1 matching flag(s)
+2025-11-12 10:19:41,406 - INFO - Flag validation passed: status changed pending -> running
+2025-11-12 10:19:41,407 - INFO - Status updated to 'running'
+2025-11-12 10:19:41,409 - INFO - JSON file updated: /BDSP/interfaces/working/pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,409 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:19:41,409 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-11-12 10:19:41,409 - INFO - Total commands generated: 0
+2025-11-12 10:19:41,409 - INFO - Starting defacing process...
+2025-11-12 10:19:41,409 - ERROR - Unexpected error during execution: cli 리스트와 flags 리스트의 길이가 일치하지 않습니다. cli=0, flags=2
+2025-11-12 10:19:41,409 - ERROR - Error processing pkm_parknm_99999999_20251112101201_export.json: cli 리스트와 flags 리스트의 길이가 일치하지 않습니다. cli=0, flags=2
+2025-11-12 10:19:41,411 - INFO - [ErrorHandler] Moved failed file back to EVENT_DIR: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:41,412 - WARNING - [ErrorHandler] Updated flag status to 'error' in pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:46,408 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:46,408 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:46,409 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:46,409 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:51,414 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:51,414 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:51,415 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:51,415 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:56,420 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:56,420 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:19:56,420 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:19:56,421 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:01,421 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:01,421 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:01,422 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:01,422 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:06,427 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:06,427 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:06,428 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:06,428 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:11,433 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:11,433 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:11,434 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:11,434 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:16,439 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:16,439 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:16,439 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:16,440 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:21,443 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:21,443 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:21,444 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:21,444 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:26,449 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:26,449 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:26,450 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:26,450 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:31,455 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:31,455 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:31,456 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:31,456 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:36,456 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:36,456 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:36,457 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:36,457 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:41,461 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:41,462 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:41,462 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:41,463 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:46,467 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:46,467 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:46,468 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:46,468 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:51,471 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:51,471 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:51,472 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:51,472 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:56,477 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:56,477 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:20:56,477 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:20:56,478 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:01,478 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:01,478 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:01,479 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:01,479 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:06,484 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:06,484 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:06,485 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:06,485 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:11,490 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:11,490 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:11,491 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:11,491 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:16,496 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:16,496 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:16,497 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:16,497 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:21,499 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:21,499 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:21,500 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:21,500 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:26,504 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:26,505 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:26,505 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:26,506 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:31,510 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:31,511 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:31,511 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:31,511 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:36,516 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:36,516 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:36,516 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:36,517 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:41,521 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:41,522 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:41,522 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:41,522 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:46,527 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:46,527 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:46,528 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:46,528 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:51,533 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:51,533 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:51,534 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:51,534 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:56,539 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:56,539 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:21:56,540 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:21:56,540 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:01,545 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:01,545 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:01,546 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:01,546 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:06,547 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:06,547 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:06,548 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:06,548 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:11,552 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:11,553 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:11,553 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:11,553 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:16,554 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:16,555 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:16,555 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:16,555 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:21,560 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:21,560 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:21,561 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:21,561 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:26,566 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:26,566 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:26,566 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:26,567 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:31,571 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:31,571 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:31,572 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:31,572 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:36,575 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:36,575 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:36,576 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:36,576 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:41,581 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:41,581 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:41,581 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:41,582 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:52,360 - INFO - Starting JSON file monitoring...
+2025-11-12 10:22:52,360 - INFO - Monitoring for: process=canonical, package=canonical, status=pending
+2025-11-12 10:22:52,361 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:52,361 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:52,362 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:52,362 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:57,367 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:57,367 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:22:57,368 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:22:57,368 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:02,373 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:02,373 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:02,374 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:02,374 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:07,378 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:07,379 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:07,379 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:07,380 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:12,384 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:12,384 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:12,385 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:12,385 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:17,390 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:17,390 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:17,391 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:17,391 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:22,396 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:22,396 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:22,397 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:22,397 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:27,402 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:27,402 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:27,403 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:27,403 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:32,408 - INFO - Submitted for checking: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:32,408 - INFO - Checking file: pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:23:32,409 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112101201_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:23:32,409 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112101201_export.json
+2025-11-12 10:25:12,511 - INFO - Submitted for checking: pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:12,511 - INFO - Checking file: pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:12,512 - INFO - Found matching flag with pending status in pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:12,514 - INFO - Moved file: pkm_parknm_99999999_20251112102423_export.json to working directory
+2025-11-12 10:25:12,515 - INFO - Starting main process
+2025-11-12 10:25:12,515 - INFO - JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:12,515 - INFO - Backup dir: /BDSP/interfaces/event
+2025-11-12 10:25:12,515 - INFO - Filter: process=canonical, package=canonical
+2025-11-12 10:25:12,515 - INFO - Command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:25:12,515 - INFO - Extracted space value: 'orig' for process=canonical, package=canonical
+2025-11-12 10:25:12,515 - INFO - Matched flag: process=canonical, package=canonical
+2025-11-12 10:25:12,515 - INFO - Found 1 matching flag(s)
+2025-11-12 10:25:12,516 - INFO - Flag validation passed: status changed pending -> running
+2025-11-12 10:25:12,516 - INFO - Parsing 1 flag(s) with command: /BDSP/canonical_app/src/model_distribution/canonical_cli.py
+2025-11-12 10:25:12,516 - INFO - Processing flag 0: process=canonical, package=canonical
+2025-11-12 10:25:12,516 - INFO - Generated command [0]: /usr/bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 10:25:12,516 - INFO - Generated command [1]: /usr/bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 10:25:12,516 - INFO - Total commands generated: 2
+2025-11-12 10:25:12,516 - INFO - Starting defacing process...
+2025-11-12 10:25:12,517 - INFO - Executing command [0]: /usr/bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 10:25:12,517 - INFO -   exe_num: 01
+2025-11-12 10:25:30,019 - INFO - Command [0] completed successfully
+2025-11-12 10:25:30,019 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+
+2025-11-12 10:25:30,019 - INFO - Renaming output files...
+2025-11-12 10:25:30,020 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz
+2025-11-12 10:25:30,020 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.png
+2025-11-12 10:25:30,020 - INFO -   ✓ data: renamed successfully
+2025-11-12 10:25:30,020 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.png
+2025-11-12 10:25:30,021 - INFO - Executing command [1]: /usr/bin/python3 /BDSP/canonical_app/src/model_distribution/canonical_cli.py --input /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz --output /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 10:25:30,021 - INFO -   exe_num: 01
+2025-11-12 10:25:36,342 - INFO - Command [1] completed successfully
+2025-11-12 10:25:36,342 - INFO - stdout: Validating inputs...
+
+Input file:  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.nii.gz
+Output file: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+Orientation: RAS
+Suffix:      canonical
+
+Starting reorientation...
+
+  Reorienting to RAS...
+  Reorientation complete!
+
+✓ Success! Reoriented file saved to:
+  /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+
+2025-11-12 10:25:36,342 - INFO - Renaming output files...
+2025-11-12 10:25:36,343 - INFO - Renamed: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz -> /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz
+2025-11-12 10:25:36,343 - WARNING - File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.png
+2025-11-12 10:25:36,343 - INFO -   ✓ data: renamed successfully
+2025-11-12 10:25:36,343 - WARNING -   ✗ thumbnail: File not found: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.png
+2025-11-12 10:25:36,343 - INFO - Execution summary: 2/2 commands succeeded
+2025-11-12 10:25:36,344 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-11-12 10:25:36,344 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,344 - INFO - Original JSON file found, loading metadata
+2025-11-12 10:25:36,345 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-defacing_T1w.json
+2025-11-12 10:25:36,345 - INFO - Added derivative entry (process=canonical, space=orig, package=canonical)
+2025-11-12 10:25:36,353 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,353 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,353 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-11-12 10:25:36,353 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,353 - INFO - Original JSON file found, loading metadata
+2025-11-12 10:25:36,354 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/defacing/orig/defacer/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-defacing_T1w.json
+2025-11-12 10:25:36,354 - INFO - Added derivative entry (process=canonical, space=orig, package=canonical)
+2025-11-12 10:25:36,377 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,377 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,378 - INFO - Created 2 sidecar file(s) out of 2
+2025-11-12 10:25:36,378 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 10:25:36,379 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 10:25:36,379 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 10:25:36,380 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 10:25:36,381 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:36,381 - INFO - Found matching flag: process=canonical, package=canonical
+2025-11-12 10:25:36,381 - INFO - Updated derivatives[0]:
+2025-11-12 10:25:36,382 - INFO -   - outputs: {'canonical': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.nii.gz'}
+2025-11-12 10:25:36,382 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,382 - INFO -   - byproduct: {}
+2025-11-12 10:25:36,382 - INFO - Updated derivatives[1]:
+2025-11-12 10:25:36,382 - INFO -   - outputs: {'canonical': '/BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.nii.gz'}
+2025-11-12 10:25:36,382 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 10:25:36,382 - INFO -   - byproduct: {}
+2025-11-12 10:25:36,382 - INFO - Set status='done' for flag process=canonical, package=canonical
+2025-11-12 10:25:36,382 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:36,384 - INFO - JSON file updated successfully
+2025-11-12 10:25:36,384 - INFO - Export successful, backing up JSON file...
+2025-11-12 10:25:36,401 - INFO - JSON file backed up successfully
+2025-11-12 10:25:36,402 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:36,402 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:36,402 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:36,402 - INFO - All commands executed successfully
+2025-11-12 10:25:36,402 - INFO - Successfully processed: pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:37,539 - INFO - Submitted for checking: pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:37,539 - INFO - Checking file: pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:25:37,540 - INFO - No matching pending flag found in pkm_parknm_99999999_20251112102423_export.json (looking for process=canonical, package=canonical, status=pending)
+2025-11-12 10:25:37,540 - INFO - Skipping file (not pending or no matching flag): pkm_parknm_99999999_20251112102423_export.json
+2025-11-12 10:41:09,923 - INFO - Starting JSON file monitoring...
+2025-11-12 10:41:09,923 - INFO - Monitoring for: process=canonical, package=canonical, status=pending

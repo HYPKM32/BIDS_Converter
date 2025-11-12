@@ -123,7 +123,7 @@ def main(flag_data, json_file_path, backup_dir, process, package, command, worke
     try:
         execution_result = pcli.execute_commands(
             command_list=command_list,
-            derived_data_list=flag['derived_data'],
+            derivatives_list=flag['derivatives'],  # ✅ 수정됨!
             civet_work_mapping=civet_work_mapping,
             workers=workers
         )

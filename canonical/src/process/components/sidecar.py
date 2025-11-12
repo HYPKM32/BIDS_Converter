@@ -162,7 +162,7 @@ def _create_single_sidecar(execution_result, process, package, space):
         'space': space,
         'package': package,
         'input': input_path,
-        'output_dir': output_dir,
+        'outputDir': output_dir,
         'outputs': outputs.get('data', '')
     }
     

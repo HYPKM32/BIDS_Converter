@@ -30,7 +30,7 @@ def bids_cleanup(execution_results):
         
         logger.info(f"Processing result[{result['index']}]")
         
-        output_path = result["output_path"]
+        output_dir = result["outputDir"]
         working_name = result["working_name"]
         moved_items = result["moved_items"]
         
@@ -38,14 +38,14 @@ def bids_cleanup(execution_results):
         validate_required_folders(moved_items)
         
         # 2. 모든 파일 BIDS 형식으로 파일명 변경 (logs 포함)
-        rename_all_files_to_bids(output_path, working_name, moved_items)
+        rename_all_files_to_bids(output_dir, working_name, moved_items)
         
         # 3. .mnc 파일만 .nii.gz로 변환
-        convert_mnc_files_to_nii_gz(output_path, moved_items)
+        convert_mnc_files_to_nii_gz(output_dir, moved_items)
         
         # 4. cleanup_result 생성 (logs 제외)
         cleanup_result = create_cleanup_result(
-            output_path=output_path,
+            output_dir=output_dir,
             working_name=working_name,
             moved_items=moved_items
         )
@@ -169,7 +169,7 @@ def to_lower_camel(snake_str):
     return components[0] + ''.join(x.capitalize() for x in components[1:])
 
 
-def rename_all_files_to_bids(output_path, working_name, moved_items):
+def rename_all_files_to_bids(output_dir, working_name, moved_items):
     """
     모든 파일을 BIDS 형식으로 파일명 변경 (logs 포함)
     
@@ -181,7 +181,7 @@ def rename_all_files_to_bids(output_path, working_name, moved_items):
         .mnc 파일은 _T1w 추가
     
     Args:
-        output_path (str): 출력 디렉토리
+        output_dir (str): 출력 디렉토리
         working_name (str): working_name
         moved_items (list): 이동된 파일 목록
     """
@@ -190,7 +190,7 @@ def rename_all_files_to_bids(output_path, working_name, moved_items):
     renamed_count = 0
     
     for item in moved_items:
-        old_path = os.path.join(output_path, item)
+        old_path = os.path.join(output_dir, item)
         
         if not os.path.exists(old_path):
             logger.warning(f"File not found: {old_path}")
@@ -239,7 +239,7 @@ def rename_all_files_to_bids(output_path, working_name, moved_items):
     logger.info(f"Renamed {renamed_count} files to BIDS format")
 
 
-def convert_mnc_files_to_nii_gz(output_path, moved_items):
+def convert_mnc_files_to_nii_gz(output_dir, moved_items):
     """
     .mnc 파일만 .nii.gz로 변환
     
@@ -249,7 +249,7 @@ def convert_mnc_files_to_nii_gz(output_path, moved_items):
         3. .mnc, .nii 파일 삭제
     
     Args:
-        output_path (str): 출력 디렉토리
+        output_dir (str): 출력 디렉토리
         moved_items (list): 이동된 파일 목록
     """
     logger.info("Converting .mnc files to .nii.gz")
@@ -257,7 +257,7 @@ def convert_mnc_files_to_nii_gz(output_path, moved_items):
     # 변경된 파일명으로 .mnc 파일 찾기 (stg-XXX_T1w.mnc 형식)
     mnc_files = []
     
-    for root, dirs, files in os.walk(output_path):
+    for root, dirs, files in os.walk(output_dir):
         for file in files:
             if file.endswith('_T1w.mnc'):
                 mnc_files.append(os.path.join(root, file))
@@ -306,13 +306,13 @@ def convert_mnc_files_to_nii_gz(output_path, moved_items):
     logger.info(f"Converted {converted_count} .mnc files to .nii.gz")
 
 
-def create_cleanup_result(output_path, working_name, moved_items):
+def create_cleanup_result(output_dir, working_name, moved_items):
     """
     cleanup_result 생성 (logs 제외, stage별 분류)
     
     Returns:
         dict: {
-            "output_path": "...",
+            "outputDir": "...",
             "working_name": "...",
             "outputs": {
                 "classify": {
@@ -332,13 +332,13 @@ def create_cleanup_result(output_path, working_name, moved_items):
     
     outputs = {}
     
-    # output_path 하위의 모든 파일 탐색
-    for root, dirs, files in os.walk(output_path):
+    # output_dir 하위의 모든 파일 탐색
+    for root, dirs, files in os.walk(output_dir):
         for file in files:
             full_path = os.path.join(root, file)
             
-            # output_path 기준 상대 경로
-            rel_path = os.path.relpath(full_path, output_path)
+            # output_dir 기준 상대 경로
+            rel_path = os.path.relpath(full_path, output_dir)
             
             # logs 폴더 제외
             if rel_path.startswith('logs/'):
@@ -382,7 +382,7 @@ def create_cleanup_result(output_path, working_name, moved_items):
             logger.debug(f"Added to outputs: {stage}/{stage_task_camel} = {full_path}")
     
     cleanup_result = {
-        "output_path": output_path,
+        "outputDir": output_dir,
         "working_name": working_name,
         "outputs": outputs
     }

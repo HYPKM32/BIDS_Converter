@@ -111,9 +111,9 @@ def create_export_json(config, global_vars, paths):
     
     # export 키 추가
     export_data['export'] = {
-        'mss': mss_path,
-        'origindata': origin_path,
-        'data': data_list
+        'mssPath': mss_path,
+        'origin': origin_path,
+        'bidsPath': data_list
     }
     
     # 5. 파일에 저장

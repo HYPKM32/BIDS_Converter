@@ -40,21 +40,21 @@ def collect_directory_structure(directory_path, base_name):
     return items
 
 
-def run_single_command(command_list, index, derived_data, civet_work_mapping):
+def run_single_command(command_list, index, derivative, civet_work_mapping):
     """
     단일 CIVET 커맨드 실행 및 결과 처리
     
     Args:
         command_list (list): 실행할 커맨드 토큰 리스트
         index (int): 커맨드 인덱스
-        derived_data (dict): 해당 커맨드의 derived_data
+        derivative (dict): 해당 커맨드의 derivative
         civet_work_mapping (dict): 작업 디렉토리 매핑 정보
         
     Returns:
         dict: 실행 결과
     """
-    output_path = derived_data.get('output_path', '')
-    mapping = civet_work_mapping.get(output_path, {})
+    output_dir = derivative.get('outputDir', '')
+    mapping = civet_work_mapping.get(output_dir, {})
     tmp_dir = mapping.get('tmp_dir', '')
     working_name = mapping.get('working_name', '')
     
@@ -64,7 +64,7 @@ def run_single_command(command_list, index, derived_data, civet_work_mapping):
         "success": False,
         "tmp_dir": tmp_dir,
         "working_name": working_name,
-        "output_path": output_path,
+        "outputDir": output_dir,
         "moved": False,
         "tmp_cleaned": False,
         "exit_code": None,
@@ -72,7 +72,7 @@ def run_single_command(command_list, index, derived_data, civet_work_mapping):
         "stderr": "",
         "error": None,
         "moved_items": [],
-        "derived_data": derived_data
+        "derivative": derivative
     }
     
     try:
@@ -109,17 +109,17 @@ def run_single_command(command_list, index, derived_data, civet_work_mapping):
         
         logger.info(f"[{index}] Found CIVET output: {civet_output_dir}")
         
-        # output_path 디렉토리 생성
-        os.makedirs(output_path, exist_ok=True)
+        # outputDir 디렉토리 생성
+        os.makedirs(output_dir, exist_ok=True)
         
-        # working_name 하위 내용물만 output_path로 복사
-        logger.info(f"[{index}] Moving files from {civet_output_dir} to {output_path}")
+        # working_name 하위 내용물만 outputDir로 복사
+        logger.info(f"[{index}] Moving files from {civet_output_dir} to {output_dir}")
         
         moved_items = []
         
         for item in os.listdir(civet_output_dir):
             source_item = os.path.join(civet_output_dir, item)
-            dest_item = os.path.join(output_path, item)
+            dest_item = os.path.join(output_dir, item)
             
             try:
                 if os.path.isdir(source_item):
@@ -142,7 +142,7 @@ def run_single_command(command_list, index, derived_data, civet_work_mapping):
         
         result["moved"] = True
         result["moved_items"] = moved_items
-        logger.info(f"[{index}] Moved {len(moved_items)} items to {output_path}")
+        logger.info(f"[{index}] Moved {len(moved_items)} items to {output_dir}")
         
         # tmp 디렉토리 삭제
         try:
@@ -161,14 +161,14 @@ def run_single_command(command_list, index, derived_data, civet_work_mapping):
         return result
 
 
-def execute_commands(command_list, derived_data_list, civet_work_mapping, workers):
+def execute_commands(command_list, derivatives_list, civet_work_mapping, workers):
     """
     CIVET 커맨드들을 병렬로 실행하고 결과 처리
     
     Args:
         command_list (list): 실행할 커맨드 리스트
-        derived_data_list (list): 각 커맨드의 derived_data
-        civet_work_mapping (dict): {output_path: {"tmp_dir": ..., "working_name": ...}}
+        derivatives_list (list): 각 커맨드의 derivative
+        civet_work_mapping (dict): {outputDir: {"tmp_dir": ..., "working_name": ...}}
         workers (int): 최대 동시 실행 노드 수
         
     Returns:
@@ -179,10 +179,10 @@ def execute_commands(command_list, derived_data_list, civet_work_mapping, worker
         ValueError: 입력 리스트 길이 불일치
     """
     # 입력 검증
-    if len(command_list) != len(derived_data_list):
+    if len(command_list) != len(derivatives_list):
         raise ValueError(
-            f"command_list and derived_data_list length mismatch: "
-            f"{len(command_list)} vs {len(derived_data_list)}"
+            f"command_list and derivatives_list length mismatch: "
+            f"{len(command_list)} vs {len(derivatives_list)}"
         )
     
     total_commands = len(command_list)
@@ -195,12 +195,12 @@ def execute_commands(command_list, derived_data_list, civet_work_mapping, worker
         # 모든 커맨드를 executor에 제출
         future_to_index = {}
         
-        for idx, (cmd, derived_data) in enumerate(zip(command_list, derived_data_list)):
+        for idx, (cmd, derivative) in enumerate(zip(command_list, derivatives_list)):
             future = executor.submit(
                 run_single_command,
                 cmd,
                 idx,
-                derived_data,
+                derivative,
                 civet_work_mapping
             )
             future_to_index[future] = idx

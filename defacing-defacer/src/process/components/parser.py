@@ -24,7 +24,7 @@ def parser(command, filtered_flags):
         process = flag.get('process', '')
         package = flag.get('package', '')
         options = flag.get('options', []) or []
-        derived_data_list = flag.get('derived_data', []) or []
+        derivatives_list = flag.get('derivatives', []) or []  # ← 변경: derived_data → derivatives
 
         logger.info(f"Processing flag {flag_idx}: process={process}, package={package}")
 
@@ -53,10 +53,10 @@ def parser(command, filtered_flags):
                     option_args.append(f"--{key}")
                     option_args.append(str(value))
 
-        # derived_data 개수만큼 커맨드 생성
-        for data_idx, derived_data in enumerate(derived_data_list):
-            input_data = derived_data.get('input', [])
-            output_path = derived_data.get('output_path', '')
+        # derivatives 개수만큼 커맨드 생성
+        for data_idx, derivative in enumerate(derivatives_list):  # ← 변경: derived_data → derivative
+            input_data = derivative.get('input', [])
+            output_dir = derivative.get('outputDir', '')  # ← 변경: output_path → outputDir
 
             # input이 리스트가 아닌 경우 리스트로 변환 (하위 호환성)
             if not isinstance(input_data, list):
@@ -77,8 +77,8 @@ def parser(command, filtered_flags):
                     command_list.extend(filtered_inputs)
 
             # 출력 추가
-            if output_path:
-                command_list.extend(["--output", output_path])
+            if output_dir:
+                command_list.extend(["--output", output_dir])
 
             cli.append(command_list)
 

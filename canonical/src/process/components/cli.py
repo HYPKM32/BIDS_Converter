@@ -1,3 +1,4 @@
+#/BDSP/canonical_app/src/process/components/cli.py
 import subprocess
 import logging
 import os
@@ -11,7 +12,7 @@ def parse_output_paths(command_list, flag):
     
     Args:
         command_list (list): 실행할 커맨드 리스트
-        flag (dict): flag 딕셔너리 (exe_num 포함)
+        flag (dict): flag 딕셔너리 (exeNum 포함)
         
     Returns:
         dict: 실제 및 예상되는 출력 파일 경로들
@@ -29,7 +30,7 @@ def parse_output_paths(command_list, flag):
               }
     
     Raises:
-        ValueError: exe_num이 flag에 없을 경우
+        ValueError: exeNum이 flag에 없을 경우
     """
     input_path = None
     output_dir = None
@@ -45,11 +46,11 @@ def parse_output_paths(command_list, flag):
         logger.warning("Could not extract input/output paths from command")
         return None
     
-    # flag에서 exe_num 추출 (필수값)
-    if 'exe_num' not in flag:
-        raise ValueError("flag 딕셔너리에 'exe_num' 키가 필수입니다")
+    # flag에서 exeNum 추출 (필수값) - JSON 키는 camelCase
+    if 'exeNum' not in flag:
+        raise ValueError("flag 딕셔너리에 'exeNum' 키가 필수입니다")
     
-    exe_num = flag['exe_num']
+    exe_num = flag['exeNum']
     
     # exe_num이 비어있거나 None인 경우도 체크
     if not exe_num:
@@ -246,8 +247,9 @@ def execute_commands(cli, flags):
         }
         
         try:
+            # JSON 키는 camelCase로 접근
             logger.info(f"Executing command [{idx}]: {' '.join(command_list)}")
-            logger.info(f"  exe_num: {flag.get('exe_num', 'N/A')}")
+            logger.info(f"  exe_num: {flag.get('exeNum', 'N/A')}")
             
             # subprocess.run으로 커맨드 실행
             result = subprocess.run(

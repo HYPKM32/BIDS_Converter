@@ -107,7 +107,7 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
         raise
     
     # status를 pending -> running으로 변경
-    filter.update_flag_status(flag, 'running',json_file_path)
+    filter.update_flag_status(flag, 'running', json_file_path)
     
     # components.parser 호출 (command와 flag 전달)
     command_list = parser.parser(command, [flag])
@@ -115,7 +115,8 @@ def main(flag_data, json_file_path, backup_dir, process, package, command):
     logger.info(f"Starting defacing process...")
     
     try:
-        execution_result = cli.execute_commands(command_list, flag['derived_data'])
+        # derivatives 사용 (derived_data에서 변경)
+        execution_result = cli.execute_commands(command_list, flag['derivatives'])
         
         # space 값을 sidecar 모듈에 전달
         sidecar_json = sidecar.make_sidecar_json(execution_result, process, package, space)

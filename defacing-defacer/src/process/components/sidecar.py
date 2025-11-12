@@ -162,10 +162,10 @@ def _create_single_sidecar(execution_result, process, package, space):
         'space': space,
         'package': package,
         'input': input_path,
-        'output_dir': output_dir,
-        'outputs': outputs.get('data', ''),  # 수정: 'defaced_data' -> 'data'
+        'outputDir': output_dir,
+        'outputs': outputs.get('data', ''),  
         'thumbnail': outputs.get('thumbnail', ''),
-        'defacemask': outputs.get('mask', '')  # 수정: 'defacing_mask' -> 'mask' (키 이름은 'defacemask'로 유지)
+        'defacemask': outputs.get('mask', '')  
     }
     
     # 6. derivatives 리스트에 추가

@@ -1,3 +1,4 @@
+#/BDSP/canonical_app/src/process/components/parser.py
 import logging
 import sys
 
@@ -24,7 +25,8 @@ def parser(command, filtered_flags):
         process = flag.get('process', '')
         package = flag.get('package', '')
         options = flag.get('options', []) or []
-        derived_data_list = flag.get('derived_data', []) or []
+        # JSON 키는 camelCase: derivedData
+        derived_data_list = flag.get('derivatives', []) or []
 
         logger.info(f"Processing flag {flag_idx}: process={process}, package={package}")
 
@@ -56,7 +58,8 @@ def parser(command, filtered_flags):
         # derived_data 개수만큼 커맨드 생성
         for data_idx, derived_data in enumerate(derived_data_list):
             input_data = derived_data.get('input', [])
-            output_path = derived_data.get('output_path', '')
+            # JSON 키는 camelCase: outputDir
+            output_path = derived_data.get('outputDir', '')
 
             # input이 리스트가 아닌 경우 리스트로 변환 (하위 호환성)
             if not isinstance(input_data, list):

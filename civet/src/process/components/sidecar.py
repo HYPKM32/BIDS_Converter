@@ -19,13 +19,13 @@ def make_sidecar_json(execution_results, cleanup_results, process, package, spac
                                         "index": 0,
                                         "command": "...",
                                         "success": True,
-                                        "output_path": "...",
+                                        "outputDir": "...",
                                         "working_name": "...",
-                                        "derived_data": {
+                                        "derivative": {
                                             "input": ["..."],
-                                            "output_path": "...",
-                                            "run_num": "01",
-                                            "exe_num": "01"
+                                            "outputDir": "...",
+                                            "runNum": "01",
+                                            "exeNum": "01"
                                         },
                                         ...
                                     },
@@ -34,7 +34,7 @@ def make_sidecar_json(execution_results, cleanup_results, process, package, spac
         cleanup_results (list): civet_cleanup.bids_cleanup()의 반환값
                                [
                                    {
-                                       "output_path": "...",
+                                       "outputDir": "...",
                                        "working_name": "...",
                                        "outputs": {
                                            "classify": {...},
@@ -84,7 +84,7 @@ def make_sidecar_json(execution_results, cleanup_results, process, package, spac
             continue
         
         # output_dir 수집
-        output_dir = cleanup_result.get('output_path', '')
+        output_dir = cleanup_result.get('outputDir', '')
         if output_dir:
             output_dirs.add(output_dir)
         
@@ -135,12 +135,12 @@ def _create_single_sidecar(execution_result, cleanup_result, process, package, s
     Returns:
         str: 생성된 JSON 파일 경로 또는 None
     """
-    # 1. input 파일 경로 가져오기 (derived_data에서)
-    derived_data = execution_result.get('derived_data', {})
-    input_list = derived_data.get('input', [])
+    # 1. input 파일 경로 가져오기 (derivative에서)
+    derivative = execution_result.get('derivative', {})
+    input_list = derivative.get('input', [])
     
     if not input_list or len(input_list) == 0:
-        logger.warning("No input path in derived_data")
+        logger.warning("No input path in derivative")
         return None
     
     input_path = input_list[0]  # 첫 번째 input 파일
@@ -174,7 +174,7 @@ def _create_single_sidecar(execution_result, cleanup_result, process, package, s
     
     # 파일명: {working_name}_{modality}.json
     new_json_filename = f"{working_name}_{modality}.json"
-    output_dir = cleanup_result.get('output_path', '')
+    output_dir = cleanup_result.get('outputDir', '')
     new_json_path = os.path.join(output_dir, new_json_filename)
     
     logger.info(f"Target JSON path: {new_json_path}")
@@ -236,12 +236,13 @@ def _extract_modality(filename):
         filename (str): 파일명 (예: "sub-01_drv-canonical_T1w.nii.gz")
     
     Returns:
-        str: 모달리티 (예: "T1w", "T2w", "PDw")
+        str: 모달리티 (예: "T1w", "T2w", "PDw", 또는 임의의 modality)
              None: 추출 실패
     
     예시:
         "sub-01_drv-canonical_T1w.nii.gz" → "T1w"
         "sub-01_ses-01_run-01_T2w.nii.gz" → "T2w"
+        "sub-01_ses-01_CustomModality.nii.gz" → "CustomModality"
     """
     # .nii.gz 제거
     if filename.endswith('.nii.gz'):
@@ -249,24 +250,20 @@ def _extract_modality(filename):
     elif filename.endswith('.nii'):
         basename = filename[:-4]
     else:
-        basename = filename
+        logger.warning(f"Unsupported file extension: {filename}")
+        return None
     
     # 언더스코어로 분리
     parts = basename.split('_')
     
-    # 마지막 부분이 모달리티인 경우가 많음
-    # 예: T1w, T2w, PDw, FLAIR, bold 등
+    # 마지막 부분이 modality
     if len(parts) > 0:
-        last_part = parts[-1]
+        modality = parts[-1]
         
-        # 일반적인 모달리티 패턴 확인
-        modalities = ['T1w', 'T2w', 'PDw', 'FLAIR', 'bold', 'dwi', 'sbref']
-        if last_part in modalities:
-            return last_part
-        
-        # T1w, T2w 같은 패턴 매칭 (대소문자 무시)
-        if last_part.upper() in [m.upper() for m in modalities]:
-            return last_part
+        # 빈 문자열이 아니면 반환
+        if modality:
+            logger.debug(f"Extracted modality: '{modality}' from {filename}")
+            return modality
     
     logger.warning(f"Could not extract modality from filename: {filename}")
     return None

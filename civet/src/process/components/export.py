@@ -7,13 +7,13 @@ logger = logging.getLogger(__name__)
 
 def export_json(cleanup_results, json_file_path, process, package, sidecar_json_list):
     """
-    cleanup_results의 outputs를 JSON 파일의 flag.derived_data에 업데이트
+    cleanup_results의 outputs를 JSON 파일의 flag.derivatives에 업데이트
 
     Args:
         cleanup_results (list): civet_cleanup.bids_cleanup()의 반환값
                                [
                                    {
-                                       "output_path": "...",
+                                       "outputDir": "...",
                                        "working_name": "...",
                                        "outputs": {
                                            "classify": {...},
@@ -50,13 +50,13 @@ def export_json(cleanup_results, json_file_path, process, package, sidecar_json_
             logger.error(f"No matching flag found for process={process}, package={package}")
             return False
 
-        # 3. derived_data 배열과 cleanup_results 매칭하여 업데이트
-        derived_data_list = target_flag.get('derived_data', [])
+        # 3. derivatives 배열과 cleanup_results 매칭하여 업데이트
+        derivatives_list = target_flag.get('derivatives', [])
 
         # 길이 검증: 반드시 일치해야 함
-        if len(derived_data_list) != len(cleanup_results):
+        if len(derivatives_list) != len(cleanup_results):
             error_msg = (
-                f"Length mismatch: derived_data has {len(derived_data_list)} items, "
+                f"Length mismatch: derivatives has {len(derivatives_list)} items, "
                 f"but cleanup_results has {len(cleanup_results)} items"
             )
             logger.error(error_msg)
@@ -71,7 +71,7 @@ def export_json(cleanup_results, json_file_path, process, package, sidecar_json_
             logger.error(error_msg)
             raise ValueError(error_msg)
 
-        # cleanup_results의 각 항목을 derived_data에 추가
+        # cleanup_results의 각 항목을 derivatives에 추가
         for idx, cleanup_result in enumerate(cleanup_results):
             # outputs: cleanup_result의 outputs를 그대로 저장 (옵션 A)
             # - classify, transforms, surfaces, thickness, mask, verify, temp, native 등
@@ -83,12 +83,12 @@ def export_json(cleanup_results, json_file_path, process, package, sidecar_json_
             # byproduct: 빈 객체 (옵션 A)
             byproduct = {}
             
-            # derived_data[idx]에 필드 추가
-            derived_data_list[idx]['outputs'] = outputs
-            derived_data_list[idx]['sidecar'] = sidecar
-            derived_data_list[idx]['byproduct'] = byproduct
+            # derivatives[idx]에 필드 추가
+            derivatives_list[idx]['outputs'] = outputs
+            derivatives_list[idx]['sidecar'] = sidecar
+            derivatives_list[idx]['byproduct'] = byproduct
             
-            logger.info(f"Updated derived_data[{idx}]:")
+            logger.info(f"Updated derivatives[{idx}]:")
             logger.info(f"  - outputs: {len(outputs)} stages")
             
             # 각 stage별 파일 개수 로깅

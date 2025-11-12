@@ -1,4 +1,4 @@
-#/BDSP/defacer_app/src/process/components/filter.py
+#/BDSP/canonical_app/src/process/components/filter.py
 import logging
 import json
 

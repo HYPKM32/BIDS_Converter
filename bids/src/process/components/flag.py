@@ -125,8 +125,8 @@ def get_input_paths_from_derivatives(modality_condition, flag_list):
     # flag_list에서 해당 process와 package를 가진 프로세스 찾기
     for flag in flag_list:
         if flag.get('process') == target_process and flag.get('package') == target_package:
-            # derived_data에서 outputs 확인
-            for derived in flag.get('derived_data', []):
+            # derivatives에서 outputs 확인
+            for derived in flag.get('derivatives', []):
                 outputs = derived.get('outputs', {})
                 
                 # outputs의 모든 항목을 순회
@@ -193,7 +193,7 @@ def prepare_process_data(flag, export_list, flag_list, derivatives_path):
     Returns:
         int: 매칭된 데이터 개수
     """
-    modality_conditions = flag.get('modality_condition', [])
+    modality_conditions = flag.get('modCond', [])
     process_name = flag.get('process')
     space = flag.get('space')
     package = flag.get('package')
@@ -273,12 +273,12 @@ def prepare_process_data(flag, export_list, flag_list, derivatives_path):
             os.makedirs(derived_output_folder_path, exist_ok=True)
             logger.debug(f"출력 경로 생성: {derived_output_folder_path}")
             
-            # derived_data에 추가 (input을 리스트로 저장)
-            flag['derived_data'].append({
+            # derivatives에 추가 (input을 리스트로 저장)
+            flag['derivatives'].append({
                 'input': input_paths_for_this_run,  # 리스트로 저장
-                'output_path': str(derived_output_folder_path),
-                'run_num': bids_info['run_num'],
-                'exe_num': exe_num
+                'outputDir': str(derived_output_folder_path),
+                'runNum': bids_info['run_num'],
+                'exeNum': exe_num
             })
             
             matched_count += 1
@@ -304,7 +304,11 @@ def wait_for_process_completion(json_file_path, process_name, timeout=3600, chec
         check_interval: 체크 간격 (초)
         
     Returns:
-        dict: 완료된 JSON 데이터, 실패 시 None
+        dict: 완료된 JSON 데이터
+        
+    Raises:
+        ValueError: 프로세스가 error 상태로 완료된 경우
+        TimeoutError: 프로세스가 timeout 시간 내에 완료되지 않은 경우
     """
     print(f"\n'{process_name}' 프로세스 완료 대기 중...")
     print(f"  모니터링 파일: {json_file_path}")
@@ -335,6 +339,13 @@ def wait_for_process_completion(json_file_path, process_name, timeout=3600, chec
                         print(f"  ✓ 프로세스 완료 확인!")
                         logger.info(f"프로세스 '{process_name}' 완료")
                         return data
+                    elif status == 'error':
+                        # 에러 상태 감지 - ValueError 발생
+                        error_message = flag.get('errorMessage', '알 수 없는 오류')
+                        print(f"  ✗ 프로세스 에러 발생!")
+                        print(f"  에러 메시지: {error_message}")
+                        logger.error(f"프로세스 '{process_name}' 에러: {error_message}")
+                        raise ValueError(f"프로세스 '{process_name}' 실행 중 오류 발생: {error_message}")
                     else:
                         logger.debug(f"프로세스 '{process_name}' 상태: {status}")
             
@@ -358,7 +369,7 @@ def wait_for_process_completion(json_file_path, process_name, timeout=3600, chec
     # 타임아웃
     logger.error(f"프로세스 '{process_name}' 타임아웃 ({timeout}초)")
     print(f"  ✗ 타임아웃: 프로세스가 {timeout}초 내에 완료되지 않았습니다")
-    return None
+    raise TimeoutError(f"프로세스 '{process_name}'이(가) {timeout}초 내에 완료되지 않았습니다")
 
 
 def process_flags(flag_list, global_vars, export_json_path):
@@ -390,11 +401,11 @@ def process_flags(flag_list, global_vars, export_json_path):
     for idx, flag in enumerate(flag_list, 1):
         print(f"  {idx}. {flag.get('process')} - {flag.get('package')} (enabled: {flag.get('enabled')})")
     
-    # 5. 각 프로세스에 derived_data 키 생성하고 빈 배열 할당
+    # 5. 각 프로세스에 derivatives 키 생성하고 빈 배열 할당
     for flag in flag_list:
-        if 'derived_data' not in flag:
-            flag['derived_data'] = []
-            logger.debug(f"프로세스 '{flag.get('process')}'에 derived_data 초기화")
+        if 'derivatives' not in flag:
+            flag['derivatives'] = []
+            logger.debug(f"프로세스 '{flag.get('process')}'에 derivatives 초기화")
     
     # 6. export_json_path 파일 읽기
     print("\n처리 대상 데이터 분석 중...")
@@ -424,13 +435,13 @@ def process_flags(flag_list, global_vars, export_json_path):
         print("ERROR: export 데이터가 없습니다")
         return None
     
-    mss_path = export_obj.get('mss')
+    mss_path = export_obj.get('mssPath')
     if not mss_path:
         logger.error("mss 경로를 찾을 수 없음")
         print("ERROR: mss 경로가 없습니다")
         return None
     
-    export_list = export_obj.get('data', [])
+    export_list = export_obj.get('bidsPath', [])
     if not export_list:
         logger.error("export data 리스트가 비어있음")
         print("ERROR: 처리할 데이터가 없습니다")
@@ -495,7 +506,7 @@ def process_flags(flag_list, global_vars, export_json_path):
         except Exception as e:
             logger.error(f"JSON 파일 저장 오류: {e}")
             print(f"ERROR: JSON 파일 저장 실패: {e}")
-            return None
+            raise  # 예외를 상위로 전파
         
         # 8-5. flag 디렉토리로 이동 (이벤팅)
         flag_event_path = Path(flag_dir) / process_name / package
@@ -518,20 +529,26 @@ def process_flags(flag_list, global_vars, export_json_path):
         except Exception as e:
             logger.error(f"JSON 파일 이동 오류: {e}")
             print(f"ERROR: 파일 이동 실패: {e}")
-            return None
+            raise  # 예외를 상위로 전파
         
         # 8-6. 프로세스 완료 대기
-        completed_data = wait_for_process_completion(
-            current_json_path, 
-            process_name,
-            timeout=999999999,  # 24시간
-            check_interval=5  # 5초마다 체크
-        )
-        
-        if completed_data is None:
-            logger.error(f"프로세스 '{process_name}' 완료 실패")
-            print(f"\nERROR: 프로세스 '{process_name}'이(가) 완료되지 않았습니다")
-            return None
+        try:
+            completed_data = wait_for_process_completion(
+                current_json_path, 
+                process_name,
+                timeout=999999999,
+                check_interval=5
+            )
+        except ValueError as e:
+            # 프로세스 에러 발생
+            logger.error(f"프로세스 '{process_name}' 에러로 인한 파이프라인 중단: {e}")
+            print(f"\nERROR: {e}")
+            raise  # 예외를 상위로 전파하여 app.py에서 ERROR_DIR로 이동하도록 함
+        except TimeoutError as e:
+            # 타임아웃 발생
+            logger.error(f"프로세스 '{process_name}' 타임아웃으로 인한 파이프라인 중단: {e}")
+            print(f"\nERROR: {e}")
+            raise  # 예외를 상위로 전파하여 app.py에서 ERROR_DIR로 이동하도록 함
         
         # 완료된 데이터로 업데이트 (outputs 포함)
         current_json_data = completed_data
@@ -568,7 +585,7 @@ def process_flags(flag_list, global_vars, export_json_path):
             except Exception as e:
                 logger.error(f"다음 프로세스로 파일 이동 오류: {e}")
                 print(f"ERROR: 파일 이동 실패: {e}")
-                return None
+                raise  # 예외를 상위로 전파
             
             print(f"\n다음 프로세스로 진행...")
         else:
@@ -579,7 +596,7 @@ def process_flags(flag_list, global_vars, export_json_path):
             if not working_dir:
                 logger.error("working_dir를 찾을 수 없음")
                 print("ERROR: working_dir 경로가 없습니다")
-                return None
+                raise ValueError("working_dir 경로를 찾을 수 없습니다")
             
             try:
                 # working_dir 생성
@@ -599,7 +616,7 @@ def process_flags(flag_list, global_vars, export_json_path):
             except Exception as e:
                 logger.error(f"working_dir로 파일 이동 오류: {e}")
                 print(f"ERROR: 최종 파일 이동 실패: {e}")
-                return None
+                raise  # 예외를 상위로 전파
         
         idx += 1  # 다음 프로세스로
     

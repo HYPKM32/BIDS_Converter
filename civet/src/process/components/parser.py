@@ -22,7 +22,7 @@ def parser(command, filtered_flags, civet_work_mapping):
     
     for flag in filtered_flags:
         options = flag.get('options', []) or []
-        derived_data_list = flag.get('derived_data', []) or []
+        derivatives_list = flag.get('derivatives', []) or []
         
         # Options 파싱
         option_args = []
@@ -38,14 +38,14 @@ def parser(command, filtered_flags, civet_work_mapping):
                     option_args.append(f"-{key}")
                     option_args.append(str(value))
         
-        # Derived data별 명령어 생성
-        for derived_data in derived_data_list:
-            output_path = derived_data.get('output_path', '')
+        # Derivatives별 명령어 생성
+        for derivative in derivatives_list:
+            output_dir = derivative.get('outputDir', '')
             
             # Mapping에서 정보 가져오기
-            mapping = civet_work_mapping.get(output_path)
+            mapping = civet_work_mapping.get(output_dir)
             if not mapping:
-                raise ValueError(f"Mapping not found: {output_path}")
+                raise ValueError(f"Mapping not found: {output_dir}")
             
             tmp_dir = mapping['tmp_dir']
             working_name = mapping['working_name']

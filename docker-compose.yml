@@ -84,6 +84,6 @@ services:
       - LANG=en_US.UTF-8
     stdin_open: true
     tty: true
-    command: /bin/bash
+    command: ["python3","/BDSP/civet_app/src/app.py"]
     ulimits:
       stack: -1

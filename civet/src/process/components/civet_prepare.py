@@ -18,12 +18,12 @@ def prepare_civet_input(flag):
     
     처리 과정:
     1. .nii.gz 파일을 gunzip으로 .nii 압축 해제 (원본 유지)
-    2. output_path를 해시로 변환하여 /BDSP/interfaces/tmp/{hash} 디렉토리 생성
+    2. outputDir을 해시로 변환하여 /BDSP/interfaces/tmp/{hash} 디렉토리 생성
     3. .nii 파일을 임시 디렉토리로 이동
     4. 이동된 위치에서 파일명 변경:
        - drv-canonical → drv-civet 변경
        - 모달리티 변경: T1w→t1, T2w→t2, PDw→pd
-    5. run/exe 엔티티를 derived_data의 run_num/exe_num과 매칭
+    5. run/exe 엔티티를 derivatives의 runNum/exeNum과 매칭
     6. nii2mnc로 .nii → .mnc 변환
     
     Args:
@@ -32,35 +32,35 @@ def prepare_civet_input(flag):
     Returns:
         tuple: (flag, civet_working_mapping)
             - flag: 전처리된 flag 객체 (원본 수정됨)
-            - civet_working_mapping: {output_path: {"tmp_dir": 임시디렉토리, "working_name": 작업폴더명}} 딕셔너리
+            - civet_working_mapping: {outputDir: {"tmp_dir": 임시디렉토리, "working_name": 작업폴더명}} 딕셔너리
     """
     logger.info("Starting CIVET input preparation")
     
-    derived_data_list = flag.get('derived_data', [])
+    derivatives_list = flag.get('derivatives', [])
     civet_working_mapping = {}
     
-    if not derived_data_list:
-        logger.warning("No derived_data found in flag")
+    if not derivatives_list:
+        logger.warning("No derivatives found in flag")
         return flag, civet_working_mapping
     
     # 임시 base 디렉토리 생성
     os.makedirs(TMP_BASE_DIR, exist_ok=True)
     
-    for idx, derived_data in enumerate(derived_data_list):
-        input_files = derived_data.get('input', [])
-        output_path = derived_data.get('output_path', '')
-        run_num = derived_data.get('run_num', '')
-        exe_num = derived_data.get('exe_num', '')
+    for idx, derivative in enumerate(derivatives_list):
+        input_files = derivative.get('input', [])
+        output_dir = derivative.get('outputDir', '')
+        run_num = derivative.get('runNum', '')
+        exe_num = derivative.get('exeNum', '')
         
-        if not input_files or not output_path:
-            logger.warning(f"Skipping derived_data[{idx}]: missing input or output_path")
+        if not input_files or not output_dir:
+            logger.warning(f"Skipping derivatives[{idx}]: missing input or outputDir")
             continue
         
-        logger.info(f"Processing derived_data[{idx}]: run={run_num}, exe={exe_num}")
-        logger.info(f"Original output_path: {output_path}")
+        logger.info(f"Processing derivatives[{idx}]: run={run_num}, exe={exe_num}")
+        logger.info(f"Original outputDir: {output_dir}")
         
-        # output_path를 해시로 변환
-        path_hash = hash_path(output_path)
+        # outputDir을 해시로 변환
+        path_hash = hash_path(output_dir)
         tmp_dir = os.path.join(TMP_BASE_DIR, path_hash)
         
         # 임시 디렉토리 생성
@@ -102,7 +102,7 @@ def prepare_civet_input(flag):
                 working_name = extract_working_name(mnc_filename)
                 
                 # 6. 매핑 정보 저장
-                civet_working_mapping[output_path] = {
+                civet_working_mapping[output_dir] = {
                     "tmp_dir": tmp_dir,
                     "working_name": working_name
                 }
@@ -110,7 +110,7 @@ def prepare_civet_input(flag):
                 logger.info(f"Prepared file: {mnc_filename}")
                 logger.info(f"  Final location: {os.path.join(tmp_dir, mnc_filename)}")
                 logger.info(f"  Working name: {working_name}")
-                logger.info(f"  Mapped: {output_path} -> {tmp_dir}")
+                logger.info(f"  Mapped: {output_dir} -> {tmp_dir}")
                 
             except Exception as e:
                 logger.error(f"Failed to prepare input file {input_file}: {e}")
@@ -231,8 +231,8 @@ def convert_nii_to_mnc(nii_filepath, output_dir):
         # nii2mnc 실행
         result = subprocess.run(
             ['nii2mnc', nii_filepath, mnc_filepath],
-            capture_output=True,  # ← 삭제
-            text=True             # ← 삭제
+            capture_output=True,
+            text=True
         )
         # 변환 성공 확인
         if not os.path.exists(mnc_filepath):
@@ -269,12 +269,12 @@ def rename_for_civet(filename, run_num, exe_num):
     2. exe-XX가 없으면 run-XX 뒤에 exe-{exe_num} 추가
     3. drv 엔티티가 없으면 exe-XX 뒤에 drv-civet 추가
     4. 모달리티 변경: T1w→t1, T2w→t2, PDw→pd
-    5. run-XX, exe-XX 엔티티를 run_num, exe_num과 매칭
+    5. run-XX, exe-XX 엔티티를 runNum, exeNum과 매칭
     
     Args:
         filename (str): 원본 파일명
-        run_num (str): derived_data의 run_num
-        exe_num (str): derived_data의 exe_num
+        run_num (str): derivatives의 runNum
+        exe_num (str): derivatives의 exeNum
         
     Returns:
         str: 변경된 파일명

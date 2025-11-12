@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 def export_json(execution_result, json_file_path, process, package, sidecar_json_list):
     """
-    execution_result의 outputs를 JSON 파일의 flag.derived_data에 업데이트
+    execution_result의 outputs를 JSON 파일의 flag.derivatives에 업데이트
 
     Args:
         execution_result (list): cli.execute_commands()의 반환값
@@ -36,13 +36,13 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             logger.error(f"No matching flag found for process={process}, package={package}")
             return False
 
-        # 3. derived_data 배열과 execution_result 매칭하여 업데이트
-        derived_data_list = target_flag.get('derived_data', [])
+        # 3. derivatives 배열과 execution_result 매칭하여 업데이트
+        derivatives_list = target_flag.get('derivatives', [])  # ← 변경: derived_data → derivatives
 
         # 길이 검증: 반드시 일치해야 함
-        if len(derived_data_list) != len(execution_result):
+        if len(derivatives_list) != len(execution_result):  # ← 변경
             error_msg = (
-                f"Length mismatch: derived_data has {len(derived_data_list)} items, "
+                f"Length mismatch: derivatives has {len(derivatives_list)} items, "  # ← 변경
                 f"but execution_result has {len(execution_result)} items"
             )
             logger.error(error_msg)
@@ -57,13 +57,13 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             logger.error(error_msg)
             raise ValueError(error_msg)
 
-        # execution_result의 각 항목을 derived_data에 추가
+        # execution_result의 각 항목을 derivatives에 추가
         for idx, result in enumerate(execution_result):
             result_outputs = result.get('outputs', {})
             
             # outputs: defaced_data와 defacemask 모두 포함 (키 이름은 유지)
             outputs = {
-                'defaced_data': result_outputs.get('data', ''),
+                'defacing': result_outputs.get('data', ''),
                 'defacemask': result_outputs.get('mask', '')
             }
             
@@ -76,12 +76,12 @@ def export_json(execution_result, json_file_path, process, package, sidecar_json
             if thumbnail:
                 byproduct['thumbnail'] = thumbnail
             
-            # derived_data[idx]에 필드 추가
-            derived_data_list[idx]['outputs'] = outputs
-            derived_data_list[idx]['sidecar'] = sidecar
-            derived_data_list[idx]['byproduct'] = byproduct
+            # derivatives[idx]에 필드 추가
+            derivatives_list[idx]['outputs'] = outputs  # ← 변경
+            derivatives_list[idx]['sidecar'] = sidecar  # ← 변경
+            derivatives_list[idx]['byproduct'] = byproduct  # ← 변경
             
-            logger.info(f"Updated derived_data[{idx}]:")
+            logger.info(f"Updated derivatives[{idx}]:")  # ← 변경
             logger.info(f"  - outputs: {outputs}")
             logger.info(f"  - sidecar: {sidecar}")
             logger.info(f"  - byproduct: {byproduct}")
