@@ -54013,3 +54013,106 @@ Can't create output file '/BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Han
 2025-11-12 10:47:22,359 - INFO - Submitted 2 commands to executor
 2025-11-12 10:47:22,360 - INFO - [0] Executing command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/274a999374a24993 -targetdir /BDSP/interfaces/tmp/274a999374a24993 sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet -run
 2025-11-12 10:47:22,361 - INFO - [1] Executing command: CIVET_Processing_Pipeline -lsq12 -N3-distance 125 -headheight 175 -resample-surface -sourcedir /BDSP/interfaces/tmp/813e5d79f6bcc1bd -targetdir /BDSP/interfaces/tmp/813e5d79f6bcc1bd sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet -run
+2025-11-12 15:01:55,603 - INFO - [0] Command completed successfully
+2025-11-12 15:01:55,603 - INFO - [0] Found CIVET output: /BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet
+2025-11-12 15:01:56,063 - INFO - [0] Moving files from /BDSP/interfaces/tmp/274a999374a24993/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet to /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 15:02:00,119 - INFO - [0] Moved 205 items to /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 15:02:00,170 - INFO - [0] Cleaned tmp directory: /BDSP/interfaces/tmp/274a999374a24993
+2025-11-12 15:02:00,172 - INFO - [0] Completed successfully (1/2)
+2025-11-12 15:02:17,653 - INFO - [1] Command completed successfully
+2025-11-12 15:02:17,654 - INFO - [1] Found CIVET output: /BDSP/interfaces/tmp/813e5d79f6bcc1bd/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet
+2025-11-12 15:02:17,762 - INFO - [1] Moving files from /BDSP/interfaces/tmp/813e5d79f6bcc1bd/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet to /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 15:02:23,032 - INFO - [1] Moved 205 items to /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 15:02:23,081 - INFO - [1] Cleaned tmp directory: /BDSP/interfaces/tmp/813e5d79f6bcc1bd
+2025-11-12 15:02:23,083 - INFO - [1] Completed successfully (2/2)
+2025-11-12 15:02:23,089 - INFO - Execution completed: 2 succeeded, 0 failed
+2025-11-12 15:02:23,089 - INFO - All 2 commands completed successfully
+2025-11-12 15:02:23,089 - INFO - Starting CIVET cleanup for 2 results
+2025-11-12 15:02:23,089 - INFO - Processing result[0]
+2025-11-12 15:02:23,090 - INFO - All required folders validated
+2025-11-12 15:02:23,090 - INFO - Renaming all files to BIDS format
+2025-11-12 15:02:23,173 - INFO - Renamed 205 files to BIDS format
+2025-11-12 15:02:23,173 - INFO - Converting .mnc files to .nii.gz
+2025-11-12 15:02:23,179 - INFO - Found 21 .mnc files to convert
+2025-11-12 15:03:16,666 - INFO - Converted 21 .mnc files to .nii.gz
+2025-11-12 15:03:16,666 - INFO - Creating cleanup result
+2025-11-12 15:03:16,675 - INFO - Cleanup result created with 9 stages
+2025-11-12 15:03:16,675 - INFO - Cleanup completed for result[0]
+2025-11-12 15:03:16,675 - INFO - Processing result[1]
+2025-11-12 15:03:16,676 - INFO - All required folders validated
+2025-11-12 15:03:16,676 - INFO - Renaming all files to BIDS format
+2025-11-12 15:03:16,767 - INFO - Renamed 205 files to BIDS format
+2025-11-12 15:03:16,767 - INFO - Converting .mnc files to .nii.gz
+2025-11-12 15:03:16,774 - INFO - Found 21 .mnc files to convert
+2025-11-12 15:04:12,363 - INFO - Converted 21 .mnc files to .nii.gz
+2025-11-12 15:04:12,364 - INFO - Creating cleanup result
+2025-11-12 15:04:12,374 - INFO - Cleanup result created with 9 stages
+2025-11-12 15:04:12,374 - INFO - Cleanup completed for result[1]
+2025-11-12 15:04:12,374 - INFO - CIVET cleanup completed: 2 results
+2025-11-12 15:04:12,374 - INFO - Extracted modality: T1w
+2025-11-12 15:04:12,374 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 15:04:12,374 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,695 - INFO - Original JSON file found, loading metadata
+2025-11-12 15:04:12,697 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-canonical_T1w.json
+2025-11-12 15:04:12,697 - INFO - Added derivative entry (process=T1wPreprocess, space=orig, package=civet)
+2025-11-12 15:04:12,697 - INFO -   with 9 output stages
+2025-11-12 15:04:12,733 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,733 - INFO - Created sidecar for index 0: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,733 - INFO - Extracted modality: T1w
+2025-11-12 15:04:12,733 - INFO - Looking for original JSON: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 15:04:12,733 - INFO - Target JSON path: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,883 - INFO - Original JSON file found, loading metadata
+2025-11-12 15:04:12,884 - INFO - Loaded metadata from: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/canonical/orig/canonical/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-canonical_T1w.json
+2025-11-12 15:04:12,884 - INFO - Added derivative entry (process=T1wPreprocess, space=orig, package=civet)
+2025-11-12 15:04:12,884 - INFO -   with 9 output stages
+2025-11-12 15:04:12,894 - INFO - Sidecar JSON file saved successfully: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,894 - INFO - Created sidecar for index 1: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,894 - INFO - Created 2 sidecar file(s) out of 2
+2025-11-12 15:04:12,894 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 15:04:12,904 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat
+2025-11-12 15:04:12,904 - INFO - Running bdsp_walk on output_dir: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 15:04:12,914 - INFO - Successfully created file list JSON in: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat
+2025-11-12 15:04:12,914 - INFO - Reading JSON file: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 15:04:12,927 - INFO - Found matching flag: process=T1wPreprocess, package=civet
+2025-11-12 15:04:12,927 - INFO - Updated derivatives[0]:
+2025-11-12 15:04:12,928 - INFO -   - outputs: 9 stages
+2025-11-12 15:04:12,928 - INFO -     - thickness: 6 files
+2025-11-12 15:04:12,928 - INFO -     - temp: 7 files
+2025-11-12 15:04:12,928 - INFO -     - transforms: 7 files
+2025-11-12 15:04:12,928 - INFO -     - mask: 2 files
+2025-11-12 15:04:12,928 - INFO -     - final: 2 files
+2025-11-12 15:04:12,928 - INFO -     - surfaces: 27 files
+2025-11-12 15:04:12,929 - INFO -     - verify: 11 files
+2025-11-12 15:04:12,929 - INFO -     - native: 2 files
+2025-11-12 15:04:12,929 - INFO -     - classify: 8 files
+2025-11-12 15:04:12,929 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-01/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-01_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,929 - INFO -   - byproduct: {}
+2025-11-12 15:04:12,929 - INFO - Updated derivatives[1]:
+2025-11-12 15:04:12,929 - INFO -   - outputs: 9 stages
+2025-11-12 15:04:12,929 - INFO -     - native: 2 files
+2025-11-12 15:04:12,929 - INFO -     - verify: 11 files
+2025-11-12 15:04:12,930 - INFO -     - final: 2 files
+2025-11-12 15:04:12,930 - INFO -     - thickness: 6 files
+2025-11-12 15:04:12,930 - INFO -     - temp: 7 files
+2025-11-12 15:04:12,930 - INFO -     - transforms: 7 files
+2025-11-12 15:04:12,930 - INFO -     - surfaces: 27 files
+2025-11-12 15:04:12,930 - INFO -     - mask: 2 files
+2025-11-12 15:04:12,930 - INFO -     - classify: 8 files
+2025-11-12 15:04:12,930 - INFO -   - sidecar: /BDSP/interfaces/working/CNA_lab/cna0000/1/Hanyang/IMAGE/BRAIN/DATA/derivatives/T1wPreprocess/orig/civet/sub-2cna00001Hanyangparknm/ses-01/run-02/exe-01/anat/sub-2cna00001Hanyangparknm_ses-01_run-02_exe-01_drv-civet_T1w.json
+2025-11-12 15:04:12,931 - INFO -   - byproduct: {}
+2025-11-12 15:04:12,931 - INFO - Set status='done' for flag process=T1wPreprocess, package=civet
+2025-11-12 15:04:12,931 - INFO - Writing updated JSON to: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 15:04:12,958 - INFO - JSON file updated successfully
+2025-11-12 15:04:12,958 - INFO - Export successful, backing up JSON file...
+2025-11-12 15:04:12,966 - INFO - JSON file backed up successfully
+2025-11-12 15:04:12,966 - INFO -   Source: /BDSP/interfaces/working/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 15:04:12,966 - INFO -   Backup: /BDSP/interfaces/event/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 15:04:12,967 - INFO - Backup completed: /BDSP/interfaces/event/pkm_parknm_99999999_20251112104605_export.json
+2025-11-12 15:04:12,967 - INFO - All commands executed successfully
+2025-11-12 15:04:12,967 - INFO - Successfully processed: pkm_parknm_99999999_20251112104605_export.json
+2025-11-17 08:37:01,032 - INFO - Starting JSON file monitoring...
+2025-11-17 08:37:01,033 - INFO - Monitoring for: process=T1wPreprocess, package=civet, status=pending
+2025-12-22 07:08:04,819 - INFO - Starting JSON file monitoring...
+2025-12-22 07:08:04,820 - INFO - Monitoring for: process=T1wPreprocess, package=civet, status=pending
+2025-12-22 07:08:24,573 - INFO - Starting JSON file monitoring...
+2025-12-22 07:08:24,573 - INFO - Monitoring for: process=T1wPreprocess, package=civet, status=pending

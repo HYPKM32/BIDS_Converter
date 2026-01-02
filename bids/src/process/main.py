@@ -289,11 +289,56 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
                     print(f"MRI 도메인 source 처리 완료 (Domain: {domain})")
                     
                 elif domain == "PET":
-                    # CT 도메인인 경우 CT 모듈 사용
-                    from process.components.domain.pet import source as pet_source
-                    from process.components.domain.pet import raw as pet_raw
-                    from process.components.domain.pet import thumbnail as pet_thumbnail
-                    print(f"PET 도메인 source 처리 완료")
+                    from process.components.domain.pet.source import source as pet_source
+                    from process.components.domain.pet.raw import raw as pet_raw
+                    from process.components.domain.pet.post import bids_checker as pet_checker
+                    from process.components.domain.pet.post import byproduct as pet_byproduct
+                    from process.components.domain.pet.post import thumbnail as pet_thumbnail
+
+                    # source_path로 받아서 개별 변수로 저장
+                    source_path = pet_source.create_source_path(structured_config, mss_path, origin_unzip_path)
+                    paths = update_paths_after_step(paths, "step3_source",
+                                source_path=source_path)
+
+                    logger.info(f"Step 4: Domain '{domain}'에 따른 raw 처리")
+                    raw_path = pet_raw.create_raw_path(structured_config, source_path, global_vars)
+                    paths = update_paths_after_step(paths, "step4_raw",
+                                raw_path=raw_path)
+
+                    logger.info(f"Step 5-1: Domain '{domain}' 후처리: BIDS tracer Checker")
+                    bids_checklist = pet_checker.check_modality(raw_path)
+                    paths = update_paths_after_step(paths, "step5_checklist",
+                                bids_checklist=bids_checklist)
+
+                    logger.info(f"Step 5-2: Domain '{domain}' 후처리: BIDS Byproduct Checker")
+                    byproduct_path = pet_byproduct.check_byproduct(raw_path)
+
+
+                    logger.info(f"Step 5-3: Domain '{domain}' 후처리: Thumbnail 생성")
+                    thumbnail_path = pet_thumbnail.thumbnail(raw_path)
+
+                    raw_to_source = {}
+                    for source_key, raw_key in raw_path.items():
+                        raw_to_source[raw_key] = source_key
+
+
+                    for nifti_key in bids_checklist.keys():
+                        # byproduct 추가
+                        if nifti_key in byproduct_path:
+                            bids_checklist[nifti_key]['byproduct'] = byproduct_path[nifti_key]
+
+                        # thumbnail 추가
+                        if nifti_key in thumbnail_path:
+                            bids_checklist[nifti_key]['thumbnail'] = thumbnail_path[nifti_key]
+
+                        # source 추가
+                        if nifti_key in raw_to_source:
+                            bids_checklist[nifti_key]['source'] = raw_to_source[nifti_key]
+
+                    # 통합된 checklist만 paths에 업데이트
+                    paths = update_paths_after_step(paths, "step5_checklist",
+                                bids_checklist=bids_checklist)
+                    print(f"PET 도메인 처리 완료")
                     
                 else:
                     # 지원되지 않는 도메인인 경우 에러 처리

@@ -54,5 +54,11 @@
   "ct": {
     "CR": {"subject": "label", "session": "label", "run": "index"},
     "DX": {"subject": "label", "session": "label", "run": "index"}
+  },
+  "pet":{
+    "pet": {"subject": "label", "session": "label", "trc": "label", "run": "index"},
+    "events": {"subject": "label", "session": "label","task": "label" ,"trc": "label", "run": "index"},
+    "physio": {"subject": "label", "session": "label","task": "label" ,"trc": "label", "run": "index"},
+    "stim": {"subject": "label", "session": "label","task": "label" ,"trc": "label", "run": "index"}
   }
 }
