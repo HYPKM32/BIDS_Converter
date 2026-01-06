@@ -132,12 +132,12 @@ def create_source_path(structured_config, mss_path, origin_unzip_path):
         public = '1' if request['public'] else '2'
         project_code = request['projectCode']
         project_seq = request['projectSeq']
-        org_id = request['orgId']
+        org_no = request['orgNo']
         subject_id = request['subjectId']
 
         # 2) source 경로 및 alias/session/format
         source_path = Path(mss_path) / 'sourcedata'
-        alias_id = f"{public}{project_code}{project_seq}{org_id}{subject_id}"
+        alias_id = f"{public}{project_code}{project_seq}{org_no}{subject_id}"
         session_num = common.zero_fill(request['trialIndex'])
 
         # PET은 DICOM만 지원

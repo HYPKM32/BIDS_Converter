@@ -121,18 +121,20 @@ def validate_and_initialize_config(config):
                 'user': config['user'],
                 'systemId': config['systemId'],
                 'projectCode': config['projectCode'],
+                'projectName': config['projectName'],
                 'projectSeq': config['projectSeq'],
                 'orgId': config['orgId'],
+                'orgNo': config['orgNo'],
                 'trialIndex': config['trialIndex'],
                 'uploadTime': config['uploadTime'],
                 'domain': config['domain'],
-                'bodyPart': config['bodyPart'],  
+                'bodyPart': config['bodyPart'],
                 'category': config['category'],
                 'public': config['public'],
                 'subjectId': config['subjectId']
             },
             'task': config['task'],
-            'flag': config['flag'] 
+            'flag': config['flag']
         }
         
         # 모든 딕셔너리 문자열 값에서 공백 제거
@@ -240,6 +242,7 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
                     from process.components.domain.mri.source import source as mri_source
                     from process.components.domain.mri.raw import raw as mri_raw
                     from process.components.domain.mri.post import bids_checker as mri_checker
+                    from process.components.domain.mri.post import metadata_adder as mri_metadata_adder
                     from process.components.domain.mri.post import byproduct as mri_byproduct
                     from process.components.domain.mri.post import thumbnail as mri_thumbnail
                     # source_path로 받아서 개별 변수로 저장
@@ -256,12 +259,16 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
                     bids_checklist = mri_checker.check_modality(raw_path)
                     paths = update_paths_after_step(paths,"step5_checklist",
                                 bids_checklist=bids_checklist)
-                    
-                    logger.info(f"Step 5-2: Domain '{domain}' 후처리: BIDS mdality Byproduct Checker")
+
+                    logger.info(f"Step 5-2: Domain '{domain}' 후처리: Metadata 추가")
+                    format_name = os.path.basename(source_path['format_path'])
+                    bids_checklist = mri_metadata_adder.add_metadata(bids_checklist, raw_path, format_name)
+
+                    logger.info(f"Step 5-3: Domain '{domain}' 후처리: BIDS mdality Byproduct Checker")
                     byproduct_path = mri_byproduct.check_byproduct(raw_path)
-                    
-                    
-                    logger.info(f"Step 5-3: Domain '{domain}' 후처리: Thumbnail 생성")
+
+
+                    logger.info(f"Step 5-4: Domain '{domain}' 후처리: Thumbnail 생성")
                     thumbnail_path = mri_thumbnail.thumbnail(raw_path)
                     
                     raw_to_source = {}
@@ -292,6 +299,7 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
                     from process.components.domain.pet.source import source as pet_source
                     from process.components.domain.pet.raw import raw as pet_raw
                     from process.components.domain.pet.post import bids_checker as pet_checker
+                    from process.components.domain.pet.post import metadata_adder as pet_metadata_adder
                     from process.components.domain.pet.post import byproduct as pet_byproduct
                     from process.components.domain.pet.post import thumbnail as pet_thumbnail
 
@@ -310,11 +318,14 @@ def main(json_file_path, upload_dir=None, backup_dir=None, error_dir=None, worki
                     paths = update_paths_after_step(paths, "step5_checklist",
                                 bids_checklist=bids_checklist)
 
-                    logger.info(f"Step 5-2: Domain '{domain}' 후처리: BIDS Byproduct Checker")
+                    logger.info(f"Step 5-2: Domain '{domain}' 후처리: Metadata 추가")
+                    bids_checklist = pet_metadata_adder.add_metadata(bids_checklist, raw_path)
+
+                    logger.info(f"Step 5-3: Domain '{domain}' 후처리: BIDS Byproduct Checker")
                     byproduct_path = pet_byproduct.check_byproduct(raw_path)
 
 
-                    logger.info(f"Step 5-3: Domain '{domain}' 후처리: Thumbnail 생성")
+                    logger.info(f"Step 5-4: Domain '{domain}' 후처리: Thumbnail 생성")
                     thumbnail_path = pet_thumbnail.thumbnail(raw_path)
 
                     raw_to_source = {}

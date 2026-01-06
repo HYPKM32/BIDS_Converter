@@ -6,8 +6,6 @@ import pydicom
 from pydicom.errors import InvalidDicomError
 import shutil
 import os
-import re
-from collections import defaultdict
 import nibabel as nib
 import numpy as np
 from typing import List, Tuple
@@ -223,10 +221,23 @@ class DicomValidator:
         groups: dict[tuple[str, str], list[Path]] = {}
 
         for item in data.get("path", []):
-            p = Path(item.get("file_path", ""))
-            cur = self.invalid_data_path / p.name
-            if not cur.exists():
-                logger.error(f"File not found: {cur}")
+            file_path = item.get("file_path", "")
+            if not file_path:
+                continue
+
+            # file_path는 원본 파일의 절대 경로, 파일명만 추출
+            src_filename = Path(file_path).name
+
+            # invalid_data에서 재귀적으로 파일 찾기
+            cur = None
+            for file in self.invalid_data_path.rglob(src_filename):
+                if file.is_file():
+                    cur = file
+                    break
+
+            if not cur:
+                # 파일이 복사되지 않았으면 건너뛰기
+                logger.debug(f"File not found in invalid_data (skipped): {src_filename}")
                 continue
             try:
                 ds = pydicom.dcmread(str(cur), stop_before_pixels=True, force=True)
@@ -270,6 +281,28 @@ class ParrecValidator:
         self.invalid_data_path = Path(invalid_data_path)
         self.valid_data_path = Path(valid_data_path)
 
+    def _fix_par_header(self, par_file: Path) -> None:
+        """PAR 파일 헤더의 CLINICAL TRYOUT 라인 수정"""
+        correct_line = "# CLINICAL TRYOUT             Research image export tool     V4.2"
+
+        try:
+            with open(par_file, 'r', encoding='utf-8', errors='ignore') as f:
+                lines = f.readlines()
+
+            modified = False
+            for i, line in enumerate(lines):
+                if "# CLINICAL TRYOUT" in line and line.strip() != correct_line:
+                    lines[i] = correct_line + "\n"
+                    modified = True
+                    break  # 보통 첫 번째만 있으므로
+
+            if modified:
+                with open(par_file, 'w', encoding='utf-8') as f:
+                    f.writelines(lines)
+                logger.info(f"Fixed CLINICAL TRYOUT header in {par_file.name}")
+        except Exception as e:
+            logger.warning(f"Failed to fix PAR header {par_file.name}: {e}")
+
     def run(self) -> List[Tuple[str, str]] | None:
         jpath = self.invalid_data_path / "bdsp_file_list.json"
         if not jpath.exists():
@@ -285,10 +318,23 @@ class ParrecValidator:
         pairs: dict[str, dict[str, Path | None]] = {}
 
         for item in data.get("path", []):
-            p = Path(item.get("file_path", ""))
-            cur = self.invalid_data_path / p.name
-            if not cur.exists():
-                logger.error(f"File not found: {cur}")
+            file_path = item.get("file_path", "")
+            if not file_path:
+                continue
+
+            # file_path는 원본 파일의 절대 경로, 파일명만 추출
+            src_filename = Path(file_path).name
+
+            # invalid_data에서 재귀적으로 파일 찾기
+            cur = None
+            for file in self.invalid_data_path.rglob(src_filename):
+                if file.is_file():
+                    cur = file
+                    break
+
+            if not cur:
+                # 파일이 복사되지 않았으면 건너뛰기
+                logger.debug(f"File not found in invalid_data (skipped): {src_filename}")
                 continue
 
             suf = cur.suffix.lower()
@@ -311,6 +357,9 @@ class ParrecValidator:
             if not validate_parrec_files(str(par_file)):
                 logger.error(f"Invalid PAR/REC: {par_file.name} / {rec_file.name}")
                 continue
+
+            # PAR 헤더 수정
+            self._fix_par_header(par_file)
 
             set_id = "set-" + _sha1(f"{par_file.name}|{rec_file.name}")
             target_dir = self.valid_data_path / set_id
@@ -353,10 +402,23 @@ class NiftiValidator:
         groups: dict[str, list[Path]] = {}
 
         for item in data.get("path", []):
-            p = Path(item.get("file_path", ""))
-            cur = self.invalid_data_path / p.name
-            if not cur.exists():
-                logger.error(f"File not found: {cur}")
+            file_path = item.get("file_path", "")
+            if not file_path:
+                continue
+
+            # file_path는 원본 파일의 절대 경로, 파일명만 추출
+            src_filename = Path(file_path).name
+
+            # invalid_data에서 재귀적으로 파일 찾기
+            cur = None
+            for file in self.invalid_data_path.rglob(src_filename):
+                if file.is_file():
+                    cur = file
+                    break
+
+            if not cur:
+                # 파일이 복사되지 않았으면 건너뛰기
+                logger.debug(f"File not found in invalid_data (skipped): {src_filename}")
                 continue
             name_low = cur.name.lower()
             if cur.suffix.lower() == '.nii' or name_low.endswith('.nii.gz'):

@@ -18,12 +18,16 @@ class DicomTracerMapper:
     def _load_tracer_mapping(self):
         """DICOM tracer 매핑 JSON 파일 로드"""
         request = self.structured_config['request']
-        filename = f"{request['systemId']}_{request['projectCode']}_{request['projectSeq']}_{request['orgId']}_dicom_tracer.json"
+        filename = f"{request['systemId']}_{request['projectName']}_{request['projectSeq']}_{request['orgId']}_dicom_tracer.json"
         mapping_path = os.path.join(self.global_vars['dicom_modality'], filename)
+
+        logger.info(f"Loading tracer mapping from: {mapping_path}")
 
         try:
             with open(mapping_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                mapping = json.load(f)
+                logger.info(f"Tracer mapping loaded successfully. Tracers: {list(mapping.keys())}")
+                return mapping
         except FileNotFoundError:
             logger.error(f"DICOM tracer mapping file not found: {mapping_path}")
             return {}

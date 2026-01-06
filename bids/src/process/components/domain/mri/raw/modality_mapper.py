@@ -18,7 +18,7 @@ class DicomMapper:
     def _load_modality_mapping(self):
         """DICOM 모달리티 매핑 JSON 파일 로드"""
         request = self.structured_config['request']
-        filename = f"{request['systemId']}_{request['projectCode']}_{request['projectSeq']}_{request['orgId']}_dicom_modality.json"
+        filename = f"{request['systemId']}_{request['projectName']}_{request['projectSeq']}_{request['orgId']}_dicom_modality.json"
         mapping_path = os.path.join(self.global_vars['dicom_modality'], filename)
         
         try:
@@ -114,7 +114,7 @@ class ParrecMapper:
     def _load_modality_mapping(self):
         """PARREC 모달리티 매핑 JSON 파일 로드"""
         request = self.structured_config['request']
-        filename = f"{request['systemId']}_{request['projectCode']}_{request['projectSeq']}_{request['orgId']}_parrec_modality.json"
+        filename = f"{request['systemId']}_{request['projectName']}_{request['projectSeq']}_{request['orgId']}_parrec_modality.json"
         mapping_path = os.path.join(self.global_vars['parrec_modality'], filename)
         
         try:

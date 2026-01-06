@@ -55,7 +55,8 @@ RUN pip3 install --no-cache-dir \
     python-multipart \
     httpx \
     watchdog \
-    requests
+    requests \ 
+    pyyaml
 
 WORKDIR /BDSP/bids_app
 

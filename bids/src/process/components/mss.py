@@ -175,22 +175,24 @@ def create_mss_structure(structured_config, global_vars):
         # Entity 변수들 선언
         system_id = request['systemId']
         project_code = request['projectCode']
+        project_name = request['projectName']
         project_seq = request['projectSeq']
         org_id = request['orgId']
+        org_no = request['orgNo']
         category = request['category']
-        body_part = request['bodyPart']  
+        body_part = request['bodyPart']
         domain = request['domain']
-        
-        # MSS 경로 구성: working_dir/system_id/project_code/project_seq/org_id/category/body_part/domain
+
+        # MSS 경로 구성: working_dir/system_id/project_name/project_seq/org_id/category/body_part/DATA
         mss_path = os.path.join(
             working_dir,
             system_id,
-            project_code,
+            project_name,
             project_seq,
             org_id,
             category,
             body_part,
-            domain
+            "DATA"
         )
         
         # MSS 경로가 이미 존재하는지 확인

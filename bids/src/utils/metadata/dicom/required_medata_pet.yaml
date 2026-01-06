@@ -1,0 +1,33 @@
+present:
+  TracerName:
+    source: "bids:trc"
+  TracerRadionuclide:
+    - "(0008,0100)"
+    - "(0008,0104)"
+  InjectedRadioactivity: "(0018,1074)"
+  FrameDuration: "(0018,1242)"
+  FrameTimesStart: "(0054,0032)"
+  ScanStart:
+    - "(0008,0032)"
+    - "(0008,002A)"
+  InjectionStart: "(0018,1072)"
+  ImageDecayCorrectionTime: ""
+  ReconMethodName: "(0054,1103)"
+  ReconMethodParameterLabels: "(0054,1103)"
+  ReconFilterType: "(0018,1210)"
+  AttenuationCorrection: "(0054,1101)"
+  Manufacturer: "(0008,0070)"
+  ManufacturersModelName: "(0008,1090)"
+  Units: "(0054,1001)"
+
+absent:
+  InjectedRadioactivityUnits: "unknown"
+  InjectedMass: "n/a"
+  InjectedMassUnits: "n/a"
+  SpecificRadioactivity: "n/a"
+  SpecificRadioactivityUnits: "unknown"
+  ModeOfAdministration: "unknown"
+  TimeZero: "unknown"
+  ScanStart: "unknown"
+  AcquisitionMode: "unknown"
+  ImageDecayCorrected: true

@@ -43,11 +43,11 @@ def get_suffix_map():
 #################################################################
 #                   2. MODALITY MAPPING 저장                    #
 #################################################################
-@router.post("/mapping/{file_format}/{system_id}/{project_code}/{project_seq}/{org_id}")
+@router.post("/mapping/{file_format}/{system_id}/{project_name}/{project_seq}/{org_id}")
 async def save_modality_mapping(
     file_format: str,
     system_id: str,
-    project_code: str,
+    project_name: str,
     project_seq: str,
     org_id: str,
     modality_data: dict
@@ -60,21 +60,21 @@ async def save_modality_mapping(
         file_format_lower = file_format.lower()
         if file_format_lower not in ['dicom', 'parrec']:
             raise HTTPException(
-                status_code=400, 
+                status_code=400,
                 detail="file_format must be 'dicom' or 'parrec'"
             )
-        
+
         # 폴더 경로 결정
         if file_format_lower == 'dicom':
             base_path = Path(DICOM_MODALITY)
         else:  # parrec
             base_path = Path(PARREC_MODALITY)
-        
+
         # 폴더 생성
         base_path.mkdir(parents=True, exist_ok=True)
-        
+
         # 파일명 생성
-        filename = f"{system_id}_{project_code}_{project_seq}_{org_id}_{file_format_lower}_modality.json"
+        filename = f"{system_id}_{project_name}_{project_seq}_{org_id}_{file_format_lower}_modality.json"
         filepath = base_path / filename
         
         # 기존 파일 확인
@@ -110,6 +110,79 @@ async def save_modality_mapping(
         raise HTTPException(
             status_code=500, 
             detail=f"Failed to save modality mapping: {str(e)}"
+        )
+
+
+#################################################################
+#                   3. TRACER MAPPING 저장                      #
+#################################################################
+@router.post("/tracer/{file_format}/{system_id}/{project_name}/{project_seq}/{org_id}")
+async def save_tracer_mapping(
+    file_format: str,
+    system_id: str,
+    project_name: str,
+    project_seq: str,
+    org_id: str,
+    tracer_data: dict
+):
+    """
+    Tracer mapping JSON 저장 (있으면 merge, 없으면 생성)
+    """
+    try:
+        # fileFormat 소문자 변환 및 검증
+        file_format_lower = file_format.lower()
+        if file_format_lower not in ['dicom', 'parrec']:
+            raise HTTPException(
+                status_code=400,
+                detail="file_format must be 'dicom' or 'parrec'"
+            )
+
+        # 폴더 경로 결정
+        if file_format_lower == 'dicom':
+            base_path = Path(DICOM_MODALITY)
+        else:  # parrec
+            base_path = Path(PARREC_MODALITY)
+
+        # 폴더 생성
+        base_path.mkdir(parents=True, exist_ok=True)
+
+        # 파일명 생성 (tracer.json)
+        filename = f"{system_id}_{project_name}_{project_seq}_{org_id}_{file_format_lower}_tracer.json"
+        filepath = base_path / filename
+
+        # 기존 파일 확인
+        file_existed = filepath.exists()
+
+        if file_existed:
+            # 기존 파일 읽기
+            with open(filepath, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+
+            # Merge 로직
+            merged_data = merge_modality_data(existing_data, tracer_data)
+        else:
+            # 새 파일
+            merged_data = tracer_data
+
+        # 파일 저장
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(merged_data, f, indent=2, ensure_ascii=False)
+
+        return {
+            "status": "success",
+            "message": "Tracer mapping saved successfully",
+            "filepath": str(filepath),
+            "filename": filename,
+            "merged": file_existed,
+            "data": merged_data
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to save tracer mapping: {str(e)}"
         )
 
 
