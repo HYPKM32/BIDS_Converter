@@ -20,6 +20,7 @@ services:
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
       - canonical_flag:/BDSP/interfaces/flag/canonical/canonical
       - T1wPreprocess-civet_flag:/BDSP/interfaces/flag/T1wPreprocess/civet
+      - PYTHONPATH=/BDSP/bids_app/src
     ports:
       - "210.117.210.9:8896:8896"
     dns:
@@ -29,7 +30,7 @@ services:
       - PORT=8896
     stdin_open: true 
     tty: true           
-    command: /bin/bash
+    command: ["python3","/BDSP/bids_app/src/app.py"]
 ###############################################################################
   defacing-defacer:
     build:

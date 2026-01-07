@@ -28,6 +28,9 @@ task_store: Dict[str, dict] = {}
 # ThreadPoolExecutor for CPU-bound tasks
 executor = ThreadPoolExecutor(max_workers=MAX_WORKERS)
 
+# 청크 크기 (10MB) - 대용량 파일 업로드용
+CHUNK_SIZE = 10 * 1024 * 1024
+
 #################################################################
 #                   1. EVENT JSON 저장                          #
 #################################################################
@@ -129,10 +132,15 @@ async def request_single(
         subject_id = event_dict.get("subjectId")
         upload_time = event_dict.get("uploadTime")
 
-        if not all([user, subject_id, upload_time]):
+        # uploadTime이 빈 문자열일 경우 현재 시간으로 채움 (YYMMDDHHmmssSSS 형식)
+        if not upload_time:
+            upload_time = datetime.now().strftime("%y%m%d%H%M%S") + datetime.now().strftime("%f")[:3]
+            event_dict["uploadTime"] = upload_time
+
+        if not all([user, subject_id]):
             raise HTTPException(
                 status_code=400,
-                detail="Missing required keys: user, subjectId, uploadTime"
+                detail="Missing required keys: user, subjectId"
             )
 
         # 3. ZIP 파일 확인
@@ -272,12 +280,29 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
         with zipfile.ZipFile(temp_zip_path, 'r') as zipf:
             zipf.extractall(extract_dir)
 
-        # Subject 폴더 탐색
-        subject_folders = [f for f in extract_dir.iterdir() if f.is_dir()]
+        # DCM 파일이 있는 폴더들을 subject로 인식
+        subject_folders = set()
+        for dcm_file in extract_dir.rglob("*.dcm"):
+            # DCM 파일의 부모 폴더를 subject로
+            subject_folders.add(dcm_file.parent)
+
+        # PAR/REC 파일도 확인
+        for par_file in extract_dir.rglob("*.par"):
+            subject_folders.add(par_file.parent)
+        for par_file in extract_dir.rglob("*.PAR"):
+            subject_folders.add(par_file.parent)
+
+        # NIfTI 파일도 확인
+        for nii_file in extract_dir.rglob("*.nii"):
+            subject_folders.add(nii_file.parent)
+        for nii_file in extract_dir.rglob("*.nii.gz"):
+            subject_folders.add(nii_file.parent)
+
+        subject_folders = list(subject_folders)
 
         if not subject_folders:
             task_store[task_id]["status"] = "failed"
-            task_store[task_id]["error"] = "No subject folders found in ZIP file"
+            task_store[task_id]["error"] = "No imaging files (DCM, PAR/REC, NIfTI) found in ZIP file"
             return
 
         total_subjects = len(subject_folders)
@@ -315,8 +340,14 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
         for idx, subject_folder in enumerate(subject_folders):
             subject_name = subject_folder.name
 
+            # uploadTime이 빈 문자열일 경우에만 각 subject마다 고유한 uploadTime 생성
+            if not upload_time:
+                subject_upload_time = datetime.now().strftime("%y%m%d%H%M%S") + datetime.now().strftime("%f")[:3]
+            else:
+                subject_upload_time = upload_time
+
             # Upload 경로 생성
-            upload_path = Path(UPLOAD_DIR) / user / subject_name / upload_time
+            upload_path = Path(UPLOAD_DIR) / user / subject_name / subject_upload_time
             upload_path.mkdir(parents=True, exist_ok=True)
 
             # Subject ZIP 생성 및 저장
@@ -340,6 +371,7 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
             # subject별 event_dict 생성
             subject_event = event_dict.copy()
             subject_event["subjectId"] = subject_name
+            subject_event["uploadTime"] = subject_upload_time
 
             with open(event_filepath, 'w', encoding='utf-8') as f:
                 json.dump(subject_event, f, indent=2, ensure_ascii=False)
@@ -394,24 +426,27 @@ async def request_multiple(
 
         # 2. 필수 키 추출 (subjectId는 제외)
         user = event_dict.get("user")
-        upload_time = event_dict.get("uploadTime")
+        upload_time = event_dict.get("uploadTime", "")
 
-        if not all([user, upload_time]):
+        # uploadTime은 빈 문자열이면 _process_multiple_subjects에서 각 subject마다 생성됨
+
+        if not user:
             raise HTTPException(
                 status_code=400,
-                detail="Missing required keys: user, uploadTime"
+                detail="Missing required key: user"
             )
 
         # 3. ZIP 파일 확인
         if not data.filename.endswith('.zip'):
             raise HTTPException(status_code=400, detail="Only ZIP files are allowed")
 
-        # 4. 임시 디렉토리에 ZIP 저장
+        # 4. 임시 디렉토리에 ZIP 저장 (청크 단위)
         temp_dir = tempfile.mkdtemp()
         temp_zip_path = Path(temp_dir) / data.filename
 
         with open(temp_zip_path, "wb") as buffer:
-            shutil.copyfileobj(data.file, buffer)
+            while chunk := await data.read(CHUNK_SIZE):
+                buffer.write(chunk)
 
         # 5. Task ID 생성 및 상태 초기화
         task_id = str(uuid.uuid4())
@@ -546,9 +581,12 @@ async def download_path(request_body: dict = {}):
 
         with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for file_path in target_path.rglob("*"):
+                arcname = file_path.relative_to(target_path)
                 if file_path.is_file():
-                    arcname = file_path.relative_to(target_path)
                     zipf.write(file_path, arcname)
+                elif file_path.is_dir():
+                    # 빈 폴더도 포함하기 위해 디렉토리 엔트리 추가
+                    zipf.write(file_path, str(arcname) + "/")
 
         zip_buffer.seek(0)
 
