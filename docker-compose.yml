@@ -20,7 +20,6 @@ services:
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
       - canonical_flag:/BDSP/interfaces/flag/canonical/canonical
       - T1wPreprocess-civet_flag:/BDSP/interfaces/flag/T1wPreprocess/civet
-      - PYTHONPATH=/BDSP/bids_app/src
     ports:
       - "210.117.210.9:8896:8896"
     dns:

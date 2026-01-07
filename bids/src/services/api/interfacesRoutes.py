@@ -280,29 +280,25 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
         with zipfile.ZipFile(temp_zip_path, 'r') as zipf:
             zipf.extractall(extract_dir)
 
-        # DCM 파일이 있는 폴더들을 subject로 인식
-        subject_folders = set()
-        for dcm_file in extract_dir.rglob("*.dcm"):
-            # DCM 파일의 부모 폴더를 subject로
-            subject_folders.add(dcm_file.parent)
+        # 최상단 폴더 찾기 (ZIP 내 첫 번째 폴더)
+        top_level_items = list(extract_dir.iterdir())
 
-        # PAR/REC 파일도 확인
-        for par_file in extract_dir.rglob("*.par"):
-            subject_folders.add(par_file.parent)
-        for par_file in extract_dir.rglob("*.PAR"):
-            subject_folders.add(par_file.parent)
+        # 최상단 폴더가 하나만 있는 경우 그것을 루트로 사용
+        if len(top_level_items) == 1 and top_level_items[0].is_dir():
+            root_dir = top_level_items[0]
+        else:
+            # 여러 항목이 있으면 extract_dir 자체를 루트로 사용
+            root_dir = extract_dir
 
-        # NIfTI 파일도 확인
-        for nii_file in extract_dir.rglob("*.nii"):
-            subject_folders.add(nii_file.parent)
-        for nii_file in extract_dir.rglob("*.nii.gz"):
-            subject_folders.add(nii_file.parent)
-
-        subject_folders = list(subject_folders)
+        # 두번째 폴더들 (root_dir의 직접 하위 폴더들)을 subject로 인식
+        subject_folders = []
+        for item in root_dir.iterdir():
+            if item.is_dir():
+                subject_folders.append(item)
 
         if not subject_folders:
             task_store[task_id]["status"] = "failed"
-            task_store[task_id]["error"] = "No imaging files (DCM, PAR/REC, NIfTI) found in ZIP file"
+            task_store[task_id]["error"] = "No subject folders found in ZIP file"
             return
 
         total_subjects = len(subject_folders)
