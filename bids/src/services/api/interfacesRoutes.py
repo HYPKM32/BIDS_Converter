@@ -291,43 +291,35 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
             root_dir = extract_dir
 
         # 두번째 폴더들 (root_dir의 직접 하위 폴더들)을 subject로 인식
+        # 유효한 이미징 파일(DICOM, PAR/REC, NIfTI)이 있는 폴더만 처리
         subject_folders = []
+        validation_results = {}
+        skipped_folders = []
+
         for item in root_dir.iterdir():
             if item.is_dir():
-                subject_folders.append(item)
+                validation = validate_subject_folder(item)
+                if validation["valid"]:
+                    subject_folders.append(item)
+                    validation_results[item.name] = validation
+                else:
+                    # 유효하지 않은 폴더는 스킵 (빈 폴더 등)
+                    skipped_folders.append({
+                        "name": item.name,
+                        "reason": validation["error"]
+                    })
 
         if not subject_folders:
             task_store[task_id]["status"] = "failed"
-            task_store[task_id]["error"] = "No subject folders found in ZIP file"
+            task_store[task_id]["error"] = {
+                "message": "No valid subject folders found in ZIP file",
+                "skipped_folders": skipped_folders
+            }
             return
 
         total_subjects = len(subject_folders)
         task_store[task_id]["total"] = total_subjects
         task_store[task_id]["processed"] = 0
-
-        # 각 subject 유효성 검사
-        validation_results = {}
-        for subject_folder in subject_folders:
-            subject_name = subject_folder.name
-            validation_results[subject_name] = validate_subject_folder(subject_folder)
-
-        # 유효하지 않은 subject 확인
-        invalid_subjects = [
-            name for name, result in validation_results.items()
-            if not result["valid"]
-        ]
-
-        if invalid_subjects:
-            errors = {
-                name: validation_results[name]["error"]
-                for name in invalid_subjects
-            }
-            task_store[task_id]["status"] = "failed"
-            task_store[task_id]["error"] = {
-                "message": "Validation failed for some subjects",
-                "invalid_subjects": errors
-            }
-            return
 
         # 각 subject별로 ZIP 생성 및 저장
         upload_results = []
@@ -388,7 +380,8 @@ def _process_multiple_subjects(task_id: str, event_dict: dict, temp_zip_path: st
             "user": user,
             "upload_time": upload_time,
             "subjects": upload_results,
-            "events": event_results
+            "events": event_results,
+            "skipped_folders": skipped_folders if skipped_folders else None
         }
 
     except Exception as e:
