@@ -51,9 +51,11 @@ class DicomValidator:
             src_filename = Path(file_path).name
 
             # invalid_data에서 재귀적으로 파일 찾기
+            # 파일명에 glob 특수문자([, ], *, ? 등)가 있을 수 있으므로
+            # rglob("*")으로 모든 파일을 찾은 후 이름으로 필터링
             cur = None
-            for file in self.invalid_data_path.rglob(src_filename):
-                if file.is_file():
+            for file in self.invalid_data_path.rglob("*"):
+                if file.is_file() and file.name == src_filename:
                     cur = file
                     break
 

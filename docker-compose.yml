@@ -14,7 +14,8 @@ services:
       dockerfile: Dockerfile
     container_name: bids
     volumes:
-      - /nasdata3/BDSP:/BDSP/interfaces/working
+      #- /nasdata3/BIDS:/BDSP/interfaces/working # 다운로드 로직용 
+      - /nasdata3/BDSP:/BDSP/interfaces/working # 서버 직접저장용
       - ./bids:/BDSP/bids_app
       - /nasdata4/parknm/bids:/BDSP/data
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
@@ -29,6 +30,7 @@ services:
       - PORT=8896
     stdin_open: true 
     tty: true           
+    #command: ["/bin/bash"]
     command: ["python3","/BDSP/bids_app/src/app.py"]
 ###############################################################################
   defacing-defacer:
