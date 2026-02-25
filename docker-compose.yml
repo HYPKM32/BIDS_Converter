@@ -14,8 +14,8 @@ services:
       dockerfile: Dockerfile
     container_name: bids
     volumes:
-      #- /nasdata3/BIDS:/BDSP/interfaces/working # 다운로드 로직용 
-      - /nasdata3/BDSP:/BDSP/interfaces/working # 서버 직접저장용
+      - /nasdata3/BIDS:/BDSP/interfaces/working # 다운로드 로직용 
+      #- /nasdata3/BDSP:/BDSP/interfaces/working # 서버 직접저장용
       - ./bids:/BDSP/bids_app
       - /nasdata4/parknm/bids:/BDSP/data
       - defacing-defacer_flag:/BDSP/interfaces/flag/defacing/defacer
@@ -39,7 +39,7 @@ services:
       dockerfile: Dockerfile
     container_name: defacing-defacer
     volumes:
-      - /nasdata3/BDSP:/BDSP/interfaces/working
+      - /nasdata3/BIDS:/BDSP/interfaces/working
       - ./defacing-defacer:/BDSP/defacer_app
       - defacing-defacer_flag:/BDSP/interfaces/event
     deploy:
@@ -52,6 +52,28 @@ services:
     stdin_open: true 
     tty: true   
     command: ["python3","/BDSP/defacer_app/src/app.py"]
+
+###############################################################################
+  defacing-medfacer:
+    build:
+      context: ./defacing-medfacer
+      dockerfile: Dockerfile
+    container_name: defacing-medfacer
+    volumes:
+      - /nasdata3/BIDS:/BDSP/interfaces/working
+      - ./defacing-medfacer:/BDSP/medfacer_app
+      - defacing-medfacer_flag:/BDSP/interfaces/event
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+              device_ids: ['1']
+    stdin_open: true 
+    tty: true   
+    command: ["/bin/bash"]
+
 ###############################################################################
   canonical:
     build:
@@ -59,7 +81,7 @@ services:
       dockerfile: Dockerfile
     container_name: canonical
     volumes:
-      - /nasdata3/BDSP:/BDSP/interfaces/working
+      - /nasdata3/BIDS:/BDSP/interfaces/working
       - ./canonical:/BDSP/canonical_app
       - canonical_flag:/BDSP/interfaces/event
     deploy:
@@ -79,7 +101,7 @@ services:
       dockerfile: Dockerfile
     container_name: T1wPreprocess-civet
     volumes: 
-      - /nasdata3/BDSP:/BDSP/interfaces/working
+      - /nasdata3/BIDS:/BDSP/interfaces/working
       - ./civet:/BDSP/civet_app
       - T1wPreprocess-civet_flag:/BDSP/interfaces/event 
     environment: 

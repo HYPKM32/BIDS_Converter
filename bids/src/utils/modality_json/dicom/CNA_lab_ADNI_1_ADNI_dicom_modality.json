@@ -1,0 +1,54 @@
+{
+    "angio": [
+      {
+        "SeriesDescription": [
+          "SWAN",
+          "Ansio",
+          "MRA"
+        ]
+      }
+    ],
+    "FLAIR": [
+      {
+        "SeriesDescription": [
+          "FLAIR"
+        ]
+      }
+    ],
+    "T1w": [
+      {
+        "SeriesDescription": [
+          "SPGR",
+          "Accelerated Sagittal MPRAGE",
+          "3D_SAG_T1",
+          "Sagittal 3D Accelerated MPRAGE"
+        ]
+      }
+    ],
+    "T2w": [
+      {
+        "SeriesDescription": [
+          "FSE"
+        ]
+      }
+    ],
+    "CR": [
+      {
+        "Modality": [
+          "CR"
+        ]
+      }
+    ],
+    "DX": [
+      {
+        "ProtocolName": [
+          "PA"
+        ]
+      },
+      {
+        "Modality": [
+          "DX"
+        ]
+      }
+    ]
+  }
