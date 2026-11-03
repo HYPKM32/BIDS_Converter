@@ -1,4 +1,4 @@
-# BDSP (Brain Data Standard Pipeline)
+# bids — BIDS 변환 서비스
 
 BIDS (Brain Imaging Data Structure) 형식으로 의료 영상 데이터를 자동 변환하고 처리하는 파이프라인 시스템
 
@@ -16,7 +16,7 @@ BIDS (Brain Imaging Data Structure) 형식으로 의료 영상 데이터를 자�
 
 ## 프로젝트 개요
 
-BDSP는 다양한 형식의 의료 영상 데이터(DICOM, NIFTI, PAR/REC)를 BIDS 표준 형식으로 자동 변환하는 시스템입니다.
+이 서비스는 다양한 형식의 의료 영상 데이터(DICOM, NIFTI, PAR/REC)를 BIDS 표준 형식으로 자동 변환하는 시스템입니다.
 
 ### 주요 기능
 - **자동 파일 감시**: JSON 설정 파일 기반 자동 처리
@@ -33,7 +33,7 @@ BDSP는 다양한 형식의 의료 영상 데이터(DICOM, NIFTI, PAR/REC)를 BI
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     BDSP Application                         │
+│                     bids Application                         │
 ├─────────────────────────────────────────────────────────────┤
 │                                                               │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
